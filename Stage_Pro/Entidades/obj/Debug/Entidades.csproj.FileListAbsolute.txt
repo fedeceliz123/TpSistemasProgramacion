@@ -1,0 +1,9 @@
+C:\TP4\Stage_Pro\Entidades\bin\Debug\Entidades.dll
+C:\TP4\Stage_Pro\Entidades\bin\Debug\Entidades.pdb
+C:\TP4\Stage_Pro\Entidades\bin\Debug\System.Data.SqlClient.dll
+C:\TP4\Stage_Pro\Entidades\bin\Debug\System.Data.SqlClient.xml
+C:\TP4\Stage_Pro\Entidades\obj\Debug\Entidades.csproj.AssemblyReference.cache
+C:\TP4\Stage_Pro\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
+C:\TP4\Stage_Pro\Entidades\obj\Debug\Entidades.csproj.CopyComplete
+C:\TP4\Stage_Pro\Entidades\obj\Debug\Entidades.dll
+C:\TP4\Stage_Pro\Entidades\obj\Debug\Entidades.pdb
