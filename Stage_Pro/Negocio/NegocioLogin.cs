@@ -17,5 +17,11 @@ namespace Negocio
             return conLog.Acceso(login);
 
         }
+
+
+        public string nombres(Login login)
+        {
+            return conLog.recuperarNombre(login);
+        }
     }
 }

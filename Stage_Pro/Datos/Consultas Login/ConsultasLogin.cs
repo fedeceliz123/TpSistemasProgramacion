@@ -32,5 +32,22 @@ namespace Datos.Consultas_Login
 
         }
 
+        public string recuperarNombre(Login login)
+        {
+            string nombre = "";
+            string consulta = "select nombre+', '+apellido as 'nombres'from empleados where dni=(select dni from login where  nombre_usuario='" + login.nombre_usuario + "' and contraseña='" + login.contraseña + "')";
+            SqlCommand command = new SqlCommand(consulta, Conetar());
+            SqlDataReader leer = command.ExecuteReader();
+
+            if (leer.Read() == true)
+            {
+                nombre = leer["nombres"].ToString();
+            }
+
+
+            return nombre;
+
+        }
+
     }
 }

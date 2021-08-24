@@ -23,7 +23,7 @@
                     </div>
                     <div class="input-group mb-2 tamano">
                         
-                         <asp:TextBox runat="server" ID="tbClave" type="password" CssClass="form-control entrada2" placeholder="Contraseña"  />
+                         <asp:TextBox runat="server" ID="tbClave" type="password" CssClass="form-control entrada2" placeholder="Contraseña"   />
                         <button class="btn btn-primary entrada3" type="button" id="button-addon1"><i class="fas fa-eye"></i></button>
                        
 
@@ -33,7 +33,7 @@
                         <a  class="link-log">Recuperar Clave</a>
                     </div>
                     <div>
-                        <asp:Button runat="server" CssClass="btn btn-primary m-4 "  Text="Ingresar" ID="btnIngresar"/>
+                        <asp:Button runat="server" CssClass="btn btn-primary m-4 "  Text="Ingresar" ID="btnIngresar" OnClick="btnIngresar_Click"/>
                         
                     </div>
             </div>

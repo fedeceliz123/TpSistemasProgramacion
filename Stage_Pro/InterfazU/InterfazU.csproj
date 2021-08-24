@@ -2020,6 +2020,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
+    <Content Include="Css\InicioCSS.css" />
     <Content Include="Css\LoginCss.css" />
     <Content Include="obj\Debug\InterfazU.csproj.FileListAbsolute.txt" />
     <Content Include="obj\Debug\InterfazU.dll" />
@@ -2042,6 +2043,7 @@
     <Content Include="Content\bootstrap-grid.rtl.css.map" />
     <Content Include="Content\bootstrap-grid.min.css.map" />
     <Content Include="Content\bootstrap-grid.css.map" />
+    <Content Include="Paginas\Master\ABMClientes.aspx" />
     <Content Include="Paginas\Master\Inicio.aspx" />
     <Content Include="Paginas\Master\Master.Master" />
     <Content Include="admin\dist\css\adminlte.css.map" />
@@ -2139,6 +2141,7 @@
     <Content Include="obj\Debug\InterfazU.csproj.CopyComplete" />
     <Content Include="obj\Debug\InterfazU.csproj.CoreCompileInputs.cache" />
     <Content Include="obj\Debug\InterfazU.csproj.GenerateResource.cache" />
+    <Content Include="WebForm1.aspx" />
     <None Include="Resources\fondologin.png" />
     <None Include="Resources\logo.png" />
     <None Include="Resources\usuario.png" />
@@ -2165,6 +2168,13 @@
     <Compile Include="Paginas\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Paginas\Master\ABMClientes.aspx.cs">
+      <DependentUpon>ABMClientes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Paginas\Master\ABMClientes.aspx.designer.cs">
+      <DependentUpon>ABMClientes.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Paginas\Master\Inicio.aspx.cs">
       <DependentUpon>Inicio.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2184,6 +2194,13 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
