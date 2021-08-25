@@ -74,7 +74,7 @@ namespace UI
             this.tbClave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(36)))), ((int)(((byte)(36)))));
             this.tbClave.BorderColor = System.Drawing.Color.LightGray;
             this.tbClave.BorderFocusColor = System.Drawing.SystemColors.ActiveBorder;
-            this.tbClave.BorderRadius = 10;
+            this.tbClave.BorderRadius = 5;
             this.tbClave.BorderSize = 2;
             this.tbClave.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbClave.ForeColor = System.Drawing.Color.White;
@@ -96,7 +96,7 @@ namespace UI
             this.tbUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(36)))), ((int)(((byte)(36)))));
             this.tbUsuario.BorderColor = System.Drawing.Color.LightGray;
             this.tbUsuario.BorderFocusColor = System.Drawing.SystemColors.ActiveBorder;
-            this.tbUsuario.BorderRadius = 10;
+            this.tbUsuario.BorderRadius = 5;
             this.tbUsuario.BorderSize = 2;
             this.tbUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbUsuario.ForeColor = System.Drawing.Color.White;

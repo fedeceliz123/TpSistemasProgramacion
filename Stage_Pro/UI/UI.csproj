@@ -71,6 +71,12 @@
     <Compile Include="componentes\RJTextBox.Designer.cs">
       <DependentUpon>RJTextBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="Empleados\CargaEmpleados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Empleados\CargaEmpleados.Designer.cs">
+      <DependentUpon>CargaEmpleados.cs</DependentUpon>
+    </Compile>
     <Compile Include="Inicio.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -96,6 +102,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="componentes\RJTextBox.resx">
       <DependentUpon>RJTextBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Empleados\CargaEmpleados.resx">
+      <DependentUpon>CargaEmpleados.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Inicio.resx">
       <DependentUpon>Inicio.cs</DependentUpon>
@@ -141,6 +150,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\cargando.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\usuario.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

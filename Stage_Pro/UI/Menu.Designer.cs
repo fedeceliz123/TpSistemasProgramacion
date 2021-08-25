@@ -36,32 +36,32 @@ namespace UI
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelMenu = new System.Windows.Forms.Panel();
+            this.panelBotones = new System.Windows.Forms.Panel();
+            this.panelSubEstadis = new System.Windows.Forms.Panel();
+            this.btnRepPers = new System.Windows.Forms.Button();
+            this.btnRepEven = new System.Windows.Forms.Button();
+            this.btnRepCompras = new System.Windows.Forms.Button();
+            this.btnEstadisticas = new System.Windows.Forms.Button();
+            this.panelSubPersonal = new System.Windows.Forms.Panel();
+            this.btnUsuario = new System.Windows.Forms.Button();
+            this.btnAsigEvento = new System.Windows.Forms.Button();
+            this.btnCarPersonal = new System.Windows.Forms.Button();
+            this.btnPersonal = new System.Windows.Forms.Button();
+            this.panelSubEventos = new System.Windows.Forms.Panel();
+            this.btnMaterial = new System.Windows.Forms.Button();
+            this.btnClientes = new System.Windows.Forms.Button();
+            this.btnCarEvento = new System.Windows.Forms.Button();
+            this.btnEventos = new System.Windows.Forms.Button();
+            this.panelSubCom = new System.Windows.Forms.Panel();
+            this.btnSaldo = new System.Windows.Forms.Button();
+            this.btnCarCompra = new System.Windows.Forms.Button();
+            this.btnProveedores = new System.Windows.Forms.Button();
+            this.btnCompras = new System.Windows.Forms.Button();
             this.panelLogoImg = new System.Windows.Forms.Panel();
             this.lblNombre = new System.Windows.Forms.Label();
+            this.rjCircularPictureBox1 = new UI.componentes.RJCircularPictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.panelContenedor = new System.Windows.Forms.Panel();
-            this.panelBotones = new System.Windows.Forms.Panel();
-            this.btnCompras = new System.Windows.Forms.Button();
-            this.panelSubCom = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.btnEventos = new System.Windows.Forms.Button();
-            this.panelSubEventos = new System.Windows.Forms.Panel();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.btnPersonal = new System.Windows.Forms.Button();
-            this.panelSubPersonal = new System.Windows.Forms.Panel();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
-            this.btnEstadisticas = new System.Windows.Forms.Button();
-            this.panelSubEstadis = new System.Windows.Forms.Panel();
-            this.button10 = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
-            this.button12 = new System.Windows.Forms.Button();
-            this.rjCircularPictureBox1 = new UI.componentes.RJCircularPictureBox();
             this.ellipseComponentes1 = new UI.componentes.EllipseComponentes();
             this.panelBarrasub.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -69,14 +69,14 @@ namespace UI
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelMenu.SuspendLayout();
-            this.panelLogoImg.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.panelBotones.SuspendLayout();
-            this.panelSubCom.SuspendLayout();
-            this.panelSubEventos.SuspendLayout();
-            this.panelSubPersonal.SuspendLayout();
             this.panelSubEstadis.SuspendLayout();
+            this.panelSubPersonal.SuspendLayout();
+            this.panelSubEventos.SuspendLayout();
+            this.panelSubCom.SuspendLayout();
+            this.panelLogoImg.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rjCircularPictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.SuspendLayout();
             // 
             // panelBarrasub
@@ -157,6 +157,363 @@ namespace UI
             this.panelMenu.Size = new System.Drawing.Size(268, 755);
             this.panelMenu.TabIndex = 1;
             // 
+            // panelBotones
+            // 
+            this.panelBotones.AutoScroll = true;
+            this.panelBotones.Controls.Add(this.panelSubEstadis);
+            this.panelBotones.Controls.Add(this.btnEstadisticas);
+            this.panelBotones.Controls.Add(this.panelSubPersonal);
+            this.panelBotones.Controls.Add(this.btnPersonal);
+            this.panelBotones.Controls.Add(this.panelSubEventos);
+            this.panelBotones.Controls.Add(this.btnEventos);
+            this.panelBotones.Controls.Add(this.panelSubCom);
+            this.panelBotones.Controls.Add(this.btnCompras);
+            this.panelBotones.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelBotones.Location = new System.Drawing.Point(0, 208);
+            this.panelBotones.Name = "panelBotones";
+            this.panelBotones.Size = new System.Drawing.Size(268, 547);
+            this.panelBotones.TabIndex = 1;
+            // 
+            // panelSubEstadis
+            // 
+            this.panelSubEstadis.Controls.Add(this.btnRepPers);
+            this.panelSubEstadis.Controls.Add(this.btnRepEven);
+            this.panelSubEstadis.Controls.Add(this.btnRepCompras);
+            this.panelSubEstadis.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelSubEstadis.Location = new System.Drawing.Point(0, 620);
+            this.panelSubEstadis.Name = "panelSubEstadis";
+            this.panelSubEstadis.Size = new System.Drawing.Size(251, 140);
+            this.panelSubEstadis.TabIndex = 7;
+            this.panelSubEstadis.Visible = false;
+            // 
+            // btnRepPers
+            // 
+            this.btnRepPers.BackColor = System.Drawing.Color.Gray;
+            this.btnRepPers.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnRepPers.FlatAppearance.BorderSize = 0;
+            this.btnRepPers.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.btnRepPers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRepPers.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRepPers.ForeColor = System.Drawing.Color.White;
+            this.btnRepPers.Location = new System.Drawing.Point(0, 70);
+            this.btnRepPers.Name = "btnRepPers";
+            this.btnRepPers.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.btnRepPers.Size = new System.Drawing.Size(251, 35);
+            this.btnRepPers.TabIndex = 3;
+            this.btnRepPers.Text = "Pesonal";
+            this.btnRepPers.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRepPers.UseVisualStyleBackColor = false;
+            // 
+            // btnRepEven
+            // 
+            this.btnRepEven.BackColor = System.Drawing.Color.Gray;
+            this.btnRepEven.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnRepEven.FlatAppearance.BorderSize = 0;
+            this.btnRepEven.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.btnRepEven.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRepEven.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRepEven.ForeColor = System.Drawing.Color.White;
+            this.btnRepEven.Location = new System.Drawing.Point(0, 35);
+            this.btnRepEven.Name = "btnRepEven";
+            this.btnRepEven.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.btnRepEven.Size = new System.Drawing.Size(251, 35);
+            this.btnRepEven.TabIndex = 2;
+            this.btnRepEven.Text = "Eventos";
+            this.btnRepEven.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRepEven.UseVisualStyleBackColor = false;
+            // 
+            // btnRepCompras
+            // 
+            this.btnRepCompras.BackColor = System.Drawing.Color.Gray;
+            this.btnRepCompras.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnRepCompras.FlatAppearance.BorderSize = 0;
+            this.btnRepCompras.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.btnRepCompras.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRepCompras.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRepCompras.ForeColor = System.Drawing.Color.White;
+            this.btnRepCompras.Location = new System.Drawing.Point(0, 0);
+            this.btnRepCompras.Name = "btnRepCompras";
+            this.btnRepCompras.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.btnRepCompras.Size = new System.Drawing.Size(251, 35);
+            this.btnRepCompras.TabIndex = 1;
+            this.btnRepCompras.Text = "Compras";
+            this.btnRepCompras.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRepCompras.UseVisualStyleBackColor = false;
+            // 
+            // btnEstadisticas
+            // 
+            this.btnEstadisticas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
+            this.btnEstadisticas.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnEstadisticas.FlatAppearance.BorderSize = 0;
+            this.btnEstadisticas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.btnEstadisticas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEstadisticas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEstadisticas.ForeColor = System.Drawing.Color.White;
+            this.btnEstadisticas.Image = ((System.Drawing.Image)(resources.GetObject("btnEstadisticas.Image")));
+            this.btnEstadisticas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEstadisticas.Location = new System.Drawing.Point(0, 570);
+            this.btnEstadisticas.Name = "btnEstadisticas";
+            this.btnEstadisticas.Size = new System.Drawing.Size(251, 50);
+            this.btnEstadisticas.TabIndex = 6;
+            this.btnEstadisticas.Text = "Reportes";
+            this.btnEstadisticas.UseVisualStyleBackColor = false;
+            this.btnEstadisticas.Click += new System.EventHandler(this.btnEstadisticas_Click);
+            // 
+            // panelSubPersonal
+            // 
+            this.panelSubPersonal.Controls.Add(this.btnUsuario);
+            this.panelSubPersonal.Controls.Add(this.btnAsigEvento);
+            this.panelSubPersonal.Controls.Add(this.btnCarPersonal);
+            this.panelSubPersonal.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelSubPersonal.Location = new System.Drawing.Point(0, 430);
+            this.panelSubPersonal.Name = "panelSubPersonal";
+            this.panelSubPersonal.Size = new System.Drawing.Size(251, 140);
+            this.panelSubPersonal.TabIndex = 5;
+            this.panelSubPersonal.Visible = false;
+            // 
+            // btnUsuario
+            // 
+            this.btnUsuario.BackColor = System.Drawing.Color.Gray;
+            this.btnUsuario.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnUsuario.FlatAppearance.BorderSize = 0;
+            this.btnUsuario.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.btnUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUsuario.ForeColor = System.Drawing.Color.White;
+            this.btnUsuario.Location = new System.Drawing.Point(0, 70);
+            this.btnUsuario.Name = "btnUsuario";
+            this.btnUsuario.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.btnUsuario.Size = new System.Drawing.Size(251, 35);
+            this.btnUsuario.TabIndex = 3;
+            this.btnUsuario.Text = "Crear Usuario";
+            this.btnUsuario.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnUsuario.UseVisualStyleBackColor = false;
+            // 
+            // btnAsigEvento
+            // 
+            this.btnAsigEvento.BackColor = System.Drawing.Color.Gray;
+            this.btnAsigEvento.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnAsigEvento.FlatAppearance.BorderSize = 0;
+            this.btnAsigEvento.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.btnAsigEvento.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAsigEvento.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAsigEvento.ForeColor = System.Drawing.Color.White;
+            this.btnAsigEvento.Location = new System.Drawing.Point(0, 35);
+            this.btnAsigEvento.Name = "btnAsigEvento";
+            this.btnAsigEvento.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.btnAsigEvento.Size = new System.Drawing.Size(251, 35);
+            this.btnAsigEvento.TabIndex = 2;
+            this.btnAsigEvento.Text = "Asignar Evento";
+            this.btnAsigEvento.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAsigEvento.UseVisualStyleBackColor = false;
+            // 
+            // btnCarPersonal
+            // 
+            this.btnCarPersonal.BackColor = System.Drawing.Color.Gray;
+            this.btnCarPersonal.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnCarPersonal.FlatAppearance.BorderSize = 0;
+            this.btnCarPersonal.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.btnCarPersonal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCarPersonal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCarPersonal.ForeColor = System.Drawing.Color.White;
+            this.btnCarPersonal.Location = new System.Drawing.Point(0, 0);
+            this.btnCarPersonal.Name = "btnCarPersonal";
+            this.btnCarPersonal.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.btnCarPersonal.Size = new System.Drawing.Size(251, 35);
+            this.btnCarPersonal.TabIndex = 1;
+            this.btnCarPersonal.Text = "Carga Personal";
+            this.btnCarPersonal.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCarPersonal.UseVisualStyleBackColor = false;
+            // 
+            // btnPersonal
+            // 
+            this.btnPersonal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
+            this.btnPersonal.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnPersonal.FlatAppearance.BorderSize = 0;
+            this.btnPersonal.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.btnPersonal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPersonal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPersonal.ForeColor = System.Drawing.Color.White;
+            this.btnPersonal.Image = ((System.Drawing.Image)(resources.GetObject("btnPersonal.Image")));
+            this.btnPersonal.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPersonal.Location = new System.Drawing.Point(0, 380);
+            this.btnPersonal.Name = "btnPersonal";
+            this.btnPersonal.Size = new System.Drawing.Size(251, 50);
+            this.btnPersonal.TabIndex = 4;
+            this.btnPersonal.Text = "Personal";
+            this.btnPersonal.UseVisualStyleBackColor = false;
+            this.btnPersonal.Click += new System.EventHandler(this.btnPersonal_Click);
+            // 
+            // panelSubEventos
+            // 
+            this.panelSubEventos.Controls.Add(this.btnMaterial);
+            this.panelSubEventos.Controls.Add(this.btnClientes);
+            this.panelSubEventos.Controls.Add(this.btnCarEvento);
+            this.panelSubEventos.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelSubEventos.Location = new System.Drawing.Point(0, 240);
+            this.panelSubEventos.Name = "panelSubEventos";
+            this.panelSubEventos.Size = new System.Drawing.Size(251, 140);
+            this.panelSubEventos.TabIndex = 3;
+            this.panelSubEventos.Visible = false;
+            // 
+            // btnMaterial
+            // 
+            this.btnMaterial.BackColor = System.Drawing.Color.Gray;
+            this.btnMaterial.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnMaterial.FlatAppearance.BorderSize = 0;
+            this.btnMaterial.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.btnMaterial.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMaterial.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMaterial.ForeColor = System.Drawing.Color.White;
+            this.btnMaterial.Location = new System.Drawing.Point(0, 70);
+            this.btnMaterial.Name = "btnMaterial";
+            this.btnMaterial.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.btnMaterial.Size = new System.Drawing.Size(251, 35);
+            this.btnMaterial.TabIndex = 3;
+            this.btnMaterial.Text = "Asignar Material";
+            this.btnMaterial.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnMaterial.UseVisualStyleBackColor = false;
+            // 
+            // btnClientes
+            // 
+            this.btnClientes.BackColor = System.Drawing.Color.Gray;
+            this.btnClientes.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnClientes.FlatAppearance.BorderSize = 0;
+            this.btnClientes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.btnClientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClientes.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClientes.ForeColor = System.Drawing.Color.White;
+            this.btnClientes.Location = new System.Drawing.Point(0, 35);
+            this.btnClientes.Name = "btnClientes";
+            this.btnClientes.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.btnClientes.Size = new System.Drawing.Size(251, 35);
+            this.btnClientes.TabIndex = 2;
+            this.btnClientes.Text = "Clientes";
+            this.btnClientes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnClientes.UseVisualStyleBackColor = false;
+            // 
+            // btnCarEvento
+            // 
+            this.btnCarEvento.BackColor = System.Drawing.Color.Gray;
+            this.btnCarEvento.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnCarEvento.FlatAppearance.BorderSize = 0;
+            this.btnCarEvento.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.btnCarEvento.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCarEvento.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCarEvento.ForeColor = System.Drawing.Color.White;
+            this.btnCarEvento.Location = new System.Drawing.Point(0, 0);
+            this.btnCarEvento.Name = "btnCarEvento";
+            this.btnCarEvento.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.btnCarEvento.Size = new System.Drawing.Size(251, 35);
+            this.btnCarEvento.TabIndex = 1;
+            this.btnCarEvento.Text = "Cargar Evento";
+            this.btnCarEvento.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCarEvento.UseVisualStyleBackColor = false;
+            // 
+            // btnEventos
+            // 
+            this.btnEventos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
+            this.btnEventos.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnEventos.FlatAppearance.BorderSize = 0;
+            this.btnEventos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.btnEventos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEventos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEventos.ForeColor = System.Drawing.Color.White;
+            this.btnEventos.Image = ((System.Drawing.Image)(resources.GetObject("btnEventos.Image")));
+            this.btnEventos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEventos.Location = new System.Drawing.Point(0, 190);
+            this.btnEventos.Name = "btnEventos";
+            this.btnEventos.Size = new System.Drawing.Size(251, 50);
+            this.btnEventos.TabIndex = 2;
+            this.btnEventos.Text = "Eventos";
+            this.btnEventos.UseVisualStyleBackColor = false;
+            this.btnEventos.Click += new System.EventHandler(this.btnEventos_Click);
+            // 
+            // panelSubCom
+            // 
+            this.panelSubCom.Controls.Add(this.btnSaldo);
+            this.panelSubCom.Controls.Add(this.btnCarCompra);
+            this.panelSubCom.Controls.Add(this.btnProveedores);
+            this.panelSubCom.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelSubCom.Location = new System.Drawing.Point(0, 50);
+            this.panelSubCom.Name = "panelSubCom";
+            this.panelSubCom.Size = new System.Drawing.Size(251, 140);
+            this.panelSubCom.TabIndex = 1;
+            this.panelSubCom.Visible = false;
+            // 
+            // btnSaldo
+            // 
+            this.btnSaldo.BackColor = System.Drawing.Color.Gray;
+            this.btnSaldo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnSaldo.FlatAppearance.BorderSize = 0;
+            this.btnSaldo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.btnSaldo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSaldo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSaldo.ForeColor = System.Drawing.Color.White;
+            this.btnSaldo.Location = new System.Drawing.Point(0, 70);
+            this.btnSaldo.Name = "btnSaldo";
+            this.btnSaldo.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.btnSaldo.Size = new System.Drawing.Size(251, 35);
+            this.btnSaldo.TabIndex = 3;
+            this.btnSaldo.Text = "Saldos";
+            this.btnSaldo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSaldo.UseVisualStyleBackColor = false;
+            // 
+            // btnCarCompra
+            // 
+            this.btnCarCompra.BackColor = System.Drawing.Color.Gray;
+            this.btnCarCompra.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnCarCompra.FlatAppearance.BorderSize = 0;
+            this.btnCarCompra.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.btnCarCompra.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCarCompra.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCarCompra.ForeColor = System.Drawing.Color.White;
+            this.btnCarCompra.Location = new System.Drawing.Point(0, 35);
+            this.btnCarCompra.Name = "btnCarCompra";
+            this.btnCarCompra.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.btnCarCompra.Size = new System.Drawing.Size(251, 35);
+            this.btnCarCompra.TabIndex = 2;
+            this.btnCarCompra.Text = "Compras";
+            this.btnCarCompra.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCarCompra.UseVisualStyleBackColor = false;
+            // 
+            // btnProveedores
+            // 
+            this.btnProveedores.BackColor = System.Drawing.Color.Gray;
+            this.btnProveedores.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnProveedores.FlatAppearance.BorderSize = 0;
+            this.btnProveedores.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.btnProveedores.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnProveedores.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProveedores.ForeColor = System.Drawing.Color.White;
+            this.btnProveedores.Location = new System.Drawing.Point(0, 0);
+            this.btnProveedores.Name = "btnProveedores";
+            this.btnProveedores.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.btnProveedores.Size = new System.Drawing.Size(251, 35);
+            this.btnProveedores.TabIndex = 1;
+            this.btnProveedores.Text = "Proveedores";
+            this.btnProveedores.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnProveedores.UseVisualStyleBackColor = false;
+            // 
+            // btnCompras
+            // 
+            this.btnCompras.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
+            this.btnCompras.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnCompras.FlatAppearance.BorderSize = 0;
+            this.btnCompras.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.btnCompras.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCompras.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCompras.ForeColor = System.Drawing.Color.White;
+            this.btnCompras.Image = ((System.Drawing.Image)(resources.GetObject("btnCompras.Image")));
+            this.btnCompras.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCompras.Location = new System.Drawing.Point(0, 0);
+            this.btnCompras.Name = "btnCompras";
+            this.btnCompras.Size = new System.Drawing.Size(251, 50);
+            this.btnCompras.TabIndex = 0;
+            this.btnCompras.Text = "Compras";
+            this.btnCompras.UseVisualStyleBackColor = false;
+            this.btnCompras.Click += new System.EventHandler(this.btnCompras_Click);
+            // 
             // panelLogoImg
             // 
             this.panelLogoImg.Controls.Add(this.lblNombre);
@@ -179,6 +536,22 @@ namespace UI
             this.lblNombre.TabIndex = 2;
             this.lblNombre.Text = "-";
             // 
+            // rjCircularPictureBox1
+            // 
+            this.rjCircularPictureBox1.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
+            this.rjCircularPictureBox1.BorderColor = System.Drawing.Color.Black;
+            this.rjCircularPictureBox1.BorderColor2 = System.Drawing.Color.DarkGray;
+            this.rjCircularPictureBox1.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+            this.rjCircularPictureBox1.BorderSize = 2;
+            this.rjCircularPictureBox1.GradientAngle = 50F;
+            this.rjCircularPictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("rjCircularPictureBox1.Image")));
+            this.rjCircularPictureBox1.Location = new System.Drawing.Point(12, 142);
+            this.rjCircularPictureBox1.Name = "rjCircularPictureBox1";
+            this.rjCircularPictureBox1.Size = new System.Drawing.Size(47, 47);
+            this.rjCircularPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.rjCircularPictureBox1.TabIndex = 1;
+            this.rjCircularPictureBox1.TabStop = false;
+            // 
             // pictureBox5
             // 
             this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
@@ -196,379 +569,6 @@ namespace UI
             this.panelContenedor.Name = "panelContenedor";
             this.panelContenedor.Size = new System.Drawing.Size(928, 755);
             this.panelContenedor.TabIndex = 2;
-            // 
-            // panelBotones
-            // 
-            this.panelBotones.AutoScroll = true;
-            this.panelBotones.Controls.Add(this.panelSubEstadis);
-            this.panelBotones.Controls.Add(this.btnEstadisticas);
-            this.panelBotones.Controls.Add(this.panelSubPersonal);
-            this.panelBotones.Controls.Add(this.btnPersonal);
-            this.panelBotones.Controls.Add(this.panelSubEventos);
-            this.panelBotones.Controls.Add(this.btnEventos);
-            this.panelBotones.Controls.Add(this.panelSubCom);
-            this.panelBotones.Controls.Add(this.btnCompras);
-            this.panelBotones.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelBotones.Location = new System.Drawing.Point(0, 208);
-            this.panelBotones.Name = "panelBotones";
-            this.panelBotones.Size = new System.Drawing.Size(268, 547);
-            this.panelBotones.TabIndex = 1;
-            // 
-            // btnCompras
-            // 
-            this.btnCompras.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
-            this.btnCompras.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnCompras.FlatAppearance.BorderSize = 0;
-            this.btnCompras.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
-            this.btnCompras.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCompras.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCompras.ForeColor = System.Drawing.Color.White;
-            this.btnCompras.Image = ((System.Drawing.Image)(resources.GetObject("btnCompras.Image")));
-            this.btnCompras.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCompras.Location = new System.Drawing.Point(0, 0);
-            this.btnCompras.Name = "btnCompras";
-            this.btnCompras.Size = new System.Drawing.Size(251, 50);
-            this.btnCompras.TabIndex = 0;
-            this.btnCompras.Text = "Compras";
-            this.btnCompras.UseVisualStyleBackColor = false;
-            this.btnCompras.Click += new System.EventHandler(this.btnCompras_Click);
-            // 
-            // panelSubCom
-            // 
-            this.panelSubCom.Controls.Add(this.button3);
-            this.panelSubCom.Controls.Add(this.button2);
-            this.panelSubCom.Controls.Add(this.button1);
-            this.panelSubCom.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelSubCom.Location = new System.Drawing.Point(0, 50);
-            this.panelSubCom.Name = "panelSubCom";
-            this.panelSubCom.Size = new System.Drawing.Size(251, 140);
-            this.panelSubCom.TabIndex = 1;
-            this.panelSubCom.Visible = false;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.Gray;
-            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(0, 0);
-            this.button1.Name = "button1";
-            this.button1.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.button1.Size = new System.Drawing.Size(251, 35);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Compras";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.Gray;
-            this.button2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(0, 35);
-            this.button2.Name = "button2";
-            this.button2.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.button2.Size = new System.Drawing.Size(251, 35);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Compras";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.UseVisualStyleBackColor = false;
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.Gray;
-            this.button3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(0, 70);
-            this.button3.Name = "button3";
-            this.button3.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.button3.Size = new System.Drawing.Size(251, 35);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "Compras";
-            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.UseVisualStyleBackColor = false;
-            // 
-            // btnEventos
-            // 
-            this.btnEventos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
-            this.btnEventos.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnEventos.FlatAppearance.BorderSize = 0;
-            this.btnEventos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
-            this.btnEventos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEventos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEventos.ForeColor = System.Drawing.Color.White;
-            this.btnEventos.Image = ((System.Drawing.Image)(resources.GetObject("btnEventos.Image")));
-            this.btnEventos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEventos.Location = new System.Drawing.Point(0, 190);
-            this.btnEventos.Name = "btnEventos";
-            this.btnEventos.Size = new System.Drawing.Size(251, 50);
-            this.btnEventos.TabIndex = 2;
-            this.btnEventos.Text = "Eventos";
-            this.btnEventos.UseVisualStyleBackColor = false;
-            this.btnEventos.Click += new System.EventHandler(this.btnEventos_Click);
-            // 
-            // panelSubEventos
-            // 
-            this.panelSubEventos.Controls.Add(this.button4);
-            this.panelSubEventos.Controls.Add(this.button5);
-            this.panelSubEventos.Controls.Add(this.button6);
-            this.panelSubEventos.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelSubEventos.Location = new System.Drawing.Point(0, 240);
-            this.panelSubEventos.Name = "panelSubEventos";
-            this.panelSubEventos.Size = new System.Drawing.Size(251, 140);
-            this.panelSubEventos.TabIndex = 3;
-            this.panelSubEventos.Visible = false;
-            // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.Color.Gray;
-            this.button4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(0, 70);
-            this.button4.Name = "button4";
-            this.button4.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.button4.Size = new System.Drawing.Size(251, 35);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "Compras";
-            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.UseVisualStyleBackColor = false;
-            // 
-            // button5
-            // 
-            this.button5.BackColor = System.Drawing.Color.Gray;
-            this.button5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Location = new System.Drawing.Point(0, 35);
-            this.button5.Name = "button5";
-            this.button5.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.button5.Size = new System.Drawing.Size(251, 35);
-            this.button5.TabIndex = 2;
-            this.button5.Text = "Compras";
-            this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button5.UseVisualStyleBackColor = false;
-            // 
-            // button6
-            // 
-            this.button6.BackColor = System.Drawing.Color.Gray;
-            this.button6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button6.FlatAppearance.BorderSize = 0;
-            this.button6.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.ForeColor = System.Drawing.Color.White;
-            this.button6.Location = new System.Drawing.Point(0, 0);
-            this.button6.Name = "button6";
-            this.button6.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.button6.Size = new System.Drawing.Size(251, 35);
-            this.button6.TabIndex = 1;
-            this.button6.Text = "Compras";
-            this.button6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button6.UseVisualStyleBackColor = false;
-            // 
-            // btnPersonal
-            // 
-            this.btnPersonal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
-            this.btnPersonal.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnPersonal.FlatAppearance.BorderSize = 0;
-            this.btnPersonal.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
-            this.btnPersonal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPersonal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPersonal.ForeColor = System.Drawing.Color.White;
-            this.btnPersonal.Image = ((System.Drawing.Image)(resources.GetObject("btnPersonal.Image")));
-            this.btnPersonal.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPersonal.Location = new System.Drawing.Point(0, 380);
-            this.btnPersonal.Name = "btnPersonal";
-            this.btnPersonal.Size = new System.Drawing.Size(251, 50);
-            this.btnPersonal.TabIndex = 4;
-            this.btnPersonal.Text = "Personal";
-            this.btnPersonal.UseVisualStyleBackColor = false;
-            this.btnPersonal.Click += new System.EventHandler(this.btnPersonal_Click);
-            // 
-            // panelSubPersonal
-            // 
-            this.panelSubPersonal.Controls.Add(this.button7);
-            this.panelSubPersonal.Controls.Add(this.button8);
-            this.panelSubPersonal.Controls.Add(this.button9);
-            this.panelSubPersonal.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelSubPersonal.Location = new System.Drawing.Point(0, 430);
-            this.panelSubPersonal.Name = "panelSubPersonal";
-            this.panelSubPersonal.Size = new System.Drawing.Size(251, 140);
-            this.panelSubPersonal.TabIndex = 5;
-            this.panelSubPersonal.Visible = false;
-            // 
-            // button7
-            // 
-            this.button7.BackColor = System.Drawing.Color.Gray;
-            this.button7.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button7.FlatAppearance.BorderSize = 0;
-            this.button7.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.ForeColor = System.Drawing.Color.White;
-            this.button7.Location = new System.Drawing.Point(0, 70);
-            this.button7.Name = "button7";
-            this.button7.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.button7.Size = new System.Drawing.Size(251, 35);
-            this.button7.TabIndex = 3;
-            this.button7.Text = "Compras";
-            this.button7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button7.UseVisualStyleBackColor = false;
-            // 
-            // button8
-            // 
-            this.button8.BackColor = System.Drawing.Color.Gray;
-            this.button8.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button8.FlatAppearance.BorderSize = 0;
-            this.button8.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button8.ForeColor = System.Drawing.Color.White;
-            this.button8.Location = new System.Drawing.Point(0, 35);
-            this.button8.Name = "button8";
-            this.button8.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.button8.Size = new System.Drawing.Size(251, 35);
-            this.button8.TabIndex = 2;
-            this.button8.Text = "Compras";
-            this.button8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button8.UseVisualStyleBackColor = false;
-            // 
-            // button9
-            // 
-            this.button9.BackColor = System.Drawing.Color.Gray;
-            this.button9.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button9.FlatAppearance.BorderSize = 0;
-            this.button9.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
-            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button9.ForeColor = System.Drawing.Color.White;
-            this.button9.Location = new System.Drawing.Point(0, 0);
-            this.button9.Name = "button9";
-            this.button9.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.button9.Size = new System.Drawing.Size(251, 35);
-            this.button9.TabIndex = 1;
-            this.button9.Text = "Compras";
-            this.button9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button9.UseVisualStyleBackColor = false;
-            // 
-            // btnEstadisticas
-            // 
-            this.btnEstadisticas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
-            this.btnEstadisticas.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnEstadisticas.FlatAppearance.BorderSize = 0;
-            this.btnEstadisticas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
-            this.btnEstadisticas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEstadisticas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEstadisticas.ForeColor = System.Drawing.Color.White;
-            this.btnEstadisticas.Image = ((System.Drawing.Image)(resources.GetObject("btnEstadisticas.Image")));
-            this.btnEstadisticas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEstadisticas.Location = new System.Drawing.Point(0, 570);
-            this.btnEstadisticas.Name = "btnEstadisticas";
-            this.btnEstadisticas.Size = new System.Drawing.Size(251, 50);
-            this.btnEstadisticas.TabIndex = 6;
-            this.btnEstadisticas.Text = "Reportes";
-            this.btnEstadisticas.UseVisualStyleBackColor = false;
-            this.btnEstadisticas.Click += new System.EventHandler(this.btnEstadisticas_Click);
-            // 
-            // panelSubEstadis
-            // 
-            this.panelSubEstadis.Controls.Add(this.button10);
-            this.panelSubEstadis.Controls.Add(this.button11);
-            this.panelSubEstadis.Controls.Add(this.button12);
-            this.panelSubEstadis.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelSubEstadis.Location = new System.Drawing.Point(0, 620);
-            this.panelSubEstadis.Name = "panelSubEstadis";
-            this.panelSubEstadis.Size = new System.Drawing.Size(251, 140);
-            this.panelSubEstadis.TabIndex = 7;
-            this.panelSubEstadis.Visible = false;
-            // 
-            // button10
-            // 
-            this.button10.BackColor = System.Drawing.Color.Gray;
-            this.button10.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button10.FlatAppearance.BorderSize = 0;
-            this.button10.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
-            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button10.ForeColor = System.Drawing.Color.White;
-            this.button10.Location = new System.Drawing.Point(0, 70);
-            this.button10.Name = "button10";
-            this.button10.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.button10.Size = new System.Drawing.Size(251, 35);
-            this.button10.TabIndex = 3;
-            this.button10.Text = "Compras";
-            this.button10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button10.UseVisualStyleBackColor = false;
-            // 
-            // button11
-            // 
-            this.button11.BackColor = System.Drawing.Color.Gray;
-            this.button11.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button11.FlatAppearance.BorderSize = 0;
-            this.button11.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
-            this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button11.ForeColor = System.Drawing.Color.White;
-            this.button11.Location = new System.Drawing.Point(0, 35);
-            this.button11.Name = "button11";
-            this.button11.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.button11.Size = new System.Drawing.Size(251, 35);
-            this.button11.TabIndex = 2;
-            this.button11.Text = "Compras";
-            this.button11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button11.UseVisualStyleBackColor = false;
-            // 
-            // button12
-            // 
-            this.button12.BackColor = System.Drawing.Color.Gray;
-            this.button12.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button12.FlatAppearance.BorderSize = 0;
-            this.button12.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
-            this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button12.ForeColor = System.Drawing.Color.White;
-            this.button12.Location = new System.Drawing.Point(0, 0);
-            this.button12.Name = "button12";
-            this.button12.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.button12.Size = new System.Drawing.Size(251, 35);
-            this.button12.TabIndex = 1;
-            this.button12.Text = "Compras";
-            this.button12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button12.UseVisualStyleBackColor = false;
-            // 
-            // rjCircularPictureBox1
-            // 
-            this.rjCircularPictureBox1.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
-            this.rjCircularPictureBox1.BorderColor = System.Drawing.Color.Black;
-            this.rjCircularPictureBox1.BorderColor2 = System.Drawing.Color.DarkGray;
-            this.rjCircularPictureBox1.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-            this.rjCircularPictureBox1.BorderSize = 2;
-            this.rjCircularPictureBox1.GradientAngle = 50F;
-            this.rjCircularPictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("rjCircularPictureBox1.Image")));
-            this.rjCircularPictureBox1.Location = new System.Drawing.Point(12, 142);
-            this.rjCircularPictureBox1.Name = "rjCircularPictureBox1";
-            this.rjCircularPictureBox1.Size = new System.Drawing.Size(47, 47);
-            this.rjCircularPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.rjCircularPictureBox1.TabIndex = 1;
-            this.rjCircularPictureBox1.TabStop = false;
             // 
             // ellipseComponentes1
             // 
@@ -594,15 +594,15 @@ namespace UI
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelMenu.ResumeLayout(false);
+            this.panelBotones.ResumeLayout(false);
+            this.panelSubEstadis.ResumeLayout(false);
+            this.panelSubPersonal.ResumeLayout(false);
+            this.panelSubEventos.ResumeLayout(false);
+            this.panelSubCom.ResumeLayout(false);
             this.panelLogoImg.ResumeLayout(false);
             this.panelLogoImg.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            this.panelBotones.ResumeLayout(false);
-            this.panelSubCom.ResumeLayout(false);
-            this.panelSubEventos.ResumeLayout(false);
-            this.panelSubPersonal.ResumeLayout(false);
-            this.panelSubEstadis.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.rjCircularPictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -623,24 +623,24 @@ namespace UI
         private System.Windows.Forms.Panel panelContenedor;
         private System.Windows.Forms.Panel panelBotones;
         private System.Windows.Forms.Panel panelSubEstadis;
-        private System.Windows.Forms.Button button10;
-        private System.Windows.Forms.Button button11;
-        private System.Windows.Forms.Button button12;
+        private System.Windows.Forms.Button btnRepPers;
+        private System.Windows.Forms.Button btnRepEven;
+        private System.Windows.Forms.Button btnRepCompras;
         private System.Windows.Forms.Button btnEstadisticas;
         private System.Windows.Forms.Panel panelSubPersonal;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Button btnUsuario;
+        private System.Windows.Forms.Button btnAsigEvento;
+        private System.Windows.Forms.Button btnCarPersonal;
         private System.Windows.Forms.Button btnPersonal;
         private System.Windows.Forms.Panel panelSubEventos;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button btnMaterial;
+        private System.Windows.Forms.Button btnClientes;
+        private System.Windows.Forms.Button btnCarEvento;
         private System.Windows.Forms.Button btnEventos;
         private System.Windows.Forms.Panel panelSubCom;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnSaldo;
+        private System.Windows.Forms.Button btnCarCompra;
+        private System.Windows.Forms.Button btnProveedores;
         private System.Windows.Forms.Button btnCompras;
     }
 }
