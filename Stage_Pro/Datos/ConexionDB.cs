@@ -20,7 +20,7 @@ namespace Datos
             try
             {
 
-                Conexion = new SqlConnection(conexionNube);
+                Conexion = new SqlConnection(cadena);
 
                 if (Conexion.State.Equals(ConnectionState.Open))
                 {
