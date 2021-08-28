@@ -11,7 +11,28 @@ namespace InterfazU.Paginas.Master
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            
+        }
 
+
+
+        protected void ImageButton1_Click(object sender, ImageClickEventArgs e)
+        {
+            if (Calendar1.Visible == false)
+            {
+                Calendar1.Visible = true;
+
+            }
+            else
+            {
+                Calendar1.Visible = false;
+            }
+        }
+
+        protected void Calendar1_SelectionChanged(object sender, EventArgs e)
+        {
+            tbFechaN.Text = Calendar1.SelectedDate.ToString("dd/MM/yyyy");
+            Calendar1.Visible = false;
         }
     }
 }

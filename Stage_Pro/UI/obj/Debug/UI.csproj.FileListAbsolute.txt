@@ -21,4 +21,6 @@ C:\TP4\Stage_Pro\UI\obj\Debug\UI.Menu.resources
 C:\TP4\Stage_Pro\UI\obj\Debug\UI.Carga.resources
 C:\TP4\Stage_Pro\UI\obj\Debug\UI.Inicio.resources
 C:\TP4\Stage_Pro\UI\obj\Debug\UI.Empleados.CargaEmpleados.resources
-C:\TP4\Stage_Pro\UI\obj\Debug\UI.Empleados.ListarEmpleados.resources
+C:\TP4\Stage_Pro\UI\obj\Debug\UI.Eliminar.resources
+C:\TP4\Stage_Pro\UI\obj\Debug\UI.Empleados.ListarEmp.resources
+C:\TP4\Stage_Pro\UI\obj\Debug\UI.MensajeOk.resources

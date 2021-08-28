@@ -16,7 +16,7 @@ namespace UI
         {
             //Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Empleados.CargaEmpleados());
+            Application.Run(new Empleados.ListarEmp());
         }
     }
 }

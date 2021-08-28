@@ -15,13 +15,21 @@ namespace Negocio
         Datos.Consulta_Empledos.ConsultaEmpleados emp = new Datos.Consulta_Empledos.ConsultaEmpleados();
        
 
-        public DataTable empleados(Empleados empleados)
+        public DataTable empleados(Empleados empleados,string activo)
         {
 
+            return emp.LEmpleaos(empleados,activo);
 
-            return emp.LEmpleaos(empleados);
+        }
 
+        public DataTable ListarEmp(string activo)
+        {
+            return emp.ListarEmpleaos(activo);
+        }
 
+        public void ModificarEmpleado(Empleados empleados)
+        {
+             emp.ModificarEmp(empleados);
         }
 
         public DataTable telefonoE(Empleados empleados)

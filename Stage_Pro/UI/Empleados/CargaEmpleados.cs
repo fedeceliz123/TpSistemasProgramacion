@@ -41,8 +41,8 @@ namespace UI.Empleados
 
         private void calendario_DateSelected(object sender, DateRangeEventArgs e)
         {
-            tbFecha.Texts = calendario.SelectionStart.ToString("dd/MM/yyyy");
-            calendario.Visible = false;
+            //tbFecha.Texts = calendario.SelectionStart.ToString("dd/MM/yyyy");
+            //calendario.Visible = false;
         }
 
         private void pbCal2_Click(object sender, EventArgs e)
@@ -60,7 +60,7 @@ namespace UI.Empleados
 
         private void calendario2_DateSelected(object sender, DateRangeEventArgs e)
         {
-            tbFechaIng.Texts= calendario2.SelectionStart.ToString("dd/MM/yyyy");
+            //tbFechaIng.Texts= calendario2.SelectionStart.ToString("dd/MM/yyyy");
             calendario2.Visible = false;
         }
 
@@ -87,21 +87,42 @@ namespace UI.Empleados
 
         private void CargaEmpleados_Load(object sender, EventArgs e)
         {
-            ComboSexo.SelectedIndex = 0;
+            //ComboSexo.SelectedIndex = 0;
         }
 
+            string activo;
         private void button_WOC2_Click(object sender, EventArgs e)
         {
-            empleados.dni = tbDni.Texts;
 
-            dgvEmp.DataSource = null;
-            dgvEmp.DataSource = nEmp.empleados(empleados);
+
+            if (chbActivo.Checked == false)
+            {
+                activo = "si";
+            }
+            else
+            {
+                activo = "no";
+            }
+            
+
+
+            //empleados.dni = tbDni.Texts;
+
+            llenarTablaEmpleados(activo);
+            
 
             empdgv();
 
             
             
         }
+
+        private void llenarTablaEmpleados(string activo)
+        {
+            dgvEmp.DataSource = null;
+            dgvEmp.DataSource = nEmp.empleados(empleados, activo);
+        }
+
 
         private void empdgv()
         {
@@ -166,19 +187,18 @@ namespace UI.Empleados
             DateTime fn = DateTime.Parse(dgvEmp.Rows[e.RowIndex].Cells[4].Value.ToString());
             DateTime fe = DateTime.Parse(dgvEmp.Rows[e.RowIndex].Cells[6].Value.ToString());
 
-            tbDni.Texts= dgvEmp.Rows[e.RowIndex].Cells[0].Value.ToString();
-            tbNombre.Texts = dgvEmp.Rows[e.RowIndex].Cells[1].Value.ToString();
-            tbApellido.Texts = dgvEmp.Rows[e.RowIndex].Cells[2].Value.ToString();
-            ComboSexo.Texts = dgvEmp.Rows[e.RowIndex].Cells[3].Value.ToString();
-            tbFecha.Texts = fn.ToString("dd/MM/yyyy");
-            tbPuesto.Texts = dgvEmp.Rows[e.RowIndex].Cells[5].Value.ToString();
-            tbFechaIng.Texts = fe.ToString("dd/MM/yyyy");
-            tbPreDep.Texts = dgvEmp.Rows[e.RowIndex].Cells[8].Value.ToString();
-            tbPreEve.Texts = dgvEmp.Rows[e.RowIndex].Cells[9].Value.ToString();
-           
-           
+            //tbDni.Texts= dgvEmp.Rows[e.RowIndex].Cells[0].Value.ToString();
+            //tbNombre.Texts = dgvEmp.Rows[e.RowIndex].Cells[1].Value.ToString();
+            //tbApellido.Texts = dgvEmp.Rows[e.RowIndex].Cells[2].Value.ToString();
+            //ComboSexo.Texts = dgvEmp.Rows[e.RowIndex].Cells[3].Value.ToString();
+            //tbFecha.Texts = fn.ToString("dd/MM/yyyy");
+            //tbPuesto.Texts = dgvEmp.Rows[e.RowIndex].Cells[5].Value.ToString();
+            //tbFechaIng.Texts = fe.ToString("dd/MM/yyyy");
+            //tbPreDep.Texts = dgvEmp.Rows[e.RowIndex].Cells[8].Value.ToString();
+            //tbPreEve.Texts = dgvEmp.Rows[e.RowIndex].Cells[9].Value.ToString();
 
 
+           
         }
 
         string dni="";
@@ -221,17 +241,17 @@ namespace UI.Empleados
             {
                 idDir=int.Parse(dgvDir.Rows[e.RowIndex].Cells[0].Value.ToString());
 
-                tnPais.Texts = dgvDir.Rows[e.RowIndex].Cells[2].Value.ToString();
-                tbProvincia.Texts = dgvDir.Rows[e.RowIndex].Cells[3].Value.ToString();
-                tbLocalidad.Texts = dgvDir.Rows[e.RowIndex].Cells[4].Value.ToString();
-                tbCP.Texts = dgvDir.Rows[e.RowIndex].Cells[5].Value.ToString();
-                tbBarrio.Texts = dgvDir.Rows[e.RowIndex].Cells[6].Value.ToString();
-                tbCalle.Texts = dgvDir.Rows[e.RowIndex].Cells[7].Value.ToString();
-                tbN.Texts = dgvDir.Rows[e.RowIndex].Cells[8].Value.ToString();
-                tbPiso.Texts = dgvDir.Rows[e.RowIndex].Cells[9].Value.ToString();
-                tbDpto.Texts = dgvDir.Rows[e.RowIndex].Cells[10].Value.ToString();
-                tbManzana.Texts = dgvDir.Rows[e.RowIndex].Cells[11].Value.ToString();
-                tbLote.Texts = dgvDir.Rows[e.RowIndex].Cells[12].Value.ToString();
+                //tnPais.Texts = dgvDir.Rows[e.RowIndex].Cells[2].Value.ToString();
+                //tbProvincia.Texts = dgvDir.Rows[e.RowIndex].Cells[3].Value.ToString();
+                //tbLocalidad.Texts = dgvDir.Rows[e.RowIndex].Cells[4].Value.ToString();
+                //tbCP.Texts = dgvDir.Rows[e.RowIndex].Cells[5].Value.ToString();
+                //tbBarrio.Texts = dgvDir.Rows[e.RowIndex].Cells[6].Value.ToString();
+                //tbCalle.Texts = dgvDir.Rows[e.RowIndex].Cells[7].Value.ToString();
+                //tbN.Texts = dgvDir.Rows[e.RowIndex].Cells[8].Value.ToString();
+                //tbPiso.Texts = dgvDir.Rows[e.RowIndex].Cells[9].Value.ToString();
+                //tbDpto.Texts = dgvDir.Rows[e.RowIndex].Cells[10].Value.ToString();
+                //tbManzana.Texts = dgvDir.Rows[e.RowIndex].Cells[11].Value.ToString();
+                //tbLote.Texts = dgvDir.Rows[e.RowIndex].Cells[12].Value.ToString();
 
             }
             catch
@@ -269,6 +289,31 @@ namespace UI.Empleados
             {
 
             }
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+
+            //empleados.nombre = tbNombre.Texts;
+            //empleados.apellido = tbApellido.Texts;
+            //empleados.sexo = ComboSexo.SelectedItem.ToString();
+            //empleados.fecha_nacimiento = tbFecha.Texts;
+            //empleados.puesto = tbPuesto.Texts;
+            //empleados.fecha_ingreso = tbFechaIng.Texts;
+            //if(tbPreDep.Texts!="")
+            //empleados.valor_dia_deposito = decimal.Parse(tbPreDep.Texts);
+            //if(tbPreEve.Texts!="")
+            //empleados.valor_dia_evento = decimal.Parse(tbPreEve.Texts);
+
+            nEmp.ModificarEmpleado(empleados);
+
+            llenarTablaEmpleados(activo);
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

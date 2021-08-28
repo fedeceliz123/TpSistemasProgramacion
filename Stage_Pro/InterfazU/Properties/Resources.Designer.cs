@@ -63,6 +63,16 @@ namespace InterfazU.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap calendario1 {
+            get {
+                object obj = ResourceManager.GetObject("calendario1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap fondologin {
             get {
                 object obj = ResourceManager.GetObject("fondologin", resourceCulture);

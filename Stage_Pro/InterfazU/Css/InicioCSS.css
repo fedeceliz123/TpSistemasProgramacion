@@ -1,4 +1,8 @@
-﻿.calendario {
-    height:300px ;  
-    width:70%;
+﻿.centrar{
+    display:flex;
+   text-align:center;
+    align-items:center;
+    justify-content:center;
+    padding-top:20%;
+    padding-left:20%;
 }

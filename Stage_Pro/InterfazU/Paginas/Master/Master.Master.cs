@@ -14,12 +14,15 @@ namespace InterfazU.Paginas.Master
         protected void Page_Load(object sender, EventArgs e)
         {
 
-            if (!IsPostBack)
-            {
-                 Label1.Text = Request.QueryString["nombre"].ToString();
+            //if (!IsPostBack)
+            //{
+            //     Label1.Text = Request.QueryString["nombre"].ToString();
 
-                permiso = int.Parse(Request.QueryString["permiso"].ToString());
-            }
+            //    permiso = int.Parse(Request.QueryString["permiso"].ToString());
+            //}
+
+
+
         }
     }
 }
