@@ -21,41 +21,34 @@ namespace UI.Empleados
 
         Negocio.NegocioEmpleados nEmp = new NegocioEmpleados();
         Entidades.Empleados emp = new Entidades.Empleados();
+        Entidades.Direcciones dir = new Direcciones();
+        Entidades.Telefonos tel = new Telefonos();
+        Entidades.Emails mail = new Emails();
+        Entidades.Login login = new Entidades.Login();
+
         private void ListarEmp_Load(object sender, EventArgs e)
         {
-            cargarGrilla();
+            cargarGrilla(nEmp.ListarEmp(activo));
+
+            cargarComboPermisos();
         }
 
 
-        private string ActivoInactivo()
+
+
+        private void cargarGrilla(DataTable tabla)
         {
 
-            string activo;
-            if (chbInactivos.Checked == true)
-            {
-                activo = "no";
-            }
-            else
-            {
-                activo = "si";
-            }
-            return activo;
-
-        }
-
-        private void cargarGrilla()
-        {
-
-         dgvEmp.DataSource = null;
-         dgvEmp.DataSource= nEmp.ListarEmp(ActivoInactivo());
+            dgvEmp.DataSource = null;
+            dgvEmp.DataSource = tabla;
             dgvEmp.Columns[0].Width = 200;
             dgvEmp.Columns[1].Width = 200;
             dgvEmp.Columns[2].Width = 200;
             dgvEmp.Columns[3].Width = 200;
 
         }
-        string dni="";
-        int acciones=0;
+        string dni = "";
+        int acciones = 0;
         private void dgvEmp_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             try
@@ -68,10 +61,46 @@ namespace UI.Empleados
             }
         }
 
+        private void limpiar()
+        {
+            tbPais.Text = "";
+            tbProvincia.Text = "";
+            tbLocalidad.Text = "";
+            tbCP.Text = "";
+            tbBarrio.Text = "";
+            tbCalle.Text = "";
+            tbN.Text = "";
+            tbPiso.Text = "";
+            tbDpto.Text = "";
+            tbMzana.Text = "";
+            tbLote.Text = "";
+            tbDni.Text = "";
+            tbNombre.Text = "";
+            tbApellido.Text = "";
+            tbSexo1.Text = "";
+            tbFechaN.Text = "";
+            tbPuesto.Text = "";
+            tbFechai.Text = "";
+            tbPreDep.Text = "";
+            tbPreEve.Text = "";
+            tbCod.Text = "";
+            tbTel.Text = "";
+            tbMail.Text = "";
+            tbUseruario.Text = "";
+            tbClave.Text = "";
+
+        }
+
         private void btnCargar_Click(object sender, EventArgs e)
         {
             acciones = 1;
-            
+            inputHabilitados();
+
+            panelDatosPersonales.Visible = true;
+            btnAceptar.Visible = false;
+            btnSiguiente.Visible = true;
+            btnAtras.Visible = false;
+            limpiar();
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
@@ -86,11 +115,13 @@ namespace UI.Empleados
             }
             LlenarCampos();
             inputHabilitados();
-            
+
             panelDatosPersonales.Visible = true;
-          
 
 
+            btnAceptar.Visible = false;
+            btnSiguiente.Visible = true;
+            btnAtras.Visible = false;
         }
 
         private void btnDetalles_Click(object sender, EventArgs e)
@@ -105,10 +136,13 @@ namespace UI.Empleados
             }
             LlenarCampos();
             inputDesHabilitado();
-        
-            
+
+
             panelDatosPersonales.Visible = true;
-            
+            btnAceptar.Visible = false;
+            btnSiguiente.Visible = true;
+            btnAtras.Visible = false;
+
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -127,11 +161,11 @@ namespace UI.Empleados
 
             emp.dni = dni;
 
-            foreach(DataRow obj in nEmp.empleados(emp,ActivoInactivo()).Rows)
+            foreach (DataRow obj in nEmp.empleados(emp, activo).Rows)
             {
 
-                DateTime fechaN= DateTime.Parse(obj["fecha_de_nacimiento"].ToString());
-                DateTime fechaI= DateTime.Parse(obj["fecha_de_ingreso"].ToString());
+                DateTime fechaN = DateTime.Parse(obj["fecha_de_nacimiento"].ToString());
+                DateTime fechaI = DateTime.Parse(obj["fecha_de_ingreso"].ToString());
 
                 tbDni.Text = obj["dni"].ToString();
                 tbNombre.Text = obj["nombre"].ToString();
@@ -146,7 +180,50 @@ namespace UI.Empleados
 
             }
 
-            
+            foreach (DataRow obj in nEmp.direccionE(emp).Rows)
+            {
+                tbPais.Text = obj["pais"].ToString();
+                tbProvincia.Text = obj["provincia"].ToString();
+                tbLocalidad.Text = obj["localidad"].ToString();
+                tbCP.Text = obj["cp"].ToString();
+                tbBarrio.Text = obj["barrio"].ToString();
+                tbCalle.Text = obj["calle"].ToString();
+                tbN.Text = obj["numero"].ToString();
+                tbPiso.Text = obj["piso"].ToString();
+                tbDpto.Text = obj["dpto"].ToString();
+                tbMzana.Text = obj["mzna"].ToString();
+                tbLote.Text = obj["lote"].ToString();
+
+            }
+
+            foreach (DataRow obj in nEmp.telefonoE(emp).Rows)
+            {
+                tbCod.Text = obj["codigo_de_area"].ToString();
+                tbTel.Text = obj["numero"].ToString();
+            }
+            foreach (DataRow obj in nEmp.mailE(emp).Rows)
+            {
+                tbMail.Text = obj["email"].ToString();
+            }
+
+            foreach (DataRow obj in nEmp.UserEmp(emp).Rows)
+            {
+                tbUseruario.Text = obj["nombre_usuario"].ToString();
+                tbClave.Text = obj["contraseña"].ToString();
+                tbPermisos.Text = obj["permiso"].ToString();
+                if (obj["activo"].ToString() == "si")
+                {
+                    chbUser.Checked = false;
+                }
+                else if (obj["activo"].ToString() == "no")
+                {
+                    chbUser.Checked = true;
+
+                }
+            }
+
+
+
         }
 
 
@@ -165,6 +242,26 @@ namespace UI.Empleados
             pbAbrirCal.Enabled = true;
             pbCal2.Enabled = true;
 
+            tbPais.Enabled = true;
+            tbProvincia.Enabled = true;
+            tbLocalidad.Enabled = true;
+            tbCP.Enabled = true;
+            tbBarrio.Enabled = true;
+            tbCalle.Enabled = true;
+            tbN.Enabled = true;
+            tbPiso.Enabled = true;
+            tbDpto.Enabled = true;
+            tbMzana.Enabled = true;
+            tbLote.Enabled = true;
+
+            tbCod.Enabled = true;
+            tbTel.Enabled = true;
+
+            tbMail.Enabled = true;
+
+            tbUseruario.Enabled = true;
+            tbClave.Enabled = true;
+
 
         }
 
@@ -182,6 +279,26 @@ namespace UI.Empleados
             tbPreEve.Enabled = false;
             pbAbrirCal.Enabled = false;
             pbCal2.Enabled = false;
+
+            tbPais.Enabled = false;
+            tbProvincia.Enabled = false;
+            tbLocalidad.Enabled = false;
+            tbCP.Enabled = false;
+            tbBarrio.Enabled = false;
+            tbCalle.Enabled = false;
+            tbN.Enabled = false;
+            tbPiso.Enabled = false;
+            tbDpto.Enabled = false;
+            tbMzana.Enabled = false;
+            tbLote.Enabled = false;
+
+            tbCod.Enabled = false;
+            tbTel.Enabled = false;
+
+            tbMail.Enabled = false;
+
+            tbUseruario.Enabled = false;
+            tbClave.Enabled = false;
         }
 
         private void tbSexo_OnSelectedIndexChanged(object sender, EventArgs e)
@@ -239,16 +356,66 @@ namespace UI.Empleados
             paso2.BackColor = Color.FromArgb(3, 109, 193);
             paso3.BackColor = Color.FromArgb(3, 109, 193);
             paso4.BackColor = Color.FromArgb(3, 109, 193);
+
+
+
+
         }
 
         private void btnSiguiente_Click(object sender, EventArgs e)
         {
-            
+            if (p1.Visible == true)
+            {
+                paso2.BackColor = Color.FromArgb(69, 172, 234);
+                paso1.BackColor = Color.FromArgb(3, 109, 193);
+                paso3.BackColor = Color.FromArgb(3, 109, 193);
+                paso4.BackColor = Color.FromArgb(3, 109, 193);
+
+                p1.Visible = false;
+                pDir.Visible = true;
+                pTel.Visible = false;
+                pUser.Visible = false;
+                btnAtras.Visible = true;
+                btnSiguiente.Visible = true;
+                btnAtras.Location = new System.Drawing.Point(470, 652);
+                btnAceptar.Visible = false;
+            }
+            else if (pDir.Visible == true)
+            {
+                paso3.BackColor = Color.FromArgb(69, 172, 234);
+                paso2.BackColor = Color.FromArgb(3, 109, 193);
+                paso1.BackColor = Color.FromArgb(3, 109, 193);
+                paso4.BackColor = Color.FromArgb(3, 109, 193);
+
+                p1.Visible = false;
+                pDir.Visible = false;
+                pTel.Visible = true;
+                pUser.Visible = false;
+                btnAtras.Visible = true;
+                btnSiguiente.Visible = true;
+                btnAtras.Location = new System.Drawing.Point(470, 652);
+                btnAceptar.Visible = false;
+            }
+            else if (pTel.Visible == true)
+            {
+                paso4.BackColor = Color.FromArgb(69, 172, 234);
+                paso2.BackColor = Color.FromArgb(3, 109, 193);
+                paso3.BackColor = Color.FromArgb(3, 109, 193);
+                paso1.BackColor = Color.FromArgb(3, 109, 193);
+                p1.Visible = false;
+                pDir.Visible = false;
+                pTel.Visible = false;
+                pUser.Visible = true;
+                btnAtras.Visible = true;
+                btnSiguiente.Visible = false;
+                btnAtras.Location = new System.Drawing.Point(585, 652);
+                btnAceptar.Visible = true;
+            }
         }
 
         private void paso1_Paint(object sender, PaintEventArgs e)
         {
-            
+
         }
 
         private void paso1_Click(object sender, EventArgs e)
@@ -263,6 +430,9 @@ namespace UI.Empleados
             pTel.Visible = false;
             pUser.Visible = false;
             btnAtras.Visible = false;
+            btnSiguiente.Visible = true;
+            btnAtras.Location = new System.Drawing.Point(470, 652);
+            btnAceptar.Visible = false;
         }
 
         private void paso2_Click(object sender, EventArgs e)
@@ -277,6 +447,10 @@ namespace UI.Empleados
             pTel.Visible = false;
             pUser.Visible = false;
             btnAtras.Visible = true;
+
+            btnSiguiente.Visible = true;
+            btnAtras.Location = new System.Drawing.Point(470, 652);
+            btnAceptar.Visible = false;
 
 
         }
@@ -293,6 +467,9 @@ namespace UI.Empleados
             pTel.Visible = true;
             pUser.Visible = false;
             btnAtras.Visible = true;
+            btnSiguiente.Visible = true;
+            btnAtras.Location = new System.Drawing.Point(470, 652);
+            btnAceptar.Visible = false;
 
         }
 
@@ -307,7 +484,14 @@ namespace UI.Empleados
             pTel.Visible = false;
             pUser.Visible = true;
             btnAtras.Visible = true;
+            btnAtras.Visible = true;
+            btnSiguiente.Visible = false;
+            btnAtras.Location = new System.Drawing.Point(585, 652);
+            btnAceptar.Visible = true;
+
+
         }
+
 
         private void pictureBox4_Click(object sender, EventArgs e)
         {
@@ -318,6 +502,231 @@ namespace UI.Empleados
             else
             {
                 tbClave.UseSystemPasswordChar = true;
+            }
+        }
+
+        private void btnAtras_Click(object sender, EventArgs e)
+        {
+            if (pUser.Visible == true)
+            {
+                paso3.BackColor = Color.FromArgb(69, 172, 234);
+                paso2.BackColor = Color.FromArgb(3, 109, 193);
+                paso1.BackColor = Color.FromArgb(3, 109, 193);
+                paso4.BackColor = Color.FromArgb(3, 109, 193);
+
+                p1.Visible = false;
+                pDir.Visible = false;
+                pTel.Visible = true;
+                pUser.Visible = false;
+                btnAtras.Visible = true;
+                btnSiguiente.Visible = true;
+                btnAtras.Location = new System.Drawing.Point(470, 652);
+                btnAceptar.Visible = false;
+
+            }
+            else if (pDir.Visible == true)
+            {
+                paso1.BackColor = Color.FromArgb(69, 172, 234);
+                paso2.BackColor = Color.FromArgb(3, 109, 193);
+                paso3.BackColor = Color.FromArgb(3, 109, 193);
+                paso4.BackColor = Color.FromArgb(3, 109, 193);
+
+                p1.Visible = true;
+                pDir.Visible = false;
+                pTel.Visible = false;
+                pUser.Visible = false;
+                btnAtras.Visible = false;
+                btnSiguiente.Visible = true;
+                btnAtras.Location = new System.Drawing.Point(470, 652);
+                btnAceptar.Visible = false;
+            }
+            else if (pTel.Visible == true)
+            {
+                paso2.BackColor = Color.FromArgb(69, 172, 234);
+                paso1.BackColor = Color.FromArgb(3, 109, 193);
+                paso3.BackColor = Color.FromArgb(3, 109, 193);
+                paso4.BackColor = Color.FromArgb(3, 109, 193);
+
+                p1.Visible = false;
+                pDir.Visible = true;
+                pTel.Visible = false;
+                pUser.Visible = false;
+                btnAtras.Visible = true;
+
+                btnSiguiente.Visible = true;
+                btnAtras.Location = new System.Drawing.Point(470, 652);
+                btnAceptar.Visible = false;
+            }
+        }
+
+        private void pbUser_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog buscarimagen = new OpenFileDialog();
+            //buscarimagen.Filter = "Archivos de imagen|*.png";
+
+            buscarimagen.InitialDirectory = "C:\\";
+
+            if (buscarimagen.ShowDialog() == DialogResult.OK)
+            {
+
+                pbUser.ImageLocation = buscarimagen.FileName;
+                pbUser.SizeMode = PictureBoxSizeMode.Zoom;
+
+            }
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+
+            cargarGrilla(nEmp.FitroEmp(activo,tbBuscar.Text));
+
+
+        }
+        string activo="si";
+        private void chbInactivos_CheckedChanged(object sender, EventArgs e)
+        {
+
+            if (chbInactivos.Checked == true)
+            {
+                activo = "no";
+            }
+            else if (chbInactivos.Checked == false)
+            {
+                activo = "si";
+            }
+        }
+
+        private void chbInactivos_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAceptar_Click(object sender, EventArgs e)
+        {
+            if (acciones == 2)
+            {
+                cargarEntidades();
+
+                nEmp.ModificarEmp(emp, dir, tel, mail, login);
+
+                panelDatosPersonales.Visible = false;
+                p1.Visible = true;
+                pDir.Visible = false;
+                pTel.Visible = false;
+                pUser.Visible = false;
+                paso1.BackColor = Color.FromArgb(69, 172, 234);
+                paso2.BackColor = Color.FromArgb(3, 109, 193);
+                paso3.BackColor = Color.FromArgb(3, 109, 193);
+                paso4.BackColor = Color.FromArgb(3, 109, 193);
+
+                cargarGrilla(nEmp.ListarEmp(activo));
+
+            }
+            else if (acciones==1)
+            {
+                cargarEntidades();
+
+                nEmp.cargarEmpleado(emp,dir,tel,mail,login);
+
+                panelDatosPersonales.Visible = false;
+                p1.Visible = true;
+                pDir.Visible = false;
+                pTel.Visible = false;
+                pUser.Visible = false;
+                paso1.BackColor = Color.FromArgb(69, 172, 234);
+                paso2.BackColor = Color.FromArgb(3, 109, 193);
+                paso3.BackColor = Color.FromArgb(3, 109, 193);
+                paso4.BackColor = Color.FromArgb(3, 109, 193);
+
+                cargarGrilla(nEmp.ListarEmp(activo));
+
+
+            }
+        }
+
+
+        string userAc = "si";
+
+        private void cargarEntidades()
+        {
+            emp.dni = tbDni.Text;
+            emp.nombre = tbNombre.Text;
+            emp.apellido = tbApellido.Text;
+            emp.sexo = tbSexo.Text;
+            emp.fecha_nacimiento = tbFechaN.Text;
+            emp.puesto =  tbPuesto.Text;
+            emp.fecha_ingreso = tbFechai.Text;
+            emp.valor_dia_deposito = decimal.Parse(tbPreDep.Text);
+            emp.valor_dia_evento = decimal.Parse(tbPreEve.Text);
+
+            // dir 
+
+            dir.pais = tbPais.Text;
+            dir.provincia = tbProvincia.Text;
+            dir.localidad = tbLocalidad.Text;
+            dir.cp = tbCP.Text;
+            dir.barrio = tbBarrio.Text;
+            dir.calle = tbCalle.Text;
+            dir.numero = tbN.Text;
+            dir.piso = tbPiso.Text;
+            dir.dpto = tbDpto.Text;
+            dir.mzna = tbMzana.Text;
+            dir.lote = tbLote.Text;
+
+            // tel
+
+            tel.codigo_de_area = tbCod.Text;
+            tel.numero = tbTel.Text;
+
+            //mail
+
+            mail.email = tbMail.Text;
+
+
+            // login
+
+            login.contraseña = tbClave.Text;
+            login.nombre_usuario = tbUseruario.Text;
+            login.email = tbMail.Text;
+            login.permiso = int.Parse(tbPermisos.Text);
+            login.activo = userAc;
+
+
+        }
+
+        private void cargarComboPermisos()
+        {
+            cbPermiso.DataSource = nEmp.listarPermisos();
+            cbPermiso.DisplayMember = "permiso";
+            cbPermiso.ValueMember = "id";
+        }
+
+        private void cbPermiso_OnSelectedIndexChanged(object sender, EventArgs e)
+        {
+            tbPermisos.Text = (int.Parse(cbPermiso.SelectedIndex.ToString())+1).ToString(); ;
+        }
+
+        private void chbUser_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chbUser.Checked == true)
+            {
+                userAc = "no";
+            }
+            else if (chbUser.Checked==false)
+            {
+                userAc = "si";
+            }
+        }
+
+        private void pictureBox5_Click(object sender, EventArgs e)
+        {
+            if (fNac.Visible == false)
+            {
+                fNac.Visible = true;
+            }
+            else
+            {
+                fNac.Visible = false;
             }
         }
     }

@@ -29,11 +29,29 @@ namespace UI.Empleados
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ListarEmp));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelLista = new System.Windows.Forms.Panel();
             this.panelDatosPersonales = new System.Windows.Forms.Panel();
+            this.pUser = new System.Windows.Forms.Panel();
+            this.label29 = new System.Windows.Forms.Label();
+            this.panel11 = new System.Windows.Forms.Panel();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.tbClave = new System.Windows.Forms.TextBox();
+            this.panel10 = new System.Windows.Forms.Panel();
+            this.tbUseruario = new System.Windows.Forms.TextBox();
+            this.label28 = new System.Windows.Forms.Label();
+            this.pTel = new System.Windows.Forms.Panel();
+            this.panel25 = new System.Windows.Forms.Panel();
+            this.tbMail = new System.Windows.Forms.TextBox();
+            this.panel24 = new System.Windows.Forms.Panel();
+            this.tbTel = new System.Windows.Forms.TextBox();
+            this.panel23 = new System.Windows.Forms.Panel();
+            this.tbCod = new System.Windows.Forms.TextBox();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
             this.pDir = new System.Windows.Forms.Panel();
             this.panel22 = new System.Windows.Forms.Panel();
             this.tbLote = new System.Windows.Forms.TextBox();
@@ -114,24 +132,12 @@ namespace UI.Empleados
             this.panel3 = new System.Windows.Forms.Panel();
             this.tbBuscar = new System.Windows.Forms.TextBox();
             this.dgvEmp = new System.Windows.Forms.DataGridView();
-            this.pTel = new System.Windows.Forms.Panel();
-            this.panel25 = new System.Windows.Forms.Panel();
-            this.tbMail = new System.Windows.Forms.TextBox();
-            this.panel24 = new System.Windows.Forms.Panel();
-            this.tbTel = new System.Windows.Forms.TextBox();
-            this.panel23 = new System.Windows.Forms.Panel();
-            this.tbCod = new System.Windows.Forms.TextBox();
-            this.label24 = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
-            this.pUser = new System.Windows.Forms.Panel();
-            this.panel10 = new System.Windows.Forms.Panel();
-            this.tbUseruario = new System.Windows.Forms.TextBox();
-            this.label28 = new System.Windows.Forms.Label();
-            this.panel11 = new System.Windows.Forms.Panel();
-            this.tbClave = new System.Windows.Forms.TextBox();
-            this.label29 = new System.Windows.Forms.Label();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.label30 = new System.Windows.Forms.Label();
+            this.tbPermisos = new System.Windows.Forms.TextBox();
+            this.chbUser = new System.Windows.Forms.CheckBox();
+            this.btnAceptar = new ePOSOne.btnProduct.Button_WOC();
+            this.cbPermiso = new RJComboBox();
             this.btnAtras = new ePOSOne.btnProduct.Button_WOC();
             this.pbUser = new UI.componentes.RJCircularPictureBox();
             this.tbSexo = new RJComboBox();
@@ -143,8 +149,18 @@ namespace UI.Empleados
             this.btnModificar = new ePOSOne.btnProduct.Button_WOC();
             this.btnBuscar = new ePOSOne.btnProduct.Button_WOC();
             this.ellipseControl1 = new UI.componentes.EllipseControl();
+            this.label31 = new System.Windows.Forms.Label();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.panelLista.SuspendLayout();
             this.panelDatosPersonales.SuspendLayout();
+            this.pUser.SuspendLayout();
+            this.panel11.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            this.panel10.SuspendLayout();
+            this.pTel.SuspendLayout();
+            this.panel25.SuspendLayout();
+            this.panel24.SuspendLayout();
+            this.panel23.SuspendLayout();
             this.pDir.SuspendLayout();
             this.panel22.SuspendLayout();
             this.panel21.SuspendLayout();
@@ -177,20 +193,15 @@ namespace UI.Empleados
             this.paso1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmp)).BeginInit();
-            this.pTel.SuspendLayout();
-            this.panel25.SuspendLayout();
-            this.panel24.SuspendLayout();
-            this.panel23.SuspendLayout();
-            this.pUser.SuspendLayout();
-            this.panel10.SuspendLayout();
-            this.panel11.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            this.panel9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbUser)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.SuspendLayout();
             // 
             // panelLista
             // 
             this.panelLista.Controls.Add(this.panelDatosPersonales);
+            this.panelLista.Controls.Add(this.label31);
             this.panelLista.Controls.Add(this.chbInactivos);
             this.panelLista.Controls.Add(this.btnDetalles);
             this.panelLista.Controls.Add(this.btnCargar);
@@ -208,6 +219,7 @@ namespace UI.Empleados
             // panelDatosPersonales
             // 
             this.panelDatosPersonales.Controls.Add(this.pUser);
+            this.panelDatosPersonales.Controls.Add(this.btnAceptar);
             this.panelDatosPersonales.Controls.Add(this.pTel);
             this.panelDatosPersonales.Controls.Add(this.pDir);
             this.panelDatosPersonales.Controls.Add(this.btnAtras);
@@ -215,11 +227,204 @@ namespace UI.Empleados
             this.panelDatosPersonales.Controls.Add(this.btnCancelar);
             this.panelDatosPersonales.Controls.Add(this.btnSiguiente);
             this.panelDatosPersonales.Controls.Add(this.panelPestañas);
-            this.panelDatosPersonales.Location = new System.Drawing.Point(-1, 0);
+            this.panelDatosPersonales.Location = new System.Drawing.Point(0, 3);
             this.panelDatosPersonales.Name = "panelDatosPersonales";
             this.panelDatosPersonales.Size = new System.Drawing.Size(928, 755);
             this.panelDatosPersonales.TabIndex = 1;
             this.panelDatosPersonales.Visible = false;
+            // 
+            // pUser
+            // 
+            this.pUser.Controls.Add(this.chbUser);
+            this.pUser.Controls.Add(this.label30);
+            this.pUser.Controls.Add(this.panel9);
+            this.pUser.Controls.Add(this.label29);
+            this.pUser.Controls.Add(this.panel11);
+            this.pUser.Controls.Add(this.panel10);
+            this.pUser.Controls.Add(this.label28);
+            this.pUser.Location = new System.Drawing.Point(20, 40);
+            this.pUser.Name = "pUser";
+            this.pUser.Size = new System.Drawing.Size(896, 600);
+            this.pUser.TabIndex = 106;
+            this.pUser.Visible = false;
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label29.Location = new System.Drawing.Point(147, 50);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(151, 16);
+            this.label29.TabIndex = 86;
+            this.label29.Text = "Nombre de Usuario: ";
+            // 
+            // panel11
+            // 
+            this.panel11.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel11.BackgroundImage")));
+            this.panel11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel11.Controls.Add(this.pictureBox4);
+            this.panel11.Controls.Add(this.tbClave);
+            this.panel11.Location = new System.Drawing.Point(457, 73);
+            this.panel11.Name = "panel11";
+            this.panel11.Size = new System.Drawing.Size(248, 37);
+            this.panel11.TabIndex = 87;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
+            this.pictureBox4.Location = new System.Drawing.Point(213, 3);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(26, 31);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox4.TabIndex = 88;
+            this.pictureBox4.TabStop = false;
+            this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
+            // 
+            // tbClave
+            // 
+            this.tbClave.BackColor = System.Drawing.SystemColors.Control;
+            this.tbClave.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tbClave.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbClave.Location = new System.Drawing.Point(8, 9);
+            this.tbClave.Name = "tbClave";
+            this.tbClave.Size = new System.Drawing.Size(231, 19);
+            this.tbClave.TabIndex = 72;
+            this.tbClave.UseSystemPasswordChar = true;
+            // 
+            // panel10
+            // 
+            this.panel10.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel10.BackgroundImage")));
+            this.panel10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel10.Controls.Add(this.tbUseruario);
+            this.panel10.Location = new System.Drawing.Point(150, 73);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(248, 37);
+            this.panel10.TabIndex = 85;
+            // 
+            // tbUseruario
+            // 
+            this.tbUseruario.BackColor = System.Drawing.SystemColors.Control;
+            this.tbUseruario.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tbUseruario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbUseruario.Location = new System.Drawing.Point(8, 9);
+            this.tbUseruario.Name = "tbUseruario";
+            this.tbUseruario.Size = new System.Drawing.Size(231, 19);
+            this.tbUseruario.TabIndex = 72;
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label28.Location = new System.Drawing.Point(454, 50);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(95, 16);
+            this.label28.TabIndex = 84;
+            this.label28.Text = "Contraseña: ";
+            // 
+            // pTel
+            // 
+            this.pTel.Controls.Add(this.panel25);
+            this.pTel.Controls.Add(this.panel24);
+            this.pTel.Controls.Add(this.panel23);
+            this.pTel.Controls.Add(this.label24);
+            this.pTel.Controls.Add(this.label23);
+            this.pTel.Controls.Add(this.label22);
+            this.pTel.Location = new System.Drawing.Point(3, 45);
+            this.pTel.Name = "pTel";
+            this.pTel.Size = new System.Drawing.Size(822, 553);
+            this.pTel.TabIndex = 105;
+            this.pTel.Visible = false;
+            // 
+            // panel25
+            // 
+            this.panel25.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel25.BackgroundImage")));
+            this.panel25.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel25.Controls.Add(this.tbMail);
+            this.panel25.Location = new System.Drawing.Point(424, 80);
+            this.panel25.Name = "panel25";
+            this.panel25.Size = new System.Drawing.Size(248, 37);
+            this.panel25.TabIndex = 83;
+            // 
+            // tbMail
+            // 
+            this.tbMail.BackColor = System.Drawing.SystemColors.Control;
+            this.tbMail.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tbMail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbMail.Location = new System.Drawing.Point(8, 9);
+            this.tbMail.Name = "tbMail";
+            this.tbMail.Size = new System.Drawing.Size(231, 19);
+            this.tbMail.TabIndex = 72;
+            // 
+            // panel24
+            // 
+            this.panel24.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel24.BackgroundImage")));
+            this.panel24.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel24.Controls.Add(this.tbTel);
+            this.panel24.Location = new System.Drawing.Point(257, 80);
+            this.panel24.Name = "panel24";
+            this.panel24.Size = new System.Drawing.Size(160, 37);
+            this.panel24.TabIndex = 84;
+            // 
+            // tbTel
+            // 
+            this.tbTel.BackColor = System.Drawing.SystemColors.Control;
+            this.tbTel.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tbTel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbTel.Location = new System.Drawing.Point(6, 9);
+            this.tbTel.Name = "tbTel";
+            this.tbTel.Size = new System.Drawing.Size(151, 19);
+            this.tbTel.TabIndex = 72;
+            // 
+            // panel23
+            // 
+            this.panel23.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel23.BackgroundImage")));
+            this.panel23.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel23.Controls.Add(this.tbCod);
+            this.panel23.Location = new System.Drawing.Point(150, 80);
+            this.panel23.Name = "panel23";
+            this.panel23.Size = new System.Drawing.Size(94, 37);
+            this.panel23.TabIndex = 85;
+            // 
+            // tbCod
+            // 
+            this.tbCod.BackColor = System.Drawing.SystemColors.Control;
+            this.tbCod.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tbCod.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbCod.Location = new System.Drawing.Point(6, 9);
+            this.tbCod.Name = "tbCod";
+            this.tbCod.Size = new System.Drawing.Size(85, 19);
+            this.tbCod.TabIndex = 72;
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label24.Location = new System.Drawing.Point(420, 61);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(55, 16);
+            this.label24.TabIndex = 82;
+            this.label24.Text = "Email: ";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.Location = new System.Drawing.Point(251, 61);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(78, 16);
+            this.label23.TabIndex = 81;
+            this.label23.Text = "Telefono: ";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.Location = new System.Drawing.Point(147, 61);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(66, 16);
+            this.label22.TabIndex = 80;
+            this.label22.Text = "Codigo: ";
             // 
             // pDir
             // 
@@ -245,7 +450,7 @@ namespace UI.Empleados
             this.pDir.Controls.Add(this.label25);
             this.pDir.Controls.Add(this.label26);
             this.pDir.Controls.Add(this.label27);
-            this.pDir.Location = new System.Drawing.Point(65, 73);
+            this.pDir.Location = new System.Drawing.Point(12, 62);
             this.pDir.Name = "pDir";
             this.pDir.Size = new System.Drawing.Size(806, 536);
             this.pDir.TabIndex = 104;
@@ -905,6 +1110,7 @@ namespace UI.Empleados
             // 
             this.panel8.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel8.BackgroundImage")));
             this.panel8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel8.Controls.Add(this.pictureBox5);
             this.panel8.Controls.Add(this.tbFechaN);
             this.panel8.Location = new System.Drawing.Point(56, 322);
             this.panel8.Name = "panel8";
@@ -1049,6 +1255,8 @@ namespace UI.Empleados
             this.chbInactivos.TabIndex = 81;
             this.chbInactivos.Text = "Listar inactivos";
             this.chbInactivos.UseVisualStyleBackColor = true;
+            this.chbInactivos.CheckedChanged += new System.EventHandler(this.chbInactivos_CheckedChanged);
+            this.chbInactivos.Click += new System.EventHandler(this.chbInactivos_Click);
             // 
             // panel3
             // 
@@ -1077,14 +1285,14 @@ namespace UI.Empleados
             this.dgvEmp.BackgroundColor = System.Drawing.Color.White;
             this.dgvEmp.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvEmp.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvEmp.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvEmp.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this.dgvEmp.ColumnHeadersHeight = 30;
             this.dgvEmp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvEmp.EnableHeadersVisualStyles = false;
@@ -1093,206 +1301,100 @@ namespace UI.Empleados
             this.dgvEmp.Name = "dgvEmp";
             this.dgvEmp.ReadOnly = true;
             this.dgvEmp.RowHeadersVisible = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Gray;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
-            this.dgvEmp.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.White;
+            this.dgvEmp.RowsDefaultCellStyle = dataGridViewCellStyle12;
             this.dgvEmp.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvEmp.Size = new System.Drawing.Size(803, 307);
             this.dgvEmp.TabIndex = 44;
             this.dgvEmp.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEmp_CellClick);
             // 
-            // pTel
+            // panel9
             // 
-            this.pTel.Controls.Add(this.panel25);
-            this.pTel.Controls.Add(this.panel24);
-            this.pTel.Controls.Add(this.panel23);
-            this.pTel.Controls.Add(this.label24);
-            this.pTel.Controls.Add(this.label23);
-            this.pTel.Controls.Add(this.label22);
-            this.pTel.Location = new System.Drawing.Point(65, 71);
-            this.pTel.Name = "pTel";
-            this.pTel.Size = new System.Drawing.Size(822, 553);
-            this.pTel.TabIndex = 105;
-            this.pTel.Visible = false;
+            this.panel9.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel9.BackgroundImage")));
+            this.panel9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel9.Controls.Add(this.tbPermisos);
+            this.panel9.Controls.Add(this.cbPermiso);
+            this.panel9.Location = new System.Drawing.Point(150, 142);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(248, 37);
+            this.panel9.TabIndex = 86;
             // 
-            // panel25
+            // label30
             // 
-            this.panel25.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel25.BackgroundImage")));
-            this.panel25.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel25.Controls.Add(this.tbMail);
-            this.panel25.Location = new System.Drawing.Point(424, 80);
-            this.panel25.Name = "panel25";
-            this.panel25.Size = new System.Drawing.Size(248, 37);
-            this.panel25.TabIndex = 83;
+            this.label30.AutoSize = true;
+            this.label30.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label30.Location = new System.Drawing.Point(149, 121);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(81, 16);
+            this.label30.TabIndex = 88;
+            this.label30.Text = "Permisos: ";
             // 
-            // tbMail
+            // tbPermisos
             // 
-            this.tbMail.BackColor = System.Drawing.SystemColors.Control;
-            this.tbMail.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tbMail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbMail.Location = new System.Drawing.Point(8, 9);
-            this.tbMail.Name = "tbMail";
-            this.tbMail.Size = new System.Drawing.Size(231, 19);
-            this.tbMail.TabIndex = 72;
+            this.tbPermisos.BackColor = System.Drawing.SystemColors.Control;
+            this.tbPermisos.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tbPermisos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbPermisos.Location = new System.Drawing.Point(8, 9);
+            this.tbPermisos.Name = "tbPermisos";
+            this.tbPermisos.Size = new System.Drawing.Size(200, 19);
+            this.tbPermisos.TabIndex = 73;
             // 
-            // panel24
+            // chbUser
             // 
-            this.panel24.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel24.BackgroundImage")));
-            this.panel24.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel24.Controls.Add(this.tbTel);
-            this.panel24.Location = new System.Drawing.Point(257, 80);
-            this.panel24.Name = "panel24";
-            this.panel24.Size = new System.Drawing.Size(160, 37);
-            this.panel24.TabIndex = 84;
+            this.chbUser.AutoSize = true;
+            this.chbUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chbUser.Location = new System.Drawing.Point(457, 151);
+            this.chbUser.Name = "chbUser";
+            this.chbUser.Size = new System.Drawing.Size(157, 20);
+            this.chbUser.TabIndex = 89;
+            this.chbUser.Text = "Desactivar usuario";
+            this.chbUser.UseVisualStyleBackColor = true;
+            this.chbUser.CheckedChanged += new System.EventHandler(this.chbUser_CheckedChanged);
             // 
-            // tbTel
+            // btnAceptar
             // 
-            this.tbTel.BackColor = System.Drawing.SystemColors.Control;
-            this.tbTel.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tbTel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbTel.Location = new System.Drawing.Point(6, 9);
-            this.tbTel.Name = "tbTel";
-            this.tbTel.Size = new System.Drawing.Size(151, 19);
-            this.tbTel.TabIndex = 72;
+            this.btnAceptar.BackColor = System.Drawing.SystemColors.Control;
+            this.btnAceptar.BorderColor = System.Drawing.Color.Transparent;
+            this.btnAceptar.ButtonColor = System.Drawing.Color.Teal;
+            this.btnAceptar.FlatAppearance.BorderSize = 0;
+            this.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAceptar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAceptar.ForeColor = System.Drawing.Color.White;
+            this.btnAceptar.Location = new System.Drawing.Point(809, 652);
+            this.btnAceptar.Name = "btnAceptar";
+            this.btnAceptar.OnHoverBorderColor = System.Drawing.SystemColors.GrayText;
+            this.btnAceptar.OnHoverButtonColor = System.Drawing.Color.DarkGreen;
+            this.btnAceptar.OnHoverTextColor = System.Drawing.Color.Gray;
+            this.btnAceptar.Size = new System.Drawing.Size(107, 40);
+            this.btnAceptar.TabIndex = 107;
+            this.btnAceptar.Text = "Aceptar";
+            this.btnAceptar.TextColor = System.Drawing.Color.White;
+            this.btnAceptar.UseVisualStyleBackColor = false;
+            this.btnAceptar.Visible = false;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
-            // panel23
+            // cbPermiso
             // 
-            this.panel23.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel23.BackgroundImage")));
-            this.panel23.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel23.Controls.Add(this.tbCod);
-            this.panel23.Location = new System.Drawing.Point(150, 80);
-            this.panel23.Name = "panel23";
-            this.panel23.Size = new System.Drawing.Size(94, 37);
-            this.panel23.TabIndex = 85;
-            // 
-            // tbCod
-            // 
-            this.tbCod.BackColor = System.Drawing.SystemColors.Control;
-            this.tbCod.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tbCod.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbCod.Location = new System.Drawing.Point(6, 9);
-            this.tbCod.Name = "tbCod";
-            this.tbCod.Size = new System.Drawing.Size(85, 19);
-            this.tbCod.TabIndex = 72;
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.Location = new System.Drawing.Point(420, 61);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(55, 16);
-            this.label24.TabIndex = 82;
-            this.label24.Text = "Email: ";
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.Location = new System.Drawing.Point(251, 61);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(78, 16);
-            this.label23.TabIndex = 81;
-            this.label23.Text = "Telefono: ";
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(147, 61);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(66, 16);
-            this.label22.TabIndex = 80;
-            this.label22.Text = "Codigo: ";
-            // 
-            // pUser
-            // 
-            this.pUser.Controls.Add(this.label29);
-            this.pUser.Controls.Add(this.panel11);
-            this.pUser.Controls.Add(this.panel10);
-            this.pUser.Controls.Add(this.label28);
-            this.pUser.Location = new System.Drawing.Point(55, 62);
-            this.pUser.Name = "pUser";
-            this.pUser.Size = new System.Drawing.Size(838, 572);
-            this.pUser.TabIndex = 106;
-            this.pUser.Visible = false;
-            // 
-            // panel10
-            // 
-            this.panel10.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel10.BackgroundImage")));
-            this.panel10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel10.Controls.Add(this.tbUseruario);
-            this.panel10.Location = new System.Drawing.Point(150, 73);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(248, 37);
-            this.panel10.TabIndex = 85;
-            // 
-            // tbUseruario
-            // 
-            this.tbUseruario.BackColor = System.Drawing.SystemColors.Control;
-            this.tbUseruario.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tbUseruario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbUseruario.Location = new System.Drawing.Point(8, 9);
-            this.tbUseruario.Name = "tbUseruario";
-            this.tbUseruario.Size = new System.Drawing.Size(231, 19);
-            this.tbUseruario.TabIndex = 72;
-            // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label28.Location = new System.Drawing.Point(454, 50);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(95, 16);
-            this.label28.TabIndex = 84;
-            this.label28.Text = "Contraseña: ";
-            // 
-            // panel11
-            // 
-            this.panel11.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel11.BackgroundImage")));
-            this.panel11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel11.Controls.Add(this.pictureBox4);
-            this.panel11.Controls.Add(this.tbClave);
-            this.panel11.Location = new System.Drawing.Point(457, 73);
-            this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(248, 37);
-            this.panel11.TabIndex = 87;
-            // 
-            // tbClave
-            // 
-            this.tbClave.BackColor = System.Drawing.SystemColors.Control;
-            this.tbClave.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tbClave.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbClave.Location = new System.Drawing.Point(8, 9);
-            this.tbClave.Name = "tbClave";
-            this.tbClave.Size = new System.Drawing.Size(231, 19);
-            this.tbClave.TabIndex = 72;
-            this.tbClave.UseSystemPasswordChar = true;
-            // 
-            // label29
-            // 
-            this.label29.AutoSize = true;
-            this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label29.Location = new System.Drawing.Point(147, 50);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(151, 16);
-            this.label29.TabIndex = 86;
-            this.label29.Text = "Nombre de Usuario: ";
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(213, 3);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(26, 31);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox4.TabIndex = 88;
-            this.pictureBox4.TabStop = false;
-            this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
+            this.cbPermiso.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.cbPermiso.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.cbPermiso.BorderSize = 0;
+            this.cbPermiso.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+            this.cbPermiso.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.cbPermiso.ForeColor = System.Drawing.Color.DimGray;
+            this.cbPermiso.IconColor = System.Drawing.Color.Transparent;
+            this.cbPermiso.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
+            this.cbPermiso.ListTextColor = System.Drawing.Color.DimGray;
+            this.cbPermiso.Location = new System.Drawing.Point(16, 3);
+            this.cbPermiso.MinimumSize = new System.Drawing.Size(200, 30);
+            this.cbPermiso.Name = "cbPermiso";
+            this.cbPermiso.Size = new System.Drawing.Size(220, 30);
+            this.cbPermiso.TabIndex = 0;
+            this.cbPermiso.Texts = "";
+            this.cbPermiso.OnSelectedIndexChanged += new System.EventHandler(this.cbPermiso_OnSelectedIndexChanged);
             // 
             // btnAtras
             // 
@@ -1314,6 +1416,7 @@ namespace UI.Empleados
             this.btnAtras.TextColor = System.Drawing.Color.White;
             this.btnAtras.UseVisualStyleBackColor = false;
             this.btnAtras.Visible = false;
+            this.btnAtras.Click += new System.EventHandler(this.btnAtras_Click);
             // 
             // pbUser
             // 
@@ -1332,6 +1435,7 @@ namespace UI.Empleados
             this.pbUser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbUser.TabIndex = 13;
             this.pbUser.TabStop = false;
+            this.pbUser.Click += new System.EventHandler(this.pbUser_Click);
             // 
             // tbSexo
             // 
@@ -1364,7 +1468,7 @@ namespace UI.Empleados
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.ForeColor = System.Drawing.Color.DimGray;
-            this.btnCancelar.Location = new System.Drawing.Point(702, 652);
+            this.btnCancelar.Location = new System.Drawing.Point(697, 652);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.OnHoverBorderColor = System.Drawing.SystemColors.GrayText;
             this.btnCancelar.OnHoverButtonColor = System.Drawing.Color.DimGray;
@@ -1500,6 +1604,7 @@ namespace UI.Empleados
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.TextColor = System.Drawing.Color.White;
             this.btnBuscar.UseVisualStyleBackColor = false;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // ellipseControl1
             // 
@@ -1510,6 +1615,28 @@ namespace UI.Empleados
             this.ellipseControl1.Size = new System.Drawing.Size(843, 342);
             this.ellipseControl1.TabIndex = 75;
             this.ellipseControl1.Text = "ellipseControl1";
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label31.Location = new System.Drawing.Point(43, 88);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(254, 16);
+            this.label31.TabIndex = 90;
+            this.label31.Text = "Buscar por nombre , apellido o dni: ";
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
+            this.pictureBox5.Location = new System.Drawing.Point(204, 6);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(34, 25);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox5.TabIndex = 105;
+            this.pictureBox5.TabStop = false;
+            this.pictureBox5.Click += new System.EventHandler(this.pictureBox5_Click);
             // 
             // ListarEmp
             // 
@@ -1524,6 +1651,21 @@ namespace UI.Empleados
             this.panelLista.ResumeLayout(false);
             this.panelLista.PerformLayout();
             this.panelDatosPersonales.ResumeLayout(false);
+            this.pUser.ResumeLayout(false);
+            this.pUser.PerformLayout();
+            this.panel11.ResumeLayout(false);
+            this.panel11.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            this.panel10.ResumeLayout(false);
+            this.panel10.PerformLayout();
+            this.pTel.ResumeLayout(false);
+            this.pTel.PerformLayout();
+            this.panel25.ResumeLayout(false);
+            this.panel25.PerformLayout();
+            this.panel24.ResumeLayout(false);
+            this.panel24.PerformLayout();
+            this.panel23.ResumeLayout(false);
+            this.panel23.PerformLayout();
             this.pDir.ResumeLayout(false);
             this.pDir.PerformLayout();
             this.panel22.ResumeLayout(false);
@@ -1580,22 +1722,10 @@ namespace UI.Empleados
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmp)).EndInit();
-            this.pTel.ResumeLayout(false);
-            this.pTel.PerformLayout();
-            this.panel25.ResumeLayout(false);
-            this.panel25.PerformLayout();
-            this.panel24.ResumeLayout(false);
-            this.panel24.PerformLayout();
-            this.panel23.ResumeLayout(false);
-            this.panel23.PerformLayout();
-            this.pUser.ResumeLayout(false);
-            this.pUser.PerformLayout();
-            this.panel10.ResumeLayout(false);
-            this.panel10.PerformLayout();
-            this.panel11.ResumeLayout(false);
-            this.panel11.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            this.panel9.ResumeLayout(false);
+            this.panel9.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbUser)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1713,5 +1843,13 @@ namespace UI.Empleados
         private System.Windows.Forms.TextBox tbUseruario;
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.PictureBox pictureBox4;
+        private ePOSOne.btnProduct.Button_WOC btnAceptar;
+        private System.Windows.Forms.CheckBox chbUser;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.Panel panel9;
+        private System.Windows.Forms.TextBox tbPermisos;
+        private RJComboBox cbPermiso;
+        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.Label label31;
     }
 }

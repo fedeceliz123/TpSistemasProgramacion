@@ -15,6 +15,7 @@ namespace Entidades
         public string contraseña { get; set; }
         public string email { get; set; }
         public int permiso { get; set; }
+        public string activo { get; set; }
 
     }
 }

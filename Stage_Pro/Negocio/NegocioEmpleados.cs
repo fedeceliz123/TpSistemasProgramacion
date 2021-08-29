@@ -15,6 +15,33 @@ namespace Negocio
         Datos.Consulta_Empledos.ConsultaEmpleados emp = new Datos.Consulta_Empledos.ConsultaEmpleados();
        
 
+        public void ModificarEmp(Empleados empl,Direcciones dir,Telefonos tel, Emails mail,Login login)
+        {
+            emp.ModificarEmp(empl,dir,tel,mail,login);
+        }
+
+        public DataTable FitroEmp(string activo, string dato)
+        {
+            return emp.FiltoEmpleaos(activo,dato);
+
+        }
+
+        public DataTable UserEmp(Empleados empleados)
+        {
+            return emp.UserEmp(empleados);
+        }
+
+        public DataTable listarPermisos()
+        {
+            return emp.listaPermisos();
+        }
+
+        public void cargarEmpleado(Empleados empl, Direcciones dir,Telefonos tel,Emails mail,Login login)
+        {
+            emp.CargarEmp(empl,dir,tel,mail,login);
+        }
+
+
         public DataTable empleados(Empleados empleados,string activo)
         {
 
@@ -29,7 +56,7 @@ namespace Negocio
 
         public void ModificarEmpleado(Empleados empleados)
         {
-             emp.ModificarEmp(empleados);
+             //emp.ModificarEmp(empleados,);
         }
 
         public DataTable telefonoE(Empleados empleados)

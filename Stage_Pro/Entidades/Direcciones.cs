@@ -13,11 +13,11 @@ namespace Entidades
         public string pais { get; set; }
         public string provincia { get; set; }
         public string localidad { get; set; }
-        public int cp { get; set; }
+        public string cp { get; set; }
         public string barrio { get; set; }
         public string calle { get; set; }
-        public int numero { get; set; }
-        public int piso { get; set; }
+        public string numero { get; set; }
+        public string piso { get; set; }
         public string dpto { get; set; }
         public string mzna { get; set; }
         public string lote { get; set; }
