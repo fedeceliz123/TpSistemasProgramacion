@@ -14,9 +14,9 @@ namespace UI
         [STAThread]
         static void Main()
         {
-            //Application.EnableVisualStyles();
+            Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Empleados.ListarEmp());
+            Application.Run(new Menu());
         }
     }
 }

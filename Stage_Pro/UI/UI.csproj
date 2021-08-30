@@ -56,6 +56,12 @@
     <Compile Include="Carga.Designer.cs">
       <DependentUpon>Carga.cs</DependentUpon>
     </Compile>
+    <Compile Include="Clientes\ListarClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Clientes\ListarClientes.Designer.cs">
+      <DependentUpon>ListarClientes.cs</DependentUpon>
+    </Compile>
     <Compile Include="componentes\Button_WOC.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -82,12 +88,6 @@
     </Compile>
     <Compile Include="Eliminar.Designer.cs">
       <DependentUpon>Eliminar.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Empleados\CargaEmpleados.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Empleados\CargaEmpleados.Designer.cs">
-      <DependentUpon>CargaEmpleados.cs</DependentUpon>
     </Compile>
     <Compile Include="Empleados\ListarEmp.cs">
       <SubType>Form</SubType>
@@ -121,17 +121,24 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Proveedores\ListarProveedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Proveedores\ListarProveedores.Designer.cs">
+      <DependentUpon>ListarProveedores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Validaciones.cs" />
     <EmbeddedResource Include="Carga.resx">
       <DependentUpon>Carga.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Clientes\ListarClientes.resx">
+      <DependentUpon>ListarClientes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="componentes\RJTextBox.resx">
       <DependentUpon>RJTextBox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Eliminar.resx">
       <DependentUpon>Eliminar.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Empleados\CargaEmpleados.resx">
-      <DependentUpon>CargaEmpleados.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Empleados\ListarEmp.resx">
       <DependentUpon>ListarEmp.cs</DependentUpon>
@@ -158,6 +165,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Proveedores\ListarProveedores.resx">
+      <DependentUpon>ListarProveedores.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -192,6 +202,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\flechaico.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Material\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

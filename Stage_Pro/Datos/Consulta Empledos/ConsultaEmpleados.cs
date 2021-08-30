@@ -271,5 +271,32 @@ namespace Datos.Consulta_Empledos
             cmd5.ExecuteNonQuery();
 
         }
+
+        public void DardeBajaEmp(string dni,string motivo)
+        {
+
+            string hoy = DateTime.Now.ToString("dd/MM/yyyy");
+
+            string consulta = "set dateformat dmy UPDATE Empleados set activo='no', motivo_egreso='"+motivo+"',fecha_de_egreso='"+hoy+"' where dni='" + dni+"'";
+
+            SqlCommand cmd = new SqlCommand(consulta, Conetar());
+
+            cmd.ExecuteNonQuery();
+
+
+        }
+        public void ReintegrarEmp(string dni)
+        {
+
+            string hoy = DateTime.Now.ToString("dd/MM/yyyy");
+
+            string consulta = "set dateformat dmy UPDATE Empleados set activo='si', motivo_egreso='',fecha_de_ingreso='" + hoy + "' where dni='" + dni + "'";
+
+            SqlCommand cmd = new SqlCommand(consulta, Conetar());
+
+            cmd.ExecuteNonQuery();
+
+        }
+
     }
 }

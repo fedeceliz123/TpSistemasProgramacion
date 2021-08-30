@@ -24,7 +24,7 @@ class RJComboBox : UserControl
     private Button btnIcon;
 
     //Events
-    public event EventHandler OnSelectedIndexChanged;//Default event
+    public event EventHandler SelectedIndexChanged;//Default event
 
 
     //Constructor
@@ -39,7 +39,7 @@ class RJComboBox : UserControl
         cmbList.BackColor = listBackColor;
         cmbList.Font = new Font(this.Font.Name, 10F);
         cmbList.ForeColor = listTextColor;
-        cmbList.SelectedIndexChanged += new EventHandler(ComboBox_SelectedIndexChanged);//Default event
+        cmbList.SelectedIndexChanged += new EventHandler(ComboBox_OnSelectedIndexChanged);//Default event
         cmbList.TextChanged += new EventHandler(ComboBox_TextChanged);//Refresh text
 
         //Button: Icon
@@ -92,10 +92,10 @@ class RJComboBox : UserControl
     //Event methods
 
     //-> Default event
-    private void ComboBox_SelectedIndexChanged(object sender, EventArgs e)
+    private void ComboBox_OnSelectedIndexChanged(object sender, EventArgs e)
     {
-        if (OnSelectedIndexChanged != null)
-            OnSelectedIndexChanged.Invoke(sender, e);
+        if (SelectedIndexChanged != null)
+            SelectedIndexChanged.Invoke(sender, e);
         //Refresh text
         lblText.Text = cmbList.Text;
     }

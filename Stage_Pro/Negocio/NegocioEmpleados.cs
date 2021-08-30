@@ -72,5 +72,14 @@ namespace Negocio
             return emp.mailEmpleados(empleados);
         }
 
+        public void DarDeBajaEmp(string dni, string motivo)
+        {
+            emp.DardeBajaEmp(dni,motivo);
+        }
+
+        public void ReintrearEmp(string dni)
+        {
+            emp.ReintegrarEmp(dni);
+        }
     }
 }

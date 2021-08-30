@@ -30,11 +30,15 @@ namespace UI.Empleados
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ListarEmp));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelLista = new System.Windows.Forms.Panel();
             this.panelDatosPersonales = new System.Windows.Forms.Panel();
             this.pUser = new System.Windows.Forms.Panel();
+            this.chbUser = new System.Windows.Forms.CheckBox();
+            this.label30 = new System.Windows.Forms.Label();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.tbPermisos = new System.Windows.Forms.TextBox();
             this.label29 = new System.Windows.Forms.Label();
             this.panel11 = new System.Windows.Forms.Panel();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
@@ -117,6 +121,7 @@ namespace UI.Empleados
             this.panel6 = new System.Windows.Forms.Panel();
             this.tbSexo1 = new System.Windows.Forms.TextBox();
             this.panel8 = new System.Windows.Forms.Panel();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.tbFechaN = new System.Windows.Forms.TextBox();
             this.pbAbrirCal = new System.Windows.Forms.PictureBox();
             this.panelPestañas = new System.Windows.Forms.Panel();
@@ -128,32 +133,35 @@ namespace UI.Empleados
             this.label11 = new System.Windows.Forms.Label();
             this.paso1 = new System.Windows.Forms.Panel();
             this.label10 = new System.Windows.Forms.Label();
+            this.panel26 = new System.Windows.Forms.Panel();
+            this.label32 = new System.Windows.Forms.Label();
+            this.lblMotivo = new System.Windows.Forms.Label();
+            this.pMotivo = new System.Windows.Forms.Panel();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.cbMotivo = new System.Windows.Forms.ComboBox();
+            this.label31 = new System.Windows.Forms.Label();
             this.chbInactivos = new System.Windows.Forms.CheckBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.tbBuscar = new System.Windows.Forms.TextBox();
             this.dgvEmp = new System.Windows.Forms.DataGridView();
-            this.panel9 = new System.Windows.Forms.Panel();
-            this.label30 = new System.Windows.Forms.Label();
-            this.tbPermisos = new System.Windows.Forms.TextBox();
-            this.chbUser = new System.Windows.Forms.CheckBox();
-            this.btnAceptar = new ePOSOne.btnProduct.Button_WOC();
             this.cbPermiso = new RJComboBox();
+            this.btnAceptar = new ePOSOne.btnProduct.Button_WOC();
             this.btnAtras = new ePOSOne.btnProduct.Button_WOC();
             this.pbUser = new UI.componentes.RJCircularPictureBox();
             this.tbSexo = new RJComboBox();
             this.btnCancelar = new ePOSOne.btnProduct.Button_WOC();
             this.btnSiguiente = new ePOSOne.btnProduct.Button_WOC();
+            this.btnReactivar = new ePOSOne.btnProduct.Button_WOC();
             this.btnDetalles = new ePOSOne.btnProduct.Button_WOC();
             this.btnCargar = new ePOSOne.btnProduct.Button_WOC();
             this.btnEliminar = new ePOSOne.btnProduct.Button_WOC();
             this.btnModificar = new ePOSOne.btnProduct.Button_WOC();
             this.btnBuscar = new ePOSOne.btnProduct.Button_WOC();
             this.ellipseControl1 = new UI.componentes.EllipseControl();
-            this.label31 = new System.Windows.Forms.Label();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.panelLista.SuspendLayout();
             this.panelDatosPersonales.SuspendLayout();
             this.pUser.SuspendLayout();
+            this.panel9.SuspendLayout();
             this.panel11.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.panel10.SuspendLayout();
@@ -185,22 +193,28 @@ namespace UI.Empleados
             this.panel5.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbAbrirCal)).BeginInit();
             this.panelPestañas.SuspendLayout();
             this.paso4.SuspendLayout();
             this.paso3.SuspendLayout();
             this.paso2.SuspendLayout();
             this.paso1.SuspendLayout();
+            this.panel26.SuspendLayout();
+            this.pMotivo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmp)).BeginInit();
-            this.panel9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbUser)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.SuspendLayout();
             // 
             // panelLista
             // 
             this.panelLista.Controls.Add(this.panelDatosPersonales);
+            this.panelLista.Controls.Add(this.panel26);
+            this.panelLista.Controls.Add(this.btnReactivar);
+            this.panelLista.Controls.Add(this.lblMotivo);
+            this.panelLista.Controls.Add(this.pMotivo);
             this.panelLista.Controls.Add(this.label31);
             this.panelLista.Controls.Add(this.chbInactivos);
             this.panelLista.Controls.Add(this.btnDetalles);
@@ -215,19 +229,20 @@ namespace UI.Empleados
             this.panelLista.Name = "panelLista";
             this.panelLista.Size = new System.Drawing.Size(928, 755);
             this.panelLista.TabIndex = 0;
+            this.panelLista.Paint += new System.Windows.Forms.PaintEventHandler(this.panelLista_Paint);
             // 
             // panelDatosPersonales
             // 
             this.panelDatosPersonales.Controls.Add(this.pUser);
-            this.panelDatosPersonales.Controls.Add(this.btnAceptar);
             this.panelDatosPersonales.Controls.Add(this.pTel);
+            this.panelDatosPersonales.Controls.Add(this.btnAceptar);
             this.panelDatosPersonales.Controls.Add(this.pDir);
             this.panelDatosPersonales.Controls.Add(this.btnAtras);
             this.panelDatosPersonales.Controls.Add(this.p1);
             this.panelDatosPersonales.Controls.Add(this.btnCancelar);
             this.panelDatosPersonales.Controls.Add(this.btnSiguiente);
             this.panelDatosPersonales.Controls.Add(this.panelPestañas);
-            this.panelDatosPersonales.Location = new System.Drawing.Point(0, 3);
+            this.panelDatosPersonales.Location = new System.Drawing.Point(0, 0);
             this.panelDatosPersonales.Name = "panelDatosPersonales";
             this.panelDatosPersonales.Size = new System.Drawing.Size(928, 755);
             this.panelDatosPersonales.TabIndex = 1;
@@ -242,11 +257,54 @@ namespace UI.Empleados
             this.pUser.Controls.Add(this.panel11);
             this.pUser.Controls.Add(this.panel10);
             this.pUser.Controls.Add(this.label28);
-            this.pUser.Location = new System.Drawing.Point(20, 40);
+            this.pUser.Location = new System.Drawing.Point(32, 62);
             this.pUser.Name = "pUser";
-            this.pUser.Size = new System.Drawing.Size(896, 600);
+            this.pUser.Size = new System.Drawing.Size(884, 564);
             this.pUser.TabIndex = 106;
             this.pUser.Visible = false;
+            // 
+            // chbUser
+            // 
+            this.chbUser.AutoSize = true;
+            this.chbUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chbUser.Location = new System.Drawing.Point(457, 151);
+            this.chbUser.Name = "chbUser";
+            this.chbUser.Size = new System.Drawing.Size(157, 20);
+            this.chbUser.TabIndex = 89;
+            this.chbUser.Text = "Desactivar usuario";
+            this.chbUser.UseVisualStyleBackColor = true;
+            this.chbUser.CheckedChanged += new System.EventHandler(this.chbUser_CheckedChanged);
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label30.Location = new System.Drawing.Point(149, 121);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(81, 16);
+            this.label30.TabIndex = 88;
+            this.label30.Text = "Permisos: ";
+            // 
+            // panel9
+            // 
+            this.panel9.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel9.BackgroundImage")));
+            this.panel9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel9.Controls.Add(this.tbPermisos);
+            this.panel9.Controls.Add(this.cbPermiso);
+            this.panel9.Location = new System.Drawing.Point(150, 142);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(248, 37);
+            this.panel9.TabIndex = 86;
+            // 
+            // tbPermisos
+            // 
+            this.tbPermisos.BackColor = System.Drawing.SystemColors.Control;
+            this.tbPermisos.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tbPermisos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbPermisos.Location = new System.Drawing.Point(8, 9);
+            this.tbPermisos.Name = "tbPermisos";
+            this.tbPermisos.Size = new System.Drawing.Size(200, 19);
+            this.tbPermisos.TabIndex = 73;
             // 
             // label29
             // 
@@ -330,7 +388,7 @@ namespace UI.Empleados
             this.pTel.Controls.Add(this.label24);
             this.pTel.Controls.Add(this.label23);
             this.pTel.Controls.Add(this.label22);
-            this.pTel.Location = new System.Drawing.Point(3, 45);
+            this.pTel.Location = new System.Drawing.Point(54, 62);
             this.pTel.Name = "pTel";
             this.pTel.Size = new System.Drawing.Size(822, 553);
             this.pTel.TabIndex = 105;
@@ -375,6 +433,7 @@ namespace UI.Empleados
             this.tbTel.Name = "tbTel";
             this.tbTel.Size = new System.Drawing.Size(151, 19);
             this.tbTel.TabIndex = 72;
+            this.tbTel.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbTel_KeyPress);
             // 
             // panel23
             // 
@@ -395,6 +454,7 @@ namespace UI.Empleados
             this.tbCod.Name = "tbCod";
             this.tbCod.Size = new System.Drawing.Size(85, 19);
             this.tbCod.TabIndex = 72;
+            this.tbCod.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbCod_KeyPress);
             // 
             // label24
             // 
@@ -450,7 +510,7 @@ namespace UI.Empleados
             this.pDir.Controls.Add(this.label25);
             this.pDir.Controls.Add(this.label26);
             this.pDir.Controls.Add(this.label27);
-            this.pDir.Location = new System.Drawing.Point(12, 62);
+            this.pDir.Location = new System.Drawing.Point(67, 62);
             this.pDir.Name = "pDir";
             this.pDir.Size = new System.Drawing.Size(806, 536);
             this.pDir.TabIndex = 104;
@@ -535,6 +595,7 @@ namespace UI.Empleados
             this.tbPiso.Name = "tbPiso";
             this.tbPiso.Size = new System.Drawing.Size(85, 19);
             this.tbPiso.TabIndex = 72;
+            this.tbPiso.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbPiso_KeyPress);
             // 
             // panel18
             // 
@@ -555,6 +616,7 @@ namespace UI.Empleados
             this.tbN.Name = "tbN";
             this.tbN.Size = new System.Drawing.Size(85, 19);
             this.tbN.TabIndex = 72;
+            this.tbN.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbN_KeyPress);
             // 
             // panel17
             // 
@@ -615,6 +677,7 @@ namespace UI.Empleados
             this.tbCP.Name = "tbCP";
             this.tbCP.Size = new System.Drawing.Size(151, 19);
             this.tbCP.TabIndex = 72;
+            this.tbCP.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbCP_KeyPress);
             // 
             // panel14
             // 
@@ -820,11 +883,12 @@ namespace UI.Empleados
             // 
             // fIng
             // 
-            this.fIng.Location = new System.Drawing.Point(384, 359);
+            this.fIng.Location = new System.Drawing.Point(386, 359);
             this.fIng.Name = "fIng";
             this.fIng.TabIndex = 77;
             this.fIng.Visible = false;
             this.fIng.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.fIng_DateChanged);
+            this.fIng.DateSelected += new System.Windows.Forms.DateRangeEventHandler(this.fIng_DateSelected);
             // 
             // fNac
             // 
@@ -833,6 +897,7 @@ namespace UI.Empleados
             this.fNac.TabIndex = 76;
             this.fNac.Visible = false;
             this.fNac.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.fNac_DateChanged);
+            this.fNac.DateSelected += new System.Windows.Forms.DateRangeEventHandler(this.fNac_DateSelected);
             // 
             // panel1
             // 
@@ -853,6 +918,7 @@ namespace UI.Empleados
             this.tbDni.Name = "tbDni";
             this.tbDni.Size = new System.Drawing.Size(231, 19);
             this.tbDni.TabIndex = 72;
+            this.tbDni.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbDni_KeyPress);
             // 
             // tbPuesto
             // 
@@ -893,6 +959,7 @@ namespace UI.Empleados
             this.tbPreEve.Name = "tbPreEve";
             this.tbPreEve.Size = new System.Drawing.Size(106, 19);
             this.tbPreEve.TabIndex = 72;
+            this.tbPreEve.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbPreEve_KeyPress);
             // 
             // label1
             // 
@@ -900,9 +967,9 @@ namespace UI.Empleados
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(55, 179);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(39, 16);
+            this.label1.Size = new System.Drawing.Size(49, 16);
             this.label1.TabIndex = 79;
-            this.label1.Text = "Dni: ";
+            this.label1.Text = "Dni *: ";
             // 
             // pictureBox3
             // 
@@ -930,9 +997,9 @@ namespace UI.Empleados
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(327, 179);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(71, 16);
+            this.label2.Size = new System.Drawing.Size(81, 16);
             this.label2.TabIndex = 80;
-            this.label2.Text = "Nombre: ";
+            this.label2.Text = "Nombre *: ";
             // 
             // tbPreDep
             // 
@@ -943,6 +1010,7 @@ namespace UI.Empleados
             this.tbPreDep.Name = "tbPreDep";
             this.tbPreDep.Size = new System.Drawing.Size(106, 19);
             this.tbPreDep.TabIndex = 72;
+            this.tbPreDep.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbPreDep_KeyPress);
             // 
             // label3
             // 
@@ -950,9 +1018,9 @@ namespace UI.Empleados
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(53, 242);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(74, 16);
+            this.label3.Size = new System.Drawing.Size(84, 16);
             this.label3.TabIndex = 81;
-            this.label3.Text = "Apellido: ";
+            this.label3.Text = "Apellido *: ";
             // 
             // pictureBox2
             // 
@@ -1041,9 +1109,9 @@ namespace UI.Empleados
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(54, 367);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(64, 16);
+            this.label6.Size = new System.Drawing.Size(74, 16);
             this.label6.TabIndex = 85;
-            this.label6.Text = "Puesto: ";
+            this.label6.Text = "Puesto *: ";
             // 
             // panel4
             // 
@@ -1116,6 +1184,18 @@ namespace UI.Empleados
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(248, 37);
             this.panel8.TabIndex = 94;
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
+            this.pictureBox5.Location = new System.Drawing.Point(204, 6);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(34, 25);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox5.TabIndex = 105;
+            this.pictureBox5.TabStop = false;
+            this.pictureBox5.Click += new System.EventHandler(this.pictureBox5_Click);
             // 
             // tbFechaN
             // 
@@ -1245,6 +1325,85 @@ namespace UI.Empleados
             this.label10.TabIndex = 0;
             this.label10.Text = "Datos Personales";
             // 
+            // panel26
+            // 
+            this.panel26.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(172)))), ((int)(((byte)(234)))));
+            this.panel26.Controls.Add(this.label32);
+            this.panel26.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.panel26.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel26.Location = new System.Drawing.Point(0, 0);
+            this.panel26.Name = "panel26";
+            this.panel26.Size = new System.Drawing.Size(928, 34);
+            this.panel26.TabIndex = 94;
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label32.ForeColor = System.Drawing.Color.White;
+            this.label32.Location = new System.Drawing.Point(416, 9);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(64, 15);
+            this.label32.TabIndex = 0;
+            this.label32.Text = "Personal";
+            // 
+            // lblMotivo
+            // 
+            this.lblMotivo.AutoSize = true;
+            this.lblMotivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMotivo.Location = new System.Drawing.Point(544, 88);
+            this.lblMotivo.Name = "lblMotivo";
+            this.lblMotivo.Size = new System.Drawing.Size(167, 16);
+            this.lblMotivo.TabIndex = 92;
+            this.lblMotivo.Text = "Motivo de eliminacion: ";
+            this.lblMotivo.Visible = false;
+            // 
+            // pMotivo
+            // 
+            this.pMotivo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pMotivo.BackgroundImage")));
+            this.pMotivo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pMotivo.Controls.Add(this.pictureBox6);
+            this.pMotivo.Controls.Add(this.cbMotivo);
+            this.pMotivo.Location = new System.Drawing.Point(543, 123);
+            this.pMotivo.Name = "pMotivo";
+            this.pMotivo.Size = new System.Drawing.Size(248, 37);
+            this.pMotivo.TabIndex = 91;
+            this.pMotivo.Visible = false;
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
+            this.pictureBox6.Location = new System.Drawing.Point(210, 4);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(34, 30);
+            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox6.TabIndex = 93;
+            this.pictureBox6.TabStop = false;
+            this.pictureBox6.Click += new System.EventHandler(this.pictureBox6_Click);
+            // 
+            // cbMotivo
+            // 
+            this.cbMotivo.BackColor = System.Drawing.SystemColors.Control;
+            this.cbMotivo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbMotivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbMotivo.FormattingEnabled = true;
+            this.cbMotivo.Location = new System.Drawing.Point(8, 5);
+            this.cbMotivo.Name = "cbMotivo";
+            this.cbMotivo.Size = new System.Drawing.Size(229, 28);
+            this.cbMotivo.TabIndex = 0;
+            this.cbMotivo.SelectedIndexChanged += new System.EventHandler(this.cbMotivo_SelectedIndexChanged_1);
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label31.Location = new System.Drawing.Point(43, 88);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(254, 16);
+            this.label31.TabIndex = 90;
+            this.label31.Text = "Buscar por nombre , apellido o dni: ";
+            // 
             // chbInactivos
             // 
             this.chbInactivos.AutoSize = true;
@@ -1285,14 +1444,14 @@ namespace UI.Empleados
             this.dgvEmp.BackgroundColor = System.Drawing.Color.White;
             this.dgvEmp.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvEmp.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvEmp.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvEmp.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvEmp.ColumnHeadersHeight = 30;
             this.dgvEmp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvEmp.EnableHeadersVisualStyles = false;
@@ -1301,59 +1460,36 @@ namespace UI.Empleados
             this.dgvEmp.Name = "dgvEmp";
             this.dgvEmp.ReadOnly = true;
             this.dgvEmp.RowHeadersVisible = false;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.Gray;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.White;
-            this.dgvEmp.RowsDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            this.dgvEmp.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvEmp.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvEmp.Size = new System.Drawing.Size(803, 307);
             this.dgvEmp.TabIndex = 44;
             this.dgvEmp.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEmp_CellClick);
+            this.dgvEmp.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEmp_CellContentClick);
             // 
-            // panel9
+            // cbPermiso
             // 
-            this.panel9.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel9.BackgroundImage")));
-            this.panel9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel9.Controls.Add(this.tbPermisos);
-            this.panel9.Controls.Add(this.cbPermiso);
-            this.panel9.Location = new System.Drawing.Point(150, 142);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(248, 37);
-            this.panel9.TabIndex = 86;
-            // 
-            // label30
-            // 
-            this.label30.AutoSize = true;
-            this.label30.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label30.Location = new System.Drawing.Point(149, 121);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(81, 16);
-            this.label30.TabIndex = 88;
-            this.label30.Text = "Permisos: ";
-            // 
-            // tbPermisos
-            // 
-            this.tbPermisos.BackColor = System.Drawing.SystemColors.Control;
-            this.tbPermisos.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tbPermisos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbPermisos.Location = new System.Drawing.Point(8, 9);
-            this.tbPermisos.Name = "tbPermisos";
-            this.tbPermisos.Size = new System.Drawing.Size(200, 19);
-            this.tbPermisos.TabIndex = 73;
-            // 
-            // chbUser
-            // 
-            this.chbUser.AutoSize = true;
-            this.chbUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chbUser.Location = new System.Drawing.Point(457, 151);
-            this.chbUser.Name = "chbUser";
-            this.chbUser.Size = new System.Drawing.Size(157, 20);
-            this.chbUser.TabIndex = 89;
-            this.chbUser.Text = "Desactivar usuario";
-            this.chbUser.UseVisualStyleBackColor = true;
-            this.chbUser.CheckedChanged += new System.EventHandler(this.chbUser_CheckedChanged);
+            this.cbPermiso.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.cbPermiso.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.cbPermiso.BorderSize = 0;
+            this.cbPermiso.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+            this.cbPermiso.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.cbPermiso.ForeColor = System.Drawing.Color.DimGray;
+            this.cbPermiso.IconColor = System.Drawing.Color.Transparent;
+            this.cbPermiso.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
+            this.cbPermiso.ListTextColor = System.Drawing.Color.DimGray;
+            this.cbPermiso.Location = new System.Drawing.Point(16, 3);
+            this.cbPermiso.MinimumSize = new System.Drawing.Size(200, 30);
+            this.cbPermiso.Name = "cbPermiso";
+            this.cbPermiso.Size = new System.Drawing.Size(220, 30);
+            this.cbPermiso.TabIndex = 0;
+            this.cbPermiso.Texts = "";
+            this.cbPermiso.SelectedIndexChanged += new System.EventHandler(this.cbPermiso_OnSelectedIndexChanged);
             // 
             // btnAceptar
             // 
@@ -1376,25 +1512,6 @@ namespace UI.Empleados
             this.btnAceptar.UseVisualStyleBackColor = false;
             this.btnAceptar.Visible = false;
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
-            // 
-            // cbPermiso
-            // 
-            this.cbPermiso.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.cbPermiso.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.cbPermiso.BorderSize = 0;
-            this.cbPermiso.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
-            this.cbPermiso.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.cbPermiso.ForeColor = System.Drawing.Color.DimGray;
-            this.cbPermiso.IconColor = System.Drawing.Color.Transparent;
-            this.cbPermiso.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
-            this.cbPermiso.ListTextColor = System.Drawing.Color.DimGray;
-            this.cbPermiso.Location = new System.Drawing.Point(16, 3);
-            this.cbPermiso.MinimumSize = new System.Drawing.Size(200, 30);
-            this.cbPermiso.Name = "cbPermiso";
-            this.cbPermiso.Size = new System.Drawing.Size(220, 30);
-            this.cbPermiso.TabIndex = 0;
-            this.cbPermiso.Texts = "";
-            this.cbPermiso.OnSelectedIndexChanged += new System.EventHandler(this.cbPermiso_OnSelectedIndexChanged);
             // 
             // btnAtras
             // 
@@ -1457,7 +1574,7 @@ namespace UI.Empleados
             this.tbSexo.Size = new System.Drawing.Size(233, 30);
             this.tbSexo.TabIndex = 25;
             this.tbSexo.Texts = "";
-            this.tbSexo.OnSelectedIndexChanged += new System.EventHandler(this.tbSexo_OnSelectedIndexChanged);
+            this.tbSexo.SelectedIndexChanged += new System.EventHandler(this.tbSexo_OnSelectedIndexChanged);
             // 
             // btnCancelar
             // 
@@ -1500,6 +1617,28 @@ namespace UI.Empleados
             this.btnSiguiente.TextColor = System.Drawing.Color.White;
             this.btnSiguiente.UseVisualStyleBackColor = false;
             this.btnSiguiente.Click += new System.EventHandler(this.btnSiguiente_Click);
+            // 
+            // btnReactivar
+            // 
+            this.btnReactivar.BackColor = System.Drawing.SystemColors.Control;
+            this.btnReactivar.BorderColor = System.Drawing.Color.Transparent;
+            this.btnReactivar.ButtonColor = System.Drawing.Color.DarkBlue;
+            this.btnReactivar.FlatAppearance.BorderSize = 0;
+            this.btnReactivar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReactivar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReactivar.ForeColor = System.Drawing.Color.White;
+            this.btnReactivar.Location = new System.Drawing.Point(315, 293);
+            this.btnReactivar.Name = "btnReactivar";
+            this.btnReactivar.OnHoverBorderColor = System.Drawing.SystemColors.GrayText;
+            this.btnReactivar.OnHoverButtonColor = System.Drawing.Color.Black;
+            this.btnReactivar.OnHoverTextColor = System.Drawing.Color.Gray;
+            this.btnReactivar.Size = new System.Drawing.Size(110, 40);
+            this.btnReactivar.TabIndex = 93;
+            this.btnReactivar.Text = "Reintegrar";
+            this.btnReactivar.TextColor = System.Drawing.Color.White;
+            this.btnReactivar.UseVisualStyleBackColor = false;
+            this.btnReactivar.Visible = false;
+            this.btnReactivar.Click += new System.EventHandler(this.btnReactivar_Click);
             // 
             // btnDetalles
             // 
@@ -1616,28 +1755,6 @@ namespace UI.Empleados
             this.ellipseControl1.TabIndex = 75;
             this.ellipseControl1.Text = "ellipseControl1";
             // 
-            // label31
-            // 
-            this.label31.AutoSize = true;
-            this.label31.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label31.Location = new System.Drawing.Point(43, 88);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(254, 16);
-            this.label31.TabIndex = 90;
-            this.label31.Text = "Buscar por nombre , apellido o dni: ";
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(204, 6);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(34, 25);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox5.TabIndex = 105;
-            this.pictureBox5.TabStop = false;
-            this.pictureBox5.Click += new System.EventHandler(this.pictureBox5_Click);
-            // 
             // ListarEmp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1653,6 +1770,8 @@ namespace UI.Empleados
             this.panelDatosPersonales.ResumeLayout(false);
             this.pUser.ResumeLayout(false);
             this.pUser.PerformLayout();
+            this.panel9.ResumeLayout(false);
+            this.panel9.PerformLayout();
             this.panel11.ResumeLayout(false);
             this.panel11.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
@@ -1709,6 +1828,7 @@ namespace UI.Empleados
             this.panel6.PerformLayout();
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbAbrirCal)).EndInit();
             this.panelPestañas.ResumeLayout(false);
             this.paso4.ResumeLayout(false);
@@ -1719,13 +1839,14 @@ namespace UI.Empleados
             this.paso2.PerformLayout();
             this.paso1.ResumeLayout(false);
             this.paso1.PerformLayout();
+            this.panel26.ResumeLayout(false);
+            this.panel26.PerformLayout();
+            this.pMotivo.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmp)).EndInit();
-            this.panel9.ResumeLayout(false);
-            this.panel9.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbUser)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1851,5 +1972,12 @@ namespace UI.Empleados
         private RJComboBox cbPermiso;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.Label lblMotivo;
+        private System.Windows.Forms.Panel pMotivo;
+        private System.Windows.Forms.ComboBox cbMotivo;
+        private System.Windows.Forms.PictureBox pictureBox6;
+        private ePOSOne.btnProduct.Button_WOC btnReactivar;
+        private System.Windows.Forms.Panel panel26;
+        private System.Windows.Forms.Label label32;
     }
 }

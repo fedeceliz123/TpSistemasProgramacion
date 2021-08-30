@@ -43,7 +43,6 @@ namespace UI
             this.btnRepCompras = new System.Windows.Forms.Button();
             this.btnEstadisticas = new System.Windows.Forms.Button();
             this.panelSubPersonal = new System.Windows.Forms.Panel();
-            this.btnUsuario = new System.Windows.Forms.Button();
             this.btnAsigEvento = new System.Windows.Forms.Button();
             this.btnCarPersonal = new System.Windows.Forms.Button();
             this.btnPersonal = new System.Windows.Forms.Button();
@@ -261,7 +260,6 @@ namespace UI
             // 
             // panelSubPersonal
             // 
-            this.panelSubPersonal.Controls.Add(this.btnUsuario);
             this.panelSubPersonal.Controls.Add(this.btnAsigEvento);
             this.panelSubPersonal.Controls.Add(this.btnCarPersonal);
             this.panelSubPersonal.Dock = System.Windows.Forms.DockStyle.Top;
@@ -270,24 +268,6 @@ namespace UI
             this.panelSubPersonal.Size = new System.Drawing.Size(251, 140);
             this.panelSubPersonal.TabIndex = 5;
             this.panelSubPersonal.Visible = false;
-            // 
-            // btnUsuario
-            // 
-            this.btnUsuario.BackColor = System.Drawing.Color.Gray;
-            this.btnUsuario.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnUsuario.FlatAppearance.BorderSize = 0;
-            this.btnUsuario.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
-            this.btnUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUsuario.ForeColor = System.Drawing.Color.White;
-            this.btnUsuario.Location = new System.Drawing.Point(0, 70);
-            this.btnUsuario.Name = "btnUsuario";
-            this.btnUsuario.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.btnUsuario.Size = new System.Drawing.Size(251, 35);
-            this.btnUsuario.TabIndex = 3;
-            this.btnUsuario.Text = "Crear Usuario";
-            this.btnUsuario.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUsuario.UseVisualStyleBackColor = false;
             // 
             // btnAsigEvento
             // 
@@ -324,6 +304,7 @@ namespace UI
             this.btnCarPersonal.Text = "Carga Personal";
             this.btnCarPersonal.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCarPersonal.UseVisualStyleBackColor = false;
+            this.btnCarPersonal.Click += new System.EventHandler(this.btnCarPersonal_Click);
             // 
             // btnPersonal
             // 
@@ -391,6 +372,7 @@ namespace UI
             this.btnClientes.Text = "Clientes";
             this.btnClientes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnClientes.UseVisualStyleBackColor = false;
+            this.btnClientes.Click += new System.EventHandler(this.btnClientes_Click);
             // 
             // btnCarEvento
             // 
@@ -494,6 +476,7 @@ namespace UI
             this.btnProveedores.Text = "Proveedores";
             this.btnProveedores.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnProveedores.UseVisualStyleBackColor = false;
+            this.btnProveedores.Click += new System.EventHandler(this.btnProveedores_Click);
             // 
             // btnCompras
             // 
@@ -564,7 +547,7 @@ namespace UI
             // 
             // panelContenedor
             // 
-            this.panelContenedor.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelContenedor.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panelContenedor.Location = new System.Drawing.Point(268, 44);
             this.panelContenedor.Name = "panelContenedor";
             this.panelContenedor.Size = new System.Drawing.Size(928, 755);
@@ -628,7 +611,6 @@ namespace UI
         private System.Windows.Forms.Button btnRepCompras;
         private System.Windows.Forms.Button btnEstadisticas;
         private System.Windows.Forms.Panel panelSubPersonal;
-        private System.Windows.Forms.Button btnUsuario;
         private System.Windows.Forms.Button btnAsigEvento;
         private System.Windows.Forms.Button btnCarPersonal;
         private System.Windows.Forms.Button btnPersonal;

@@ -138,5 +138,20 @@ namespace UI
                 panelSubEstadis.Visible = false;
             }
         }
+
+        private void btnProveedores_Click(object sender, EventArgs e)
+        {
+            AbrirFormhijo(new Proveedores.ListarProveedores());
+        }
+
+        private void btnClientes_Click(object sender, EventArgs e)
+        {
+            AbrirFormhijo(new Clientes.ListarClientes());
+        }
+
+        private void btnCarPersonal_Click(object sender, EventArgs e)
+        {
+            AbrirFormhijo(new Empleados.ListarEmp());
+        }
     }
 }

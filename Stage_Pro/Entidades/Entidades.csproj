@@ -44,12 +44,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Clientes.cs" />
     <Compile Include="Direcciones.cs" />
     <Compile Include="Emails.cs" />
     <Compile Include="Empleados.cs" />
     <Compile Include="Login.cs" />
     <Compile Include="Permisos.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Proveedores.cs" />
     <Compile Include="Telefonos.cs" />
   </ItemGroup>
   <ItemGroup>

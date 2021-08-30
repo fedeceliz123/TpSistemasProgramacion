@@ -31,6 +31,14 @@ namespace UI.Empleados
             cargarGrilla(nEmp.ListarEmp(activo));
 
             cargarComboPermisos();
+
+         
+            cbMotivo.Items.Add("Renuncia");
+            cbMotivo.Items.Add("Despido sin causa");
+            cbMotivo.Items.Add("Despido con cuasa");
+
+          
+
         }
 
 
@@ -47,6 +55,8 @@ namespace UI.Empleados
             dgvEmp.Columns[3].Width = 200;
 
         }
+
+
         string dni = "";
         int acciones = 0;
         private void dgvEmp_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -54,6 +64,14 @@ namespace UI.Empleados
             try
             {
                 dni = dgvEmp.Rows[e.RowIndex].Cells[0].Value.ToString();
+                if (chbInactivos.Checked == true)
+                {
+                    btnReactivar.Visible = true;
+                }
+                else
+                {
+                    btnReactivar.Visible = false;
+                }
             }
             catch
             {
@@ -95,6 +113,7 @@ namespace UI.Empleados
         {
             acciones = 1;
             inputHabilitados();
+            btnReactivar.Visible = false;
 
             panelDatosPersonales.Visible = true;
             btnAceptar.Visible = false;
@@ -105,6 +124,7 @@ namespace UI.Empleados
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
+            btnReactivar.Visible = false;
             acciones = 2;
             if (dni == "")
             {
@@ -126,6 +146,7 @@ namespace UI.Empleados
 
         private void btnDetalles_Click(object sender, EventArgs e)
         {
+            btnReactivar.Visible = false;
             acciones = 3;
             if (dni == "")
             {
@@ -145,6 +166,8 @@ namespace UI.Empleados
 
         }
 
+        public string motivo = "";
+
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             if (dni == "")
@@ -152,7 +175,13 @@ namespace UI.Empleados
                 MensajeOk mensaje = new MensajeOk();
                 mensaje.lblMensaje.Text = "Seleccione un empleado";
                 mensaje.Show();
+                return;
             }
+
+            pMotivo.Visible = true;
+            lblMotivo.Visible = true;
+           
+
         }
 
         private void LlenarCampos()
@@ -232,11 +261,11 @@ namespace UI.Empleados
             tbDni.Enabled = true;
             tbNombre.Enabled = true;
             tbApellido.Enabled = true;
-            tbSexo1.Enabled = true;
+            tbSexo1.Enabled = false;
             tbSexo.Enabled = true;
-            tbFechaN.Enabled = true;
+            tbFechaN.Enabled = false;
             tbPuesto.Enabled = true;
-            tbFechai.Enabled = true;
+            tbFechai.Enabled = false;
             tbPreDep.Enabled = true;
             tbPreEve.Enabled = true;
             pbAbrirCal.Enabled = true;
@@ -261,6 +290,7 @@ namespace UI.Empleados
 
             tbUseruario.Enabled = true;
             tbClave.Enabled = true;
+            tbPermisos.Enabled = false;
 
 
         }
@@ -299,6 +329,8 @@ namespace UI.Empleados
 
             tbUseruario.Enabled = false;
             tbClave.Enabled = false;
+            tbPermisos.Enabled = false;
+            cbPermiso.Enabled = false;
         }
 
         private void tbSexo_OnSelectedIndexChanged(object sender, EventArgs e)
@@ -332,17 +364,12 @@ namespace UI.Empleados
 
         private void fNac_DateChanged(object sender, DateRangeEventArgs e)
         {
-            DateTime fecha = fNac.SelectionStart;
-
-            tbFechaN.Text = fecha.ToString("dd/MM/yyyy");
-            fNac.Visible = false;
+            
         }
 
         private void fIng_DateChanged(object sender, DateRangeEventArgs e)
         {
-            DateTime fecha = fIng.SelectionStart;
-            tbFechai.Text = fecha.ToString("dd/MM/yyyy");
-            fIng.Visible = false;
+          
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -357,7 +384,7 @@ namespace UI.Empleados
             paso3.BackColor = Color.FromArgb(3, 109, 193);
             paso4.BackColor = Color.FromArgb(3, 109, 193);
 
-
+            dni = "";
 
 
         }
@@ -579,7 +606,15 @@ namespace UI.Empleados
         {
 
             cargarGrilla(nEmp.FitroEmp(activo,tbBuscar.Text));
-
+            btnReactivar.Visible = false;
+            if (activo == "no")
+            {
+                btnEliminar.Visible = false;
+            }
+            else
+            {
+                btnEliminar.Visible = true;
+            }
 
         }
         string activo="si";
@@ -606,8 +641,11 @@ namespace UI.Empleados
             if (acciones == 2)
             {
                 cargarEntidades();
-
+                if(validaciones.TextBoxNull(tbDni)==validaciones.TextBoxNull(tbNombre)==validaciones.TextBoxNull(tbApellido)==validaciones.TextBoxNull(tbPuesto)==false)
+                {
                 nEmp.ModificarEmp(emp, dir, tel, mail, login);
+
+                
 
                 panelDatosPersonales.Visible = false;
                 p1.Visible = true;
@@ -619,29 +657,49 @@ namespace UI.Empleados
                 paso3.BackColor = Color.FromArgb(3, 109, 193);
                 paso4.BackColor = Color.FromArgb(3, 109, 193);
 
-                cargarGrilla(nEmp.ListarEmp(activo));
+                    cargarGrilla(nEmp.ListarEmp(activo));
+                    dni = "";
+                }
+                else
+                {
+                    MensajeOk mensaje = new MensajeOk();
+                    mensaje.lblMensaje.Text = "Complete los campos obligatorios";
+                    mensaje.Show();
+                }
 
             }
             else if (acciones==1)
             {
                 cargarEntidades();
+                if (validaciones.TextBoxNull(tbDni) == validaciones.TextBoxNull(tbNombre) == validaciones.TextBoxNull(tbApellido) == validaciones.TextBoxNull(tbPuesto) == false)
+                {
+                    nEmp.ModificarEmp(emp, dir, tel, mail, login);
 
-                nEmp.cargarEmpleado(emp,dir,tel,mail,login);
 
-                panelDatosPersonales.Visible = false;
-                p1.Visible = true;
-                pDir.Visible = false;
-                pTel.Visible = false;
-                pUser.Visible = false;
-                paso1.BackColor = Color.FromArgb(69, 172, 234);
-                paso2.BackColor = Color.FromArgb(3, 109, 193);
-                paso3.BackColor = Color.FromArgb(3, 109, 193);
-                paso4.BackColor = Color.FromArgb(3, 109, 193);
+                    nEmp.cargarEmpleado(emp, dir, tel, mail, login);
 
-                cargarGrilla(nEmp.ListarEmp(activo));
+                    panelDatosPersonales.Visible = false;
+                    p1.Visible = true;
+                    pDir.Visible = false;
+                    pTel.Visible = false;
+                    pUser.Visible = false;
+                    paso1.BackColor = Color.FromArgb(69, 172, 234);
+                    paso2.BackColor = Color.FromArgb(3, 109, 193);
+                    paso3.BackColor = Color.FromArgb(3, 109, 193);
+                    paso4.BackColor = Color.FromArgb(3, 109, 193);
 
+                    cargarGrilla(nEmp.ListarEmp(activo));
+                    dni = "";
+                }
+                else
+                {
+                    MensajeOk mensaje = new MensajeOk();
+                    mensaje.lblMensaje.Text = "Complete los campos obligatorios *";
+                    mensaje.Show();
+                }
 
             }
+           
         }
 
 
@@ -652,7 +710,7 @@ namespace UI.Empleados
             emp.dni = tbDni.Text;
             emp.nombre = tbNombre.Text;
             emp.apellido = tbApellido.Text;
-            emp.sexo = tbSexo.Text;
+            emp.sexo = tbSexo1.Text;
             emp.fecha_nacimiento = tbFechaN.Text;
             emp.puesto =  tbPuesto.Text;
             emp.fecha_ingreso = tbFechai.Text;
@@ -661,6 +719,7 @@ namespace UI.Empleados
 
             // dir 
 
+            dir.id_persona = tbDni.Text;
             dir.pais = tbPais.Text;
             dir.provincia = tbProvincia.Text;
             dir.localidad = tbLocalidad.Text;
@@ -674,17 +733,17 @@ namespace UI.Empleados
             dir.lote = tbLote.Text;
 
             // tel
-
+            tel.id_persona = tbDni.Text;
             tel.codigo_de_area = tbCod.Text;
             tel.numero = tbTel.Text;
 
             //mail
-
+            mail.id_persona = tbDni.Text;
             mail.email = tbMail.Text;
 
 
             // login
-
+            login.dni = tbDni.Text;
             login.contraseña = tbClave.Text;
             login.nombre_usuario = tbUseruario.Text;
             login.email = tbMail.Text;
@@ -728,6 +787,120 @@ namespace UI.Empleados
             {
                 fNac.Visible = false;
             }
+        }
+
+        private void fNac_DateSelected(object sender, DateRangeEventArgs e)
+        {
+            DateTime fecha = fNac.SelectionStart;
+
+            tbFechaN.Text = fecha.ToString("dd/MM/yyyy");
+            fNac.Visible = false;
+        }
+
+        private void fIng_DateSelected(object sender, DateRangeEventArgs e)
+        {
+            DateTime fecha = fIng.SelectionStart;
+            tbFechai.Text = fecha.ToString("dd/MM/yyyy");
+            fIng.Visible = false;
+        }
+
+        private void cbMotivo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void panelLista_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void pictureBox6_Click(object sender, EventArgs e)
+        {
+            if (cbMotivo.DroppedDown == false)
+            {
+                cbMotivo.DroppedDown = true;
+            }
+            else
+            {
+                cbMotivo.DroppedDown = false;
+            }
+        }
+
+        private void cbMotivo_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            motivo = cbMotivo.SelectedItem.ToString();
+
+            Eliminar eliminar = new Eliminar();
+
+
+
+            if (eliminar.ShowDialog() == DialogResult.Yes)
+            {
+                nEmp.DarDeBajaEmp(dni, motivo);
+                lblMotivo.Visible = false;
+                pMotivo.Visible = false;
+            }
+            else
+            {
+                lblMotivo.Visible = false;
+                pMotivo.Visible = false;
+            }
+
+            cargarGrilla(nEmp.ListarEmp(activo));
+            dni = "";
+        }
+
+        private void dgvEmp_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void btnReactivar_Click(object sender, EventArgs e)
+        {
+            nEmp.ReintrearEmp(dni);
+            cargarGrilla(nEmp.ListarEmp(activo));
+            dni = "";
+        }
+
+        Validaciones validaciones = new Validaciones();
+        private void tbCod_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            validaciones.SoloNumeros(e);
+        }
+
+        private void tbTel_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            validaciones.SoloNumeros(e);
+        }
+
+        private void tbCP_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            validaciones.SoloNumeros(e);
+        }
+
+        private void tbN_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            validaciones.SoloNumeros(e);
+        }
+
+        private void tbPiso_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            validaciones.SoloNumeros(e);
+        }
+
+        private void tbDni_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            validaciones.SoloNumeros(e);
+        }
+
+        private void tbPreDep_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            validaciones.SoloNumeros(e);
+        }
+
+        private void tbPreEve_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            validaciones.SoloNumeros(e);
         }
     }
 }
