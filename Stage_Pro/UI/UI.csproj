@@ -107,6 +107,12 @@
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="Material\ListarMaterial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Material\ListarMaterial.Designer.cs">
+      <DependentUpon>ListarMaterial.cs</DependentUpon>
+    </Compile>
     <Compile Include="MensajeOk.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -148,6 +154,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Material\ListarMaterial.resx">
+      <DependentUpon>ListarMaterial.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MensajeOk.resx">
       <DependentUpon>MensajeOk.cs</DependentUpon>
@@ -203,8 +212,6 @@
   <ItemGroup>
     <None Include="Resources\flechaico.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Material\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -47,6 +47,7 @@
     <Compile Include="ConexionDB.cs" />
     <Compile Include="Consulta Clientes\ConsultaClientes.cs" />
     <Compile Include="Consulta Empledos\ConsultaEmpleados.cs" />
+    <Compile Include="Consulta Material\ConsultaMaterial.cs" />
     <Compile Include="Consultas Login\ConsultasLogin.cs" />
     <Compile Include="ConsultasProveedores\ConsultaProveedores.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
