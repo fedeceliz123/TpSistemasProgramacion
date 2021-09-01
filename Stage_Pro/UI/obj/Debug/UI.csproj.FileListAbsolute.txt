@@ -26,3 +26,6 @@ C:\TP4\Stage_Pro\UI\obj\Debug\UI.MensajeOk.resources
 C:\TP4\Stage_Pro\UI\obj\Debug\UI.Clientes.ListarClientes.resources
 C:\TP4\Stage_Pro\UI\obj\Debug\UI.Proveedores.ListarProveedores.resources
 C:\TP4\Stage_Pro\UI\obj\Debug\UI.Material.ListarMaterial.resources
+C:\TP4\Stage_Pro\UI\bin\Debug\Gma.QrCodeNet.Encoding.dll
+C:\TP4\Stage_Pro\UI\bin\Debug\Gma.QrCodeNet.Encoding.pdb
+C:\TP4\Stage_Pro\UI\bin\Debug\Gma.QrCodeNet.Encoding.xml

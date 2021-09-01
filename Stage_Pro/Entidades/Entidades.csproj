@@ -49,11 +49,14 @@
     <Compile Include="Emails.cs" />
     <Compile Include="Empleados.cs" />
     <Compile Include="Login.cs" />
-    <Compile Include="Matrial.cs" />
+    <Compile Include="Material.cs" />
+    <Compile Include="MedidaMaterial.cs" />
+    <Compile Include="ModeloMaterial.cs" />
     <Compile Include="Permisos.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Proveedores.cs" />
     <Compile Include="Telefonos.cs" />
+    <Compile Include="TipoMaterial.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

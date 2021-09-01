@@ -7,12 +7,13 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-   public class Matrial
+   public class Material
     {
         public int tipo { get; set; }
         public int modelo { get; set; }
         public int numero { get; set; }
         public string codigo { get; set; }
+        public int medida { get; set; }
         public string nombre { get; set; }
         public int stock_general { get; set; }
         public int disponobilidad { get; set; }
