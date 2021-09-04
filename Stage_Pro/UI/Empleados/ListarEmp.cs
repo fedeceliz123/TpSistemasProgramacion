@@ -902,5 +902,12 @@ namespace UI.Empleados
         {
             validaciones.SoloNumeros(e);
         }
+
+        private void pbX_Click(object sender, EventArgs e)
+        {
+            pbX.Visible = false;
+            this.Close();
+
+        }
     }
 }

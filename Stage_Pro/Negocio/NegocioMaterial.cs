@@ -60,5 +60,43 @@ namespace Negocio
             
         }
 
+        public DataTable LlenarFormato(string tipo)
+        {
+           return Mat.LlenarFormato(tipo);
+        }
+        public void CargarFormato(string tipo, string formato,int tip)
+        {
+            Mat.CargaFormato(tipo,formato,tip);
+        }
+
+        public DataTable ListarMaterial(string activo)
+        {
+           return Mat.ListarMaterial(activo);
+        }
+
+        public DataTable ListarMaterialFiltro(string dato,string activo)
+        {
+            return Mat.ListarMaterialFiltro(dato,activo);
+        }
+
+        public DataTable LlenarCampos(string codigo)
+        {
+            return Mat.LlenarCampos(codigo);
+        }
+
+        public void ModificarMaterial(int medida, int formato, int stock, int disp, string codigo,string detalle)
+        {
+            Mat.ModificarMaterial(medida,formato,stock,disp,codigo,detalle);
+        }
+
+        public void BajaMaterial(string codigo, string motivo)
+        {
+            Mat.BajaMaterial(codigo,motivo);
+        }
+        public void ReintegrarMaterial(string codigo)
+        {
+            Mat.ReintegrarMaterial(codigo);
+        }
+
     }
 }

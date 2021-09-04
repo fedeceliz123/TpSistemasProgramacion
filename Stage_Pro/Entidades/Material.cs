@@ -14,13 +14,14 @@ namespace Entidades
         public int numero { get; set; }
         public string codigo { get; set; }
         public int medida { get; set; }
-        public string nombre { get; set; }
+        public int formato { get; set; }
         public int stock_general { get; set; }
         public int disponobilidad { get; set; }
         public MemoryStream codigo_qr { get; set; }
         public string activo { get; set; }
         public string fecha_egreso { get; set; }
         public string motivo { get; set; }
+        public string detalle { get; set; }
 
 
 

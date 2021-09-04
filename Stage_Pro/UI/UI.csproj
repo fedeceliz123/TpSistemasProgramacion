@@ -98,6 +98,12 @@
     <Compile Include="Empleados\ListarEmp.Designer.cs">
       <DependentUpon>ListarEmp.cs</DependentUpon>
     </Compile>
+    <Compile Include="Eventos\ListarEventos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Eventos\ListarEventos.Designer.cs">
+      <DependentUpon>ListarEventos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Inicio.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -151,6 +157,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Empleados\ListarEmp.resx">
       <DependentUpon>ListarEmp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Eventos\ListarEventos.resx">
+      <DependentUpon>ListarEventos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Inicio.resx">
       <DependentUpon>Inicio.cs</DependentUpon>

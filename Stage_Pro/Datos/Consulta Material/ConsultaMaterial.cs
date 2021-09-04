@@ -132,10 +132,31 @@ namespace Datos.Consulta_Matrial
             SqlCommand cmd = new SqlCommand(consulta, Conetar());
             cmd.ExecuteNonQuery();
         }
+        public void CargaFormato(string tipo, string formato,int tip)
+        {
+            string consulta = "insert into formato_material (cod,formato,id_tipo)values('" + tipo + "','" + formato + "', "+tip+")";
+            SqlCommand cmd = new SqlCommand(consulta, Conetar());
+            cmd.ExecuteNonQuery();
+        }
+
+        public DataTable LlenarFormato(string tipo)
+        {
+            DataTable dt = new DataTable();
+            string consulta = "select id,formato from formato_material where cod='" + tipo+"'";
+            SqlDataAdapter da = new SqlDataAdapter(consulta, Conetar());
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+
+            dt = ds.Tables[0];
+
+
+            return dt;
+
+        }
 
         public void CargaMaterial(Material material)
         {
-            string consulta = "insert into material (tipo,modelo,numero,codigo,medida,nombre,codigo_qr,activo)values(@tipo,@modelo,@num,@cod,@medida,@nombre,@qr,'si')";
+            string consulta = "insert into material (tipo,modelo,numero,codigo,medida,formato,codigo_qr,activo,detalle)values(@tipo,@modelo,@num,@cod,@medida,@nombre,@qr,'si',@detalle)";
             SqlCommand cmd = new SqlCommand(consulta, Conetar());
 
             cmd.Parameters.AddWithValue("@tipo", material.tipo);
@@ -143,11 +164,99 @@ namespace Datos.Consulta_Matrial
             cmd.Parameters.AddWithValue("@num", material.numero);
             cmd.Parameters.AddWithValue("@cod", material.codigo);
             cmd.Parameters.AddWithValue("@medida", material.medida);
-            cmd.Parameters.AddWithValue("@nombre", material.nombre);
+            cmd.Parameters.AddWithValue("@nombre", material.formato);
             cmd.Parameters.AddWithValue("@qr", material.codigo_qr);
+          
+            cmd.Parameters.AddWithValue("@detalle", material.detalle);
+            cmd.ExecuteNonQuery();
+        }
+
+        public DataTable ListarMaterial(string activo)
+        {
+            DataTable dt = new DataTable();
+
+            string consulta = "select ma.codigo as Codigo ,t.tipo as Tipo,m.modelo as Modelo,f.formato as Formato, me.medida as Medida, ma.disponobilidad as Disponibilidad  " +
+                             " from material ma,tipo_material t,modelo_material m,formato_material f,medida_material me where ma.tipo=t.id and "+
+                              "ma.modelo=m.id and ma.formato=f.id and ma.medida=me.id and ma.tipo=m.id_tipo and ma.tipo=f.id_tipo and ma.activo='"+activo+"'";
+            SqlDataAdapter da = new SqlDataAdapter(consulta, Conetar());
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+
+            dt = ds.Tables[0];
+
+
+            return dt;
+        }
+
+        public DataTable ListarMaterialFiltro(string dato,string activo)
+        {
+            DataTable dt = new DataTable();
+
+            string consulta = "select ma.codigo as Codigo ,t.tipo as Tipo,m.modelo as Modelo,f.formato as Formato, me.medida as Medida, ma.disponobilidad as Disponibilidad  " +
+                             " from material ma,tipo_material t,modelo_material m,formato_material f,medida_material me where ma.tipo=t.id and " +
+                              "ma.modelo=m.id and ma.formato=f.id and ma.medida=me.id and ma.tipo=m.id_tipo and ma.tipo=f.id_tipo and "+
+                              "(ma.codigo like '%"+dato+"%' or t.tipo like '%"+dato+"%' or m.modelo like '%"+dato+"%' or f.formato like '%"+dato+"%' ) and ma.activo='"+activo+"'";
+            SqlDataAdapter da = new SqlDataAdapter(consulta, Conetar());
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+
+            dt = ds.Tables[0];
+
+
+            return dt;
+        }
+
+        public DataTable LlenarCampos(string codigo)
+        {
+            DataTable dt = new DataTable();
+            string consulta = "select * from material where codigo='" + codigo + "'";
+            SqlDataAdapter da = new SqlDataAdapter(consulta, Conetar());
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+
+            dt = ds.Tables[0];
+
+
+            return dt;
+        }
+
+        public void ModificarMaterial(int medida,int formato,int stock,int disp,string codigo,string detalle)
+        {
+            string consulta = "set dateformat dmy UPDATE material set medida = "+medida+" , formato= "+formato+ ", stock_general="+stock+ ", disponobilidad="+disp+", detalle='"+detalle+"' where codigo='"+codigo+"'";
+
+            SqlCommand cmd = new SqlCommand(consulta, Conetar());
 
             cmd.ExecuteNonQuery();
         }
+
+        public void BajaMaterial( string codigo, string motivo)
+
+           
+        {
+            string fecha = DateTime.Now.ToString("dd/MM/yyyy");
+
+            string consulta = "set dateformat dmy UPDATE material set activo='no', motivo='"+motivo+"', fecha_egreso='"+fecha+"' where codigo='"+codigo+"'";
+
+            SqlCommand cmd = new SqlCommand(consulta, Conetar());
+
+            cmd.ExecuteNonQuery();
+        }
+
+        public void ReintegrarMaterial(string codigo)
+        {
+            
+
+            string consulta = "set dateformat dmy UPDATE material set activo='si', motivo='', fecha_egreso='' where codigo='" + codigo + "'";
+
+            SqlCommand cmd = new SqlCommand(consulta, Conetar());
+
+            cmd.ExecuteNonQuery();
+        }
+
+
+
+
+
     }
 
 

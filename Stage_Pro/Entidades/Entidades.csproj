@@ -48,6 +48,7 @@
     <Compile Include="Direcciones.cs" />
     <Compile Include="Emails.cs" />
     <Compile Include="Empleados.cs" />
+    <Compile Include="Eventos.cs" />
     <Compile Include="Login.cs" />
     <Compile Include="Material.cs" />
     <Compile Include="MedidaMaterial.cs" />

@@ -39,6 +39,7 @@ namespace UI.Empleados
             this.label30 = new System.Windows.Forms.Label();
             this.panel9 = new System.Windows.Forms.Panel();
             this.tbPermisos = new System.Windows.Forms.TextBox();
+            this.cbPermiso = new RJComboBox();
             this.label29 = new System.Windows.Forms.Label();
             this.panel11 = new System.Windows.Forms.Panel();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
@@ -56,6 +57,7 @@ namespace UI.Empleados
             this.label24 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
+            this.btnAceptar = new ePOSOne.btnProduct.Button_WOC();
             this.pDir = new System.Windows.Forms.Panel();
             this.panel22 = new System.Windows.Forms.Panel();
             this.tbLote = new System.Windows.Forms.TextBox();
@@ -90,6 +92,7 @@ namespace UI.Empleados
             this.label25 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
+            this.btnAtras = new ePOSOne.btnProduct.Button_WOC();
             this.p1 = new System.Windows.Forms.Panel();
             this.fIng = new System.Windows.Forms.MonthCalendar();
             this.fNac = new System.Windows.Forms.MonthCalendar();
@@ -118,12 +121,16 @@ namespace UI.Empleados
             this.tbNombre = new System.Windows.Forms.TextBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.tbApellido = new System.Windows.Forms.TextBox();
+            this.pbUser = new UI.componentes.RJCircularPictureBox();
             this.panel6 = new System.Windows.Forms.Panel();
             this.tbSexo1 = new System.Windows.Forms.TextBox();
+            this.tbSexo = new RJComboBox();
             this.panel8 = new System.Windows.Forms.Panel();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.tbFechaN = new System.Windows.Forms.TextBox();
             this.pbAbrirCal = new System.Windows.Forms.PictureBox();
+            this.btnCancelar = new ePOSOne.btnProduct.Button_WOC();
+            this.btnSiguiente = new ePOSOne.btnProduct.Button_WOC();
             this.panelPestañas = new System.Windows.Forms.Panel();
             this.paso4 = new System.Windows.Forms.Panel();
             this.label13 = new System.Windows.Forms.Label();
@@ -135,29 +142,23 @@ namespace UI.Empleados
             this.label10 = new System.Windows.Forms.Label();
             this.panel26 = new System.Windows.Forms.Panel();
             this.label32 = new System.Windows.Forms.Label();
+            this.btnReactivar = new ePOSOne.btnProduct.Button_WOC();
             this.lblMotivo = new System.Windows.Forms.Label();
             this.pMotivo = new System.Windows.Forms.Panel();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.cbMotivo = new System.Windows.Forms.ComboBox();
             this.label31 = new System.Windows.Forms.Label();
             this.chbInactivos = new System.Windows.Forms.CheckBox();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.tbBuscar = new System.Windows.Forms.TextBox();
-            this.dgvEmp = new System.Windows.Forms.DataGridView();
-            this.cbPermiso = new RJComboBox();
-            this.btnAceptar = new ePOSOne.btnProduct.Button_WOC();
-            this.btnAtras = new ePOSOne.btnProduct.Button_WOC();
-            this.pbUser = new UI.componentes.RJCircularPictureBox();
-            this.tbSexo = new RJComboBox();
-            this.btnCancelar = new ePOSOne.btnProduct.Button_WOC();
-            this.btnSiguiente = new ePOSOne.btnProduct.Button_WOC();
-            this.btnReactivar = new ePOSOne.btnProduct.Button_WOC();
             this.btnDetalles = new ePOSOne.btnProduct.Button_WOC();
             this.btnCargar = new ePOSOne.btnProduct.Button_WOC();
             this.btnEliminar = new ePOSOne.btnProduct.Button_WOC();
             this.btnModificar = new ePOSOne.btnProduct.Button_WOC();
             this.btnBuscar = new ePOSOne.btnProduct.Button_WOC();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.tbBuscar = new System.Windows.Forms.TextBox();
+            this.dgvEmp = new System.Windows.Forms.DataGridView();
             this.ellipseControl1 = new UI.componentes.EllipseControl();
+            this.pbX = new System.Windows.Forms.PictureBox();
             this.panelLista.SuspendLayout();
             this.panelDatosPersonales.SuspendLayout();
             this.pUser.SuspendLayout();
@@ -191,6 +192,7 @@ namespace UI.Empleados
             ((System.ComponentModel.ISupportInitialize)(this.pbCal2)).BeginInit();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbUser)).BeginInit();
             this.panel6.SuspendLayout();
             this.panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
@@ -205,7 +207,7 @@ namespace UI.Empleados
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmp)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbUser)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbX)).BeginInit();
             this.SuspendLayout();
             // 
             // panelLista
@@ -305,6 +307,25 @@ namespace UI.Empleados
             this.tbPermisos.Name = "tbPermisos";
             this.tbPermisos.Size = new System.Drawing.Size(200, 19);
             this.tbPermisos.TabIndex = 73;
+            // 
+            // cbPermiso
+            // 
+            this.cbPermiso.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.cbPermiso.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.cbPermiso.BorderSize = 0;
+            this.cbPermiso.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+            this.cbPermiso.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.cbPermiso.ForeColor = System.Drawing.Color.DimGray;
+            this.cbPermiso.IconColor = System.Drawing.Color.Transparent;
+            this.cbPermiso.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
+            this.cbPermiso.ListTextColor = System.Drawing.Color.DimGray;
+            this.cbPermiso.Location = new System.Drawing.Point(16, 3);
+            this.cbPermiso.MinimumSize = new System.Drawing.Size(200, 30);
+            this.cbPermiso.Name = "cbPermiso";
+            this.cbPermiso.Size = new System.Drawing.Size(220, 30);
+            this.cbPermiso.TabIndex = 0;
+            this.cbPermiso.Texts = "";
+            this.cbPermiso.SelectedIndexChanged += new System.EventHandler(this.cbPermiso_OnSelectedIndexChanged);
             // 
             // label29
             // 
@@ -485,6 +506,28 @@ namespace UI.Empleados
             this.label22.Size = new System.Drawing.Size(66, 16);
             this.label22.TabIndex = 80;
             this.label22.Text = "Codigo: ";
+            // 
+            // btnAceptar
+            // 
+            this.btnAceptar.BackColor = System.Drawing.SystemColors.Control;
+            this.btnAceptar.BorderColor = System.Drawing.Color.Transparent;
+            this.btnAceptar.ButtonColor = System.Drawing.Color.Teal;
+            this.btnAceptar.FlatAppearance.BorderSize = 0;
+            this.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAceptar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAceptar.ForeColor = System.Drawing.Color.White;
+            this.btnAceptar.Location = new System.Drawing.Point(809, 652);
+            this.btnAceptar.Name = "btnAceptar";
+            this.btnAceptar.OnHoverBorderColor = System.Drawing.SystemColors.GrayText;
+            this.btnAceptar.OnHoverButtonColor = System.Drawing.Color.DarkGreen;
+            this.btnAceptar.OnHoverTextColor = System.Drawing.Color.Gray;
+            this.btnAceptar.Size = new System.Drawing.Size(107, 40);
+            this.btnAceptar.TabIndex = 107;
+            this.btnAceptar.Text = "Aceptar";
+            this.btnAceptar.TextColor = System.Drawing.Color.White;
+            this.btnAceptar.UseVisualStyleBackColor = false;
+            this.btnAceptar.Visible = false;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // pDir
             // 
@@ -849,6 +892,28 @@ namespace UI.Empleados
             this.label27.TabIndex = 82;
             this.label27.Text = "Pais: ";
             // 
+            // btnAtras
+            // 
+            this.btnAtras.BackColor = System.Drawing.SystemColors.Control;
+            this.btnAtras.BorderColor = System.Drawing.Color.Transparent;
+            this.btnAtras.ButtonColor = System.Drawing.Color.DarkGray;
+            this.btnAtras.FlatAppearance.BorderSize = 0;
+            this.btnAtras.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAtras.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAtras.ForeColor = System.Drawing.Color.DimGray;
+            this.btnAtras.Location = new System.Drawing.Point(470, 652);
+            this.btnAtras.Name = "btnAtras";
+            this.btnAtras.OnHoverBorderColor = System.Drawing.SystemColors.GrayText;
+            this.btnAtras.OnHoverButtonColor = System.Drawing.Color.DimGray;
+            this.btnAtras.OnHoverTextColor = System.Drawing.Color.Gray;
+            this.btnAtras.Size = new System.Drawing.Size(110, 40);
+            this.btnAtras.TabIndex = 103;
+            this.btnAtras.Text = "Atras";
+            this.btnAtras.TextColor = System.Drawing.Color.White;
+            this.btnAtras.UseVisualStyleBackColor = false;
+            this.btnAtras.Visible = false;
+            this.btnAtras.Click += new System.EventHandler(this.btnAtras_Click);
+            // 
             // p1
             // 
             this.p1.Controls.Add(this.fIng);
@@ -1153,6 +1218,25 @@ namespace UI.Empleados
             this.tbApellido.Size = new System.Drawing.Size(231, 19);
             this.tbApellido.TabIndex = 72;
             // 
+            // pbUser
+            // 
+            this.pbUser.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pbUser.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
+            this.pbUser.BorderColor = System.Drawing.Color.Black;
+            this.pbUser.BorderColor2 = System.Drawing.Color.Gray;
+            this.pbUser.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+            this.pbUser.BorderSize = 2;
+            this.pbUser.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbUser.GradientAngle = 50F;
+            this.pbUser.Image = ((System.Drawing.Image)(resources.GetObject("pbUser.Image")));
+            this.pbUser.Location = new System.Drawing.Point(585, 10);
+            this.pbUser.Name = "pbUser";
+            this.pbUser.Size = new System.Drawing.Size(185, 185);
+            this.pbUser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbUser.TabIndex = 13;
+            this.pbUser.TabStop = false;
+            this.pbUser.Click += new System.EventHandler(this.pbUser_Click);
+            // 
             // panel6
             // 
             this.panel6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel6.BackgroundImage")));
@@ -1173,6 +1257,28 @@ namespace UI.Empleados
             this.tbSexo1.Name = "tbSexo1";
             this.tbSexo1.Size = new System.Drawing.Size(185, 19);
             this.tbSexo1.TabIndex = 73;
+            // 
+            // tbSexo
+            // 
+            this.tbSexo.BackColor = System.Drawing.SystemColors.Control;
+            this.tbSexo.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.tbSexo.BorderSize = 0;
+            this.tbSexo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+            this.tbSexo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.tbSexo.ForeColor = System.Drawing.Color.Black;
+            this.tbSexo.IconColor = System.Drawing.Color.Transparent;
+            this.tbSexo.Items.AddRange(new object[] {
+            "F",
+            "M"});
+            this.tbSexo.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
+            this.tbSexo.ListTextColor = System.Drawing.Color.DimGray;
+            this.tbSexo.Location = new System.Drawing.Point(11, 3);
+            this.tbSexo.MinimumSize = new System.Drawing.Size(200, 30);
+            this.tbSexo.Name = "tbSexo";
+            this.tbSexo.Size = new System.Drawing.Size(233, 30);
+            this.tbSexo.TabIndex = 25;
+            this.tbSexo.Texts = "";
+            this.tbSexo.SelectedIndexChanged += new System.EventHandler(this.tbSexo_OnSelectedIndexChanged);
             // 
             // panel8
             // 
@@ -1218,6 +1324,48 @@ namespace UI.Empleados
             this.pbAbrirCal.TabIndex = 84;
             this.pbAbrirCal.TabStop = false;
             this.pbAbrirCal.Click += new System.EventHandler(this.pbAbrirCal_Click);
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.BackColor = System.Drawing.SystemColors.Control;
+            this.btnCancelar.BorderColor = System.Drawing.Color.Transparent;
+            this.btnCancelar.ButtonColor = System.Drawing.Color.DarkGray;
+            this.btnCancelar.FlatAppearance.BorderSize = 0;
+            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.ForeColor = System.Drawing.Color.DimGray;
+            this.btnCancelar.Location = new System.Drawing.Point(697, 652);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.OnHoverBorderColor = System.Drawing.SystemColors.GrayText;
+            this.btnCancelar.OnHoverButtonColor = System.Drawing.Color.DimGray;
+            this.btnCancelar.OnHoverTextColor = System.Drawing.Color.Gray;
+            this.btnCancelar.Size = new System.Drawing.Size(110, 40);
+            this.btnCancelar.TabIndex = 100;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.TextColor = System.Drawing.Color.Black;
+            this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
+            // btnSiguiente
+            // 
+            this.btnSiguiente.BackColor = System.Drawing.SystemColors.Control;
+            this.btnSiguiente.BorderColor = System.Drawing.Color.Transparent;
+            this.btnSiguiente.ButtonColor = System.Drawing.Color.DarkGray;
+            this.btnSiguiente.FlatAppearance.BorderSize = 0;
+            this.btnSiguiente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSiguiente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSiguiente.ForeColor = System.Drawing.Color.DimGray;
+            this.btnSiguiente.Location = new System.Drawing.Point(586, 652);
+            this.btnSiguiente.Name = "btnSiguiente";
+            this.btnSiguiente.OnHoverBorderColor = System.Drawing.SystemColors.GrayText;
+            this.btnSiguiente.OnHoverButtonColor = System.Drawing.Color.DimGray;
+            this.btnSiguiente.OnHoverTextColor = System.Drawing.Color.Gray;
+            this.btnSiguiente.Size = new System.Drawing.Size(110, 40);
+            this.btnSiguiente.TabIndex = 99;
+            this.btnSiguiente.Text = "Sigiente";
+            this.btnSiguiente.TextColor = System.Drawing.Color.White;
+            this.btnSiguiente.UseVisualStyleBackColor = false;
+            this.btnSiguiente.Click += new System.EventHandler(this.btnSiguiente_Click);
             // 
             // panelPestañas
             // 
@@ -1328,6 +1476,7 @@ namespace UI.Empleados
             // panel26
             // 
             this.panel26.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(172)))), ((int)(((byte)(234)))));
+            this.panel26.Controls.Add(this.pbX);
             this.panel26.Controls.Add(this.label32);
             this.panel26.Cursor = System.Windows.Forms.Cursors.Hand;
             this.panel26.Dock = System.Windows.Forms.DockStyle.Top;
@@ -1346,6 +1495,28 @@ namespace UI.Empleados
             this.label32.Size = new System.Drawing.Size(64, 15);
             this.label32.TabIndex = 0;
             this.label32.Text = "Personal";
+            // 
+            // btnReactivar
+            // 
+            this.btnReactivar.BackColor = System.Drawing.SystemColors.Control;
+            this.btnReactivar.BorderColor = System.Drawing.Color.Transparent;
+            this.btnReactivar.ButtonColor = System.Drawing.Color.DarkBlue;
+            this.btnReactivar.FlatAppearance.BorderSize = 0;
+            this.btnReactivar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReactivar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReactivar.ForeColor = System.Drawing.Color.White;
+            this.btnReactivar.Location = new System.Drawing.Point(315, 293);
+            this.btnReactivar.Name = "btnReactivar";
+            this.btnReactivar.OnHoverBorderColor = System.Drawing.SystemColors.GrayText;
+            this.btnReactivar.OnHoverButtonColor = System.Drawing.Color.Black;
+            this.btnReactivar.OnHoverTextColor = System.Drawing.Color.Gray;
+            this.btnReactivar.Size = new System.Drawing.Size(110, 40);
+            this.btnReactivar.TabIndex = 93;
+            this.btnReactivar.Text = "Reintegrar";
+            this.btnReactivar.TextColor = System.Drawing.Color.White;
+            this.btnReactivar.UseVisualStyleBackColor = false;
+            this.btnReactivar.Visible = false;
+            this.btnReactivar.Click += new System.EventHandler(this.btnReactivar_Click);
             // 
             // lblMotivo
             // 
@@ -1416,229 +1587,6 @@ namespace UI.Empleados
             this.chbInactivos.UseVisualStyleBackColor = true;
             this.chbInactivos.CheckedChanged += new System.EventHandler(this.chbInactivos_CheckedChanged);
             this.chbInactivos.Click += new System.EventHandler(this.chbInactivos_Click);
-            // 
-            // panel3
-            // 
-            this.panel3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel3.BackgroundImage")));
-            this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel3.Controls.Add(this.tbBuscar);
-            this.panel3.Location = new System.Drawing.Point(46, 120);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(248, 37);
-            this.panel3.TabIndex = 74;
-            // 
-            // tbBuscar
-            // 
-            this.tbBuscar.BackColor = System.Drawing.SystemColors.Control;
-            this.tbBuscar.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tbBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbBuscar.Location = new System.Drawing.Point(8, 9);
-            this.tbBuscar.Name = "tbBuscar";
-            this.tbBuscar.Size = new System.Drawing.Size(231, 19);
-            this.tbBuscar.TabIndex = 72;
-            // 
-            // dgvEmp
-            // 
-            this.dgvEmp.AllowUserToAddRows = false;
-            this.dgvEmp.AllowUserToDeleteRows = false;
-            this.dgvEmp.BackgroundColor = System.Drawing.Color.White;
-            this.dgvEmp.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvEmp.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvEmp.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvEmp.ColumnHeadersHeight = 30;
-            this.dgvEmp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dgvEmp.EnableHeadersVisualStyles = false;
-            this.dgvEmp.GridColor = System.Drawing.Color.White;
-            this.dgvEmp.Location = new System.Drawing.Point(67, 367);
-            this.dgvEmp.Name = "dgvEmp";
-            this.dgvEmp.ReadOnly = true;
-            this.dgvEmp.RowHeadersVisible = false;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Gray;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            this.dgvEmp.RowsDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvEmp.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvEmp.Size = new System.Drawing.Size(803, 307);
-            this.dgvEmp.TabIndex = 44;
-            this.dgvEmp.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEmp_CellClick);
-            this.dgvEmp.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEmp_CellContentClick);
-            // 
-            // cbPermiso
-            // 
-            this.cbPermiso.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.cbPermiso.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.cbPermiso.BorderSize = 0;
-            this.cbPermiso.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
-            this.cbPermiso.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.cbPermiso.ForeColor = System.Drawing.Color.DimGray;
-            this.cbPermiso.IconColor = System.Drawing.Color.Transparent;
-            this.cbPermiso.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
-            this.cbPermiso.ListTextColor = System.Drawing.Color.DimGray;
-            this.cbPermiso.Location = new System.Drawing.Point(16, 3);
-            this.cbPermiso.MinimumSize = new System.Drawing.Size(200, 30);
-            this.cbPermiso.Name = "cbPermiso";
-            this.cbPermiso.Size = new System.Drawing.Size(220, 30);
-            this.cbPermiso.TabIndex = 0;
-            this.cbPermiso.Texts = "";
-            this.cbPermiso.SelectedIndexChanged += new System.EventHandler(this.cbPermiso_OnSelectedIndexChanged);
-            // 
-            // btnAceptar
-            // 
-            this.btnAceptar.BackColor = System.Drawing.SystemColors.Control;
-            this.btnAceptar.BorderColor = System.Drawing.Color.Transparent;
-            this.btnAceptar.ButtonColor = System.Drawing.Color.Teal;
-            this.btnAceptar.FlatAppearance.BorderSize = 0;
-            this.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAceptar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAceptar.ForeColor = System.Drawing.Color.White;
-            this.btnAceptar.Location = new System.Drawing.Point(809, 652);
-            this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.OnHoverBorderColor = System.Drawing.SystemColors.GrayText;
-            this.btnAceptar.OnHoverButtonColor = System.Drawing.Color.DarkGreen;
-            this.btnAceptar.OnHoverTextColor = System.Drawing.Color.Gray;
-            this.btnAceptar.Size = new System.Drawing.Size(107, 40);
-            this.btnAceptar.TabIndex = 107;
-            this.btnAceptar.Text = "Aceptar";
-            this.btnAceptar.TextColor = System.Drawing.Color.White;
-            this.btnAceptar.UseVisualStyleBackColor = false;
-            this.btnAceptar.Visible = false;
-            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
-            // 
-            // btnAtras
-            // 
-            this.btnAtras.BackColor = System.Drawing.SystemColors.Control;
-            this.btnAtras.BorderColor = System.Drawing.Color.Transparent;
-            this.btnAtras.ButtonColor = System.Drawing.Color.DarkGray;
-            this.btnAtras.FlatAppearance.BorderSize = 0;
-            this.btnAtras.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAtras.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAtras.ForeColor = System.Drawing.Color.DimGray;
-            this.btnAtras.Location = new System.Drawing.Point(470, 652);
-            this.btnAtras.Name = "btnAtras";
-            this.btnAtras.OnHoverBorderColor = System.Drawing.SystemColors.GrayText;
-            this.btnAtras.OnHoverButtonColor = System.Drawing.Color.DimGray;
-            this.btnAtras.OnHoverTextColor = System.Drawing.Color.Gray;
-            this.btnAtras.Size = new System.Drawing.Size(110, 40);
-            this.btnAtras.TabIndex = 103;
-            this.btnAtras.Text = "Atras";
-            this.btnAtras.TextColor = System.Drawing.Color.White;
-            this.btnAtras.UseVisualStyleBackColor = false;
-            this.btnAtras.Visible = false;
-            this.btnAtras.Click += new System.EventHandler(this.btnAtras_Click);
-            // 
-            // pbUser
-            // 
-            this.pbUser.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pbUser.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
-            this.pbUser.BorderColor = System.Drawing.Color.Black;
-            this.pbUser.BorderColor2 = System.Drawing.Color.Gray;
-            this.pbUser.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-            this.pbUser.BorderSize = 2;
-            this.pbUser.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbUser.GradientAngle = 50F;
-            this.pbUser.Image = ((System.Drawing.Image)(resources.GetObject("pbUser.Image")));
-            this.pbUser.Location = new System.Drawing.Point(585, 10);
-            this.pbUser.Name = "pbUser";
-            this.pbUser.Size = new System.Drawing.Size(185, 185);
-            this.pbUser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbUser.TabIndex = 13;
-            this.pbUser.TabStop = false;
-            this.pbUser.Click += new System.EventHandler(this.pbUser_Click);
-            // 
-            // tbSexo
-            // 
-            this.tbSexo.BackColor = System.Drawing.SystemColors.Control;
-            this.tbSexo.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.tbSexo.BorderSize = 0;
-            this.tbSexo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
-            this.tbSexo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.tbSexo.ForeColor = System.Drawing.Color.Black;
-            this.tbSexo.IconColor = System.Drawing.Color.Transparent;
-            this.tbSexo.Items.AddRange(new object[] {
-            "F",
-            "M"});
-            this.tbSexo.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
-            this.tbSexo.ListTextColor = System.Drawing.Color.DimGray;
-            this.tbSexo.Location = new System.Drawing.Point(11, 3);
-            this.tbSexo.MinimumSize = new System.Drawing.Size(200, 30);
-            this.tbSexo.Name = "tbSexo";
-            this.tbSexo.Size = new System.Drawing.Size(233, 30);
-            this.tbSexo.TabIndex = 25;
-            this.tbSexo.Texts = "";
-            this.tbSexo.SelectedIndexChanged += new System.EventHandler(this.tbSexo_OnSelectedIndexChanged);
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.BackColor = System.Drawing.SystemColors.Control;
-            this.btnCancelar.BorderColor = System.Drawing.Color.Transparent;
-            this.btnCancelar.ButtonColor = System.Drawing.Color.DarkGray;
-            this.btnCancelar.FlatAppearance.BorderSize = 0;
-            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelar.ForeColor = System.Drawing.Color.DimGray;
-            this.btnCancelar.Location = new System.Drawing.Point(697, 652);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.OnHoverBorderColor = System.Drawing.SystemColors.GrayText;
-            this.btnCancelar.OnHoverButtonColor = System.Drawing.Color.DimGray;
-            this.btnCancelar.OnHoverTextColor = System.Drawing.Color.Gray;
-            this.btnCancelar.Size = new System.Drawing.Size(110, 40);
-            this.btnCancelar.TabIndex = 100;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.TextColor = System.Drawing.Color.Black;
-            this.btnCancelar.UseVisualStyleBackColor = false;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
-            // 
-            // btnSiguiente
-            // 
-            this.btnSiguiente.BackColor = System.Drawing.SystemColors.Control;
-            this.btnSiguiente.BorderColor = System.Drawing.Color.Transparent;
-            this.btnSiguiente.ButtonColor = System.Drawing.Color.DarkGray;
-            this.btnSiguiente.FlatAppearance.BorderSize = 0;
-            this.btnSiguiente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSiguiente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSiguiente.ForeColor = System.Drawing.Color.DimGray;
-            this.btnSiguiente.Location = new System.Drawing.Point(586, 652);
-            this.btnSiguiente.Name = "btnSiguiente";
-            this.btnSiguiente.OnHoverBorderColor = System.Drawing.SystemColors.GrayText;
-            this.btnSiguiente.OnHoverButtonColor = System.Drawing.Color.DimGray;
-            this.btnSiguiente.OnHoverTextColor = System.Drawing.Color.Gray;
-            this.btnSiguiente.Size = new System.Drawing.Size(110, 40);
-            this.btnSiguiente.TabIndex = 99;
-            this.btnSiguiente.Text = "Sigiente";
-            this.btnSiguiente.TextColor = System.Drawing.Color.White;
-            this.btnSiguiente.UseVisualStyleBackColor = false;
-            this.btnSiguiente.Click += new System.EventHandler(this.btnSiguiente_Click);
-            // 
-            // btnReactivar
-            // 
-            this.btnReactivar.BackColor = System.Drawing.SystemColors.Control;
-            this.btnReactivar.BorderColor = System.Drawing.Color.Transparent;
-            this.btnReactivar.ButtonColor = System.Drawing.Color.DarkBlue;
-            this.btnReactivar.FlatAppearance.BorderSize = 0;
-            this.btnReactivar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReactivar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReactivar.ForeColor = System.Drawing.Color.White;
-            this.btnReactivar.Location = new System.Drawing.Point(315, 293);
-            this.btnReactivar.Name = "btnReactivar";
-            this.btnReactivar.OnHoverBorderColor = System.Drawing.SystemColors.GrayText;
-            this.btnReactivar.OnHoverButtonColor = System.Drawing.Color.Black;
-            this.btnReactivar.OnHoverTextColor = System.Drawing.Color.Gray;
-            this.btnReactivar.Size = new System.Drawing.Size(110, 40);
-            this.btnReactivar.TabIndex = 93;
-            this.btnReactivar.Text = "Reintegrar";
-            this.btnReactivar.TextColor = System.Drawing.Color.White;
-            this.btnReactivar.UseVisualStyleBackColor = false;
-            this.btnReactivar.Visible = false;
-            this.btnReactivar.Click += new System.EventHandler(this.btnReactivar_Click);
             // 
             // btnDetalles
             // 
@@ -1745,6 +1693,61 @@ namespace UI.Empleados
             this.btnBuscar.UseVisualStyleBackColor = false;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
+            // panel3
+            // 
+            this.panel3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel3.BackgroundImage")));
+            this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel3.Controls.Add(this.tbBuscar);
+            this.panel3.Location = new System.Drawing.Point(46, 120);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(248, 37);
+            this.panel3.TabIndex = 74;
+            // 
+            // tbBuscar
+            // 
+            this.tbBuscar.BackColor = System.Drawing.SystemColors.Control;
+            this.tbBuscar.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tbBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbBuscar.Location = new System.Drawing.Point(8, 9);
+            this.tbBuscar.Name = "tbBuscar";
+            this.tbBuscar.Size = new System.Drawing.Size(231, 19);
+            this.tbBuscar.TabIndex = 72;
+            // 
+            // dgvEmp
+            // 
+            this.dgvEmp.AllowUserToAddRows = false;
+            this.dgvEmp.AllowUserToDeleteRows = false;
+            this.dgvEmp.BackgroundColor = System.Drawing.Color.White;
+            this.dgvEmp.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvEmp.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvEmp.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvEmp.ColumnHeadersHeight = 30;
+            this.dgvEmp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgvEmp.EnableHeadersVisualStyles = false;
+            this.dgvEmp.GridColor = System.Drawing.Color.White;
+            this.dgvEmp.Location = new System.Drawing.Point(67, 367);
+            this.dgvEmp.Name = "dgvEmp";
+            this.dgvEmp.ReadOnly = true;
+            this.dgvEmp.RowHeadersVisible = false;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            this.dgvEmp.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvEmp.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvEmp.Size = new System.Drawing.Size(803, 307);
+            this.dgvEmp.TabIndex = 44;
+            this.dgvEmp.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEmp_CellClick);
+            this.dgvEmp.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEmp_CellContentClick);
+            // 
             // ellipseControl1
             // 
             this.ellipseControl1.BackColor = System.Drawing.Color.White;
@@ -1754,6 +1757,20 @@ namespace UI.Empleados
             this.ellipseControl1.Size = new System.Drawing.Size(843, 342);
             this.ellipseControl1.TabIndex = 75;
             this.ellipseControl1.Text = "ellipseControl1";
+            // 
+            // pbX
+            // 
+            this.pbX.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pbX.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbX.Image = ((System.Drawing.Image)(resources.GetObject("pbX.Image")));
+            this.pbX.Location = new System.Drawing.Point(892, 5);
+            this.pbX.Name = "pbX";
+            this.pbX.Size = new System.Drawing.Size(25, 24);
+            this.pbX.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbX.TabIndex = 1;
+            this.pbX.TabStop = false;
+            this.pbX.Visible = false;
+            this.pbX.Click += new System.EventHandler(this.pbX_Click);
             // 
             // ListarEmp
             // 
@@ -1824,6 +1841,7 @@ namespace UI.Empleados
             this.panel4.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbUser)).EndInit();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             this.panel8.ResumeLayout(false);
@@ -1846,7 +1864,7 @@ namespace UI.Empleados
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmp)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbUser)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbX)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1979,5 +1997,6 @@ namespace UI.Empleados
         private ePOSOne.btnProduct.Button_WOC btnReactivar;
         private System.Windows.Forms.Panel panel26;
         private System.Windows.Forms.Label label32;
+        public System.Windows.Forms.PictureBox pbX;
     }
 }
