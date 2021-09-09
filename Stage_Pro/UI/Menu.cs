@@ -8,12 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using System.IO;
 
 namespace UI
 {
     public partial class Menu : Form
     {
-
+        public MemoryStream mest;
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
@@ -32,7 +33,7 @@ namespace UI
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
@@ -57,6 +58,10 @@ namespace UI
         
         private void Menu_Load(object sender, EventArgs e)
         {
+            Bitmap bm = new Bitmap(mest);
+
+            imagenUsuario.Image = bm;
+
             AbrirFormhijo(new Inicio());
         }
 
@@ -152,6 +157,21 @@ namespace UI
         private void btnCarPersonal_Click(object sender, EventArgs e)
         {
             AbrirFormhijo(new Empleados.ListarEmp());
+        }
+
+        private void btnCarEvento_Click(object sender, EventArgs e)
+        {
+            AbrirFormhijo(new Eventos.ListarEventos());
+        }
+
+        private void btnMaterial_Click(object sender, EventArgs e)
+        {
+            AbrirFormhijo(new MaterialEvento.MaterialEvento());
+        }
+
+        private void btnSaldo_Click(object sender, EventArgs e)
+        {
+            AbrirFormhijo(new Material.ListarMaterial());
         }
     }
 }

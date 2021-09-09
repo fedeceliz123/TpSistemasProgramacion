@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Entidades;
 using Datos;
+using System.IO;
 
 namespace Negocio
 {
@@ -23,5 +24,15 @@ namespace Negocio
         {
             return conLog.recuperarNombre(login);
         }
+
+        public string dni(Login login)
+        {
+            return conLog.recuperarDNI(login);
+        }
+        public MemoryStream imagen(string dni)
+        {
+          return  conLog.CargarimagenUser(dni);
+        }
+
     }
 }

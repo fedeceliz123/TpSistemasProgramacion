@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using Entidades;
 using System.Data;
 using System.Data.SqlClient;
+using System.IO;
+using System.Drawing;
 
 
 namespace Datos.Consulta_Empledos
@@ -89,9 +91,11 @@ namespace Datos.Consulta_Empledos
         public void ModificarEmp(Empleados empleados, Direcciones dir, Telefonos tel, Emails mail, Login login)
         {
             // empleados
-            string consulta = "set dateformat dmy UPDATE Empleados set nombre='" + empleados.nombre + "',apellido='" + empleados.apellido + "',sexo='" + empleados.sexo + "',fecha_de_nacimiento='" + empleados.fecha_nacimiento + "',puesto='" + empleados.puesto + "',fecha_de_ingreso='" + empleados.fecha_ingreso + "',valor_dia_deposito=" + empleados.valor_dia_deposito + ",valor_dia_evento=" + empleados.valor_dia_deposito + " where dni='" + empleados.dni + "'";
+            string consulta = "set dateformat dmy UPDATE Empleados set nombre='" + empleados.nombre + "',apellido='" + empleados.apellido + "',sexo='" + empleados.sexo + "',fecha_de_nacimiento='" + empleados.fecha_nacimiento + "',puesto='" + empleados.puesto + "',fecha_de_ingreso='" + empleados.fecha_ingreso + "',valor_dia_deposito=" + empleados.valor_dia_deposito + ",valor_dia_evento=" + empleados.valor_dia_deposito + ", imagen=@img where dni='" + empleados.dni + "'";
 
             SqlCommand cmd = new SqlCommand(consulta, Conetar());
+
+            cmd.Parameters.AddWithValue("@img", empleados.imagen.GetBuffer());
 
             cmd.ExecuteNonQuery();
 
@@ -181,8 +185,8 @@ namespace Datos.Consulta_Empledos
         {
 
             // empleados
-            string consulta = "insert into empleados (dni,nombre,apellido,sexo,fecha_de_nacimiento,puesto,fecha_de_ingreso,activo,valor_dia_deposito,valor_dia_evento)values"+
-                                                     "(@dni,@nombre,@apellido,@sexo,@fechaN,@puesto,@fechaI,@activo,@vd,@ve)";
+            string consulta = "insert into empleados (dni,nombre,apellido,sexo,fecha_de_nacimiento,puesto,fecha_de_ingreso,activo,valor_dia_deposito,valor_dia_evento,imagen)values"+
+                                                     "(@dni,@nombre,@apellido,@sexo,@fechaN,@puesto,@fechaI,@activo,@vd,@ve,@imagen)";
 
 
             SqlCommand cmd = new SqlCommand(consulta, Conetar());
@@ -198,6 +202,7 @@ namespace Datos.Consulta_Empledos
             cmd.Parameters.AddWithValue("@vd", empleados.valor_dia_deposito);
             cmd.Parameters.AddWithValue("@ve", empleados.valor_dia_evento);
             cmd.Parameters.AddWithValue("@sexo", empleados.sexo);
+            cmd.Parameters.AddWithValue("@imagen", empleados.imagen.GetBuffer());
 
 
             cmd.ExecuteNonQuery();
@@ -220,6 +225,7 @@ namespace Datos.Consulta_Empledos
             cmd2.Parameters.AddWithValue("@dpto", dir.dpto);
             cmd2.Parameters.AddWithValue("@mzna", dir.mzna);
             cmd2.Parameters.AddWithValue("@lote", dir.lote);
+
 
             cmd2.ExecuteNonQuery();
 
@@ -295,6 +301,47 @@ namespace Datos.Consulta_Empledos
             SqlCommand cmd = new SqlCommand(consulta, Conetar());
 
             cmd.ExecuteNonQuery();
+
+        }
+
+
+        public MemoryStream Cargarimagen(string dni)
+        {
+            
+            SqlCommand a = new SqlCommand();
+            string consulta = "select imagen from empleados where dni='" + dni + "'";
+
+            a = new SqlCommand(consulta, Conetar());
+
+            SqlDataReader leer = a.ExecuteReader();
+
+           
+
+            if (leer.HasRows)
+            {
+                //convertir los datos byts a la imagen 
+                leer.Read();
+                MemoryStream ms = new MemoryStream((byte[])leer["imagen"]);
+                try
+                {
+                Bitmap bm = new Bitmap(ms);
+
+                }
+                catch
+                {
+                    return null;
+                }
+
+                
+
+                return ms;
+
+            }
+            else
+            {
+                return null;
+            }
+
 
         }
 

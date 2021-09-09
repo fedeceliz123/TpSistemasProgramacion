@@ -591,7 +591,13 @@ namespace UI.Material
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             llenarDGV(nMat.ListarMaterialFiltro(tbBuscar.Text, activo));
+            
            
+              
+          
+                btnReactivar.Visible = false;
+           
+
         }
 
         private void dgvEmp_CellClick(object sender, DataGridViewCellEventArgs e)

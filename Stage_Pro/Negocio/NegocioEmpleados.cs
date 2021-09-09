@@ -7,6 +7,8 @@ using System.Data;
 using System.Data.SqlClient;
 using Entidades;
 using Datos;
+using System.Drawing;
+using System.IO;
 
 namespace Negocio
 {
@@ -80,6 +82,11 @@ namespace Negocio
         public void ReintrearEmp(string dni)
         {
             emp.ReintegrarEmp(dni);
+        }
+
+        public MemoryStream ImagenPerfil(string dni)
+        {
+            return emp.Cargarimagen(dni);
         }
     }
 }

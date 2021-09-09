@@ -30,8 +30,8 @@ namespace UI.Empleados
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ListarEmp));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelLista = new System.Windows.Forms.Panel();
             this.panelDatosPersonales = new System.Windows.Forms.Panel();
             this.pUser = new System.Windows.Forms.Panel();
@@ -141,6 +141,7 @@ namespace UI.Empleados
             this.paso1 = new System.Windows.Forms.Panel();
             this.label10 = new System.Windows.Forms.Label();
             this.panel26 = new System.Windows.Forms.Panel();
+            this.pbX = new System.Windows.Forms.PictureBox();
             this.label32 = new System.Windows.Forms.Label();
             this.btnReactivar = new ePOSOne.btnProduct.Button_WOC();
             this.lblMotivo = new System.Windows.Forms.Label();
@@ -158,7 +159,6 @@ namespace UI.Empleados
             this.tbBuscar = new System.Windows.Forms.TextBox();
             this.dgvEmp = new System.Windows.Forms.DataGridView();
             this.ellipseControl1 = new UI.componentes.EllipseControl();
-            this.pbX = new System.Windows.Forms.PictureBox();
             this.panelLista.SuspendLayout();
             this.panelDatosPersonales.SuspendLayout();
             this.pUser.SuspendLayout();
@@ -203,11 +203,11 @@ namespace UI.Empleados
             this.paso2.SuspendLayout();
             this.paso1.SuspendLayout();
             this.panel26.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbX)).BeginInit();
             this.pMotivo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmp)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbX)).BeginInit();
             this.SuspendLayout();
             // 
             // panelLista
@@ -259,7 +259,7 @@ namespace UI.Empleados
             this.pUser.Controls.Add(this.panel11);
             this.pUser.Controls.Add(this.panel10);
             this.pUser.Controls.Add(this.label28);
-            this.pUser.Location = new System.Drawing.Point(32, 62);
+            this.pUser.Location = new System.Drawing.Point(32, 68);
             this.pUser.Name = "pUser";
             this.pUser.Size = new System.Drawing.Size(884, 564);
             this.pUser.TabIndex = 106;
@@ -409,7 +409,7 @@ namespace UI.Empleados
             this.pTel.Controls.Add(this.label24);
             this.pTel.Controls.Add(this.label23);
             this.pTel.Controls.Add(this.label22);
-            this.pTel.Location = new System.Drawing.Point(54, 62);
+            this.pTel.Location = new System.Drawing.Point(41, 65);
             this.pTel.Name = "pTel";
             this.pTel.Size = new System.Drawing.Size(822, 553);
             this.pTel.TabIndex = 105;
@@ -553,7 +553,7 @@ namespace UI.Empleados
             this.pDir.Controls.Add(this.label25);
             this.pDir.Controls.Add(this.label26);
             this.pDir.Controls.Add(this.label27);
-            this.pDir.Location = new System.Drawing.Point(67, 62);
+            this.pDir.Location = new System.Drawing.Point(54, 62);
             this.pDir.Name = "pDir";
             this.pDir.Size = new System.Drawing.Size(806, 536);
             this.pDir.TabIndex = 104;
@@ -1485,6 +1485,20 @@ namespace UI.Empleados
             this.panel26.Size = new System.Drawing.Size(928, 34);
             this.panel26.TabIndex = 94;
             // 
+            // pbX
+            // 
+            this.pbX.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pbX.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbX.Image = ((System.Drawing.Image)(resources.GetObject("pbX.Image")));
+            this.pbX.Location = new System.Drawing.Point(892, 5);
+            this.pbX.Name = "pbX";
+            this.pbX.Size = new System.Drawing.Size(25, 24);
+            this.pbX.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbX.TabIndex = 1;
+            this.pbX.TabStop = false;
+            this.pbX.Visible = false;
+            this.pbX.Click += new System.EventHandler(this.pbX_Click);
+            // 
             // label32
             // 
             this.label32.AutoSize = true;
@@ -1720,14 +1734,14 @@ namespace UI.Empleados
             this.dgvEmp.BackgroundColor = System.Drawing.Color.White;
             this.dgvEmp.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvEmp.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvEmp.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvEmp.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvEmp.ColumnHeadersHeight = 30;
             this.dgvEmp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvEmp.EnableHeadersVisualStyles = false;
@@ -1736,12 +1750,12 @@ namespace UI.Empleados
             this.dgvEmp.Name = "dgvEmp";
             this.dgvEmp.ReadOnly = true;
             this.dgvEmp.RowHeadersVisible = false;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Gray;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            this.dgvEmp.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
+            this.dgvEmp.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvEmp.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvEmp.Size = new System.Drawing.Size(803, 307);
             this.dgvEmp.TabIndex = 44;
@@ -1758,20 +1772,6 @@ namespace UI.Empleados
             this.ellipseControl1.TabIndex = 75;
             this.ellipseControl1.Text = "ellipseControl1";
             // 
-            // pbX
-            // 
-            this.pbX.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pbX.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbX.Image = ((System.Drawing.Image)(resources.GetObject("pbX.Image")));
-            this.pbX.Location = new System.Drawing.Point(892, 5);
-            this.pbX.Name = "pbX";
-            this.pbX.Size = new System.Drawing.Size(25, 24);
-            this.pbX.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbX.TabIndex = 1;
-            this.pbX.TabStop = false;
-            this.pbX.Visible = false;
-            this.pbX.Click += new System.EventHandler(this.pbX_Click);
-            // 
             // ListarEmp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1780,6 +1780,7 @@ namespace UI.Empleados
             this.Controls.Add(this.panelLista);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ListarEmp";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ListarEmp";
             this.Load += new System.EventHandler(this.ListarEmp_Load);
             this.panelLista.ResumeLayout(false);
@@ -1859,12 +1860,12 @@ namespace UI.Empleados
             this.paso1.PerformLayout();
             this.panel26.ResumeLayout(false);
             this.panel26.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbX)).EndInit();
             this.pMotivo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmp)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbX)).EndInit();
             this.ResumeLayout(false);
 
         }

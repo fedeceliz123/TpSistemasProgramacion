@@ -30,3 +30,4 @@ C:\TP4\Stage_Pro\UI\bin\Debug\Gma.QrCodeNet.Encoding.dll
 C:\TP4\Stage_Pro\UI\bin\Debug\Gma.QrCodeNet.Encoding.pdb
 C:\TP4\Stage_Pro\UI\bin\Debug\Gma.QrCodeNet.Encoding.xml
 C:\TP4\Stage_Pro\UI\obj\Debug\UI.Eventos.ListarEventos.resources
+C:\TP4\Stage_Pro\UI\obj\Debug\UI.MaterialEvento.MaterialEvento.resources

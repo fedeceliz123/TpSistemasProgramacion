@@ -21,9 +21,9 @@ namespace Negocio
         {
             cEven.CargarEvento(even);
         }
-        public DataTable ListarEventos(string activo)
+        public DataTable ListarEventos(string activo,string dato)
         {
-            return cEven.ListarEventos(activo);
+            return cEven.ListarEventos(activo,dato);
         }
 
         public DataTable CargarClientes()
@@ -35,6 +35,31 @@ namespace Negocio
             return cEven.CargarEmpleados();
         }
 
+        public DataTable LlenarCampos(int id)
+        {
+            return cEven.LlenarCampos(id);
+        }
+
+        public void modificarEvento(Eventos even)
+        {
+            cEven.ModificarEvento(even);
+
+        }
+
+        public void BajaEvento(int id, string motivo)
+        {
+            cEven.BajaEvento(id,motivo);
+        }
+
+        public void Reintegrar(int id)
+        {
+            cEven.ReintegrarEvento(id);
+        }
+
+        public DataTable ListarInactivos(string activo,string dato)
+        {
+            return cEven.ListarInactivos(activo,dato);
+        }
 
     }
 }

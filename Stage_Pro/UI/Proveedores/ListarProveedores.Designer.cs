@@ -1395,6 +1395,7 @@ namespace UI.Proveedores
             this.Controls.Add(this.panelLista);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ListarProveedores";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ListarClientes";
             this.Load += new System.EventHandler(this.ListarClientes_Load);
             this.panelLista.ResumeLayout(false);

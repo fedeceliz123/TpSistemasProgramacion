@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 using Entidades;
 using System.Data;
 using System.Data.SqlClient;
-
+using System.IO;
+using System.Drawing;
 
 namespace Datos.Consultas_Login
 {
@@ -46,6 +47,63 @@ namespace Datos.Consultas_Login
 
 
             return nombre;
+
+        }
+
+        public string recuperarDNI(Login login)
+        {
+            string nombre = "";
+            string consulta = "select dni from empleados where dni=(select dni from login where  nombre_usuario='" + login.nombre_usuario + "' and contraseña='" + login.contraseña + "')";
+            SqlCommand command = new SqlCommand(consulta, Conetar());
+            SqlDataReader leer = command.ExecuteReader();
+
+            if (leer.Read() == true)
+            {
+                nombre = leer["dni"].ToString();
+            }
+
+
+            return nombre;
+
+        }
+
+        public MemoryStream CargarimagenUser(string dni)
+        {
+
+            SqlCommand a = new SqlCommand();
+            string consulta = "select imagen from empleados where dni='" + dni + "'";
+
+            a = new SqlCommand(consulta, Conetar());
+
+            SqlDataReader leer = a.ExecuteReader();
+
+
+
+            if (leer.HasRows)
+            {
+                //convertir los datos byts a la imagen 
+                leer.Read();
+                MemoryStream ms = new MemoryStream((byte[])leer["imagen"]);
+                try
+                {
+                    Bitmap bm = new Bitmap(ms);
+
+                }
+                catch
+                {
+                    return null;
+                }
+
+
+
+                return ms;
+
+            }
+            else
+            {
+                return null;
+            }
+
 
         }
 

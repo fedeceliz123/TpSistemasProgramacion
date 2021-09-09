@@ -71,14 +71,27 @@ namespace UI
                 Carga.Show();
 
                 Menu menu = new Menu();
-                menu.Show();
+
+                string dni = Nlogin.dni(login);
+               
+
 
                 menu.lblNombre.Text = Nlogin.nombres(login);
+                menu.mest = Nlogin.imagen(dni);
+                menu.Show();
 
                 tbClave.Texts = "";
                 tbUsuario.Texts = "";
 
                 this.WindowState = FormWindowState.Minimized;
+            }
+            else
+            {
+                MensajeOk mjs = new MensajeOk();
+                mjs.lblMensaje.Text = "El Usuario o Contraseña no son correctas";
+                mjs.Show();
+                tbUsuario.Texts = "";
+                tbClave.Texts = "";
             }
         }
     }

@@ -29,9 +29,9 @@ namespace UI.Eventos
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ListarEventos));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ListarEventos));
             this.panelLista = new System.Windows.Forms.Panel();
             this.panel26 = new System.Windows.Forms.Panel();
             this.label32 = new System.Windows.Forms.Label();
@@ -116,6 +116,7 @@ namespace UI.Eventos
             // 
             // panelLista
             // 
+            this.panelLista.Controls.Add(this.panelDatosPersonales);
             this.panelLista.Controls.Add(this.panel26);
             this.panelLista.Controls.Add(this.btnReactivar);
             this.panelLista.Controls.Add(this.lblMotivo);
@@ -153,9 +154,9 @@ namespace UI.Eventos
             this.label32.ForeColor = System.Drawing.Color.White;
             this.label32.Location = new System.Drawing.Point(416, 9);
             this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(60, 15);
+            this.label32.Size = new System.Drawing.Size(57, 15);
             this.label32.TabIndex = 0;
-            this.label32.Text = "Material";
+            this.label32.Text = "Eventos";
             // 
             // btnReactivar
             // 
@@ -177,6 +178,7 @@ namespace UI.Eventos
             this.btnReactivar.TextColor = System.Drawing.Color.White;
             this.btnReactivar.UseVisualStyleBackColor = false;
             this.btnReactivar.Visible = false;
+            this.btnReactivar.Click += new System.EventHandler(this.btnReactivar_Click);
             // 
             // lblMotivo
             // 
@@ -211,6 +213,7 @@ namespace UI.Eventos
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox6.TabIndex = 93;
             this.pictureBox6.TabStop = false;
+            this.pictureBox6.Click += new System.EventHandler(this.pictureBox6_Click);
             // 
             // cbMotivo
             // 
@@ -219,12 +222,14 @@ namespace UI.Eventos
             this.cbMotivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbMotivo.FormattingEnabled = true;
             this.cbMotivo.Items.AddRange(new object[] {
-            "Se vendio",
-            "Se rompio el stock"});
+            "Suspencion del evento",
+            "Eligio otro proveedor",
+            "Precio alto"});
             this.cbMotivo.Location = new System.Drawing.Point(8, 5);
             this.cbMotivo.Name = "cbMotivo";
             this.cbMotivo.Size = new System.Drawing.Size(229, 28);
             this.cbMotivo.TabIndex = 0;
+            this.cbMotivo.SelectionChangeCommitted += new System.EventHandler(this.cbMotivo_SelectionChangeCommitted);
             // 
             // label31
             // 
@@ -232,9 +237,9 @@ namespace UI.Eventos
             this.label31.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label31.Location = new System.Drawing.Point(43, 88);
             this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(216, 16);
+            this.label31.Size = new System.Drawing.Size(239, 16);
             this.label31.TabIndex = 90;
-            this.label31.Text = "Buscar por nombre  o codigo: ";
+            this.label31.Text = "Buscar por cliente, lugar o fecha: ";
             // 
             // chbInactivos
             // 
@@ -246,6 +251,7 @@ namespace UI.Eventos
             this.chbInactivos.TabIndex = 81;
             this.chbInactivos.Text = "Listar inactivos";
             this.chbInactivos.UseVisualStyleBackColor = true;
+            this.chbInactivos.CheckedChanged += new System.EventHandler(this.chbInactivos_CheckedChanged);
             // 
             // btnDetalles
             // 
@@ -308,6 +314,7 @@ namespace UI.Eventos
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.TextColor = System.Drawing.Color.White;
             this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnModificar
             // 
@@ -349,6 +356,7 @@ namespace UI.Eventos
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.TextColor = System.Drawing.Color.White;
             this.btnBuscar.UseVisualStyleBackColor = false;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // panel3
             // 
@@ -420,7 +428,7 @@ namespace UI.Eventos
             this.panelDatosPersonales.Controls.Add(this.p1);
             this.panelDatosPersonales.Controls.Add(this.btnCancelar);
             this.panelDatosPersonales.Controls.Add(this.panelPestañas);
-            this.panelDatosPersonales.Location = new System.Drawing.Point(947, 0);
+            this.panelDatosPersonales.Location = new System.Drawing.Point(0, -1);
             this.panelDatosPersonales.Name = "panelDatosPersonales";
             this.panelDatosPersonales.Size = new System.Drawing.Size(928, 755);
             this.panelDatosPersonales.TabIndex = 1;
@@ -812,6 +820,7 @@ namespace UI.Eventos
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.TextColor = System.Drawing.Color.Black;
             this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // panelPestañas
             // 
@@ -841,16 +850,15 @@ namespace UI.Eventos
             this.label10.ForeColor = System.Drawing.Color.White;
             this.label10.Location = new System.Drawing.Point(409, 7);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(101, 15);
+            this.label10.Size = new System.Drawing.Size(98, 15);
             this.label10.TabIndex = 0;
-            this.label10.Text = "Datos Material";
+            this.label10.Text = "Datos Eventos";
             // 
             // ListarEventos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1928, 755);
-            this.Controls.Add(this.panelDatosPersonales);
+            this.ClientSize = new System.Drawing.Size(928, 755);
             this.Controls.Add(this.panelLista);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ListarEventos";

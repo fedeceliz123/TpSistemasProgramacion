@@ -58,10 +58,10 @@ namespace UI
             this.btnCompras = new System.Windows.Forms.Button();
             this.panelLogoImg = new System.Windows.Forms.Panel();
             this.lblNombre = new System.Windows.Forms.Label();
-            this.rjCircularPictureBox1 = new UI.componentes.RJCircularPictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.panelContenedor = new System.Windows.Forms.Panel();
             this.ellipseComponentes1 = new UI.componentes.EllipseComponentes();
+            this.imagenUsuario = new UI.componentes.RJCircularPictureBox();
             this.panelBarrasub.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -74,8 +74,8 @@ namespace UI
             this.panelSubEventos.SuspendLayout();
             this.panelSubCom.SuspendLayout();
             this.panelLogoImg.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.rjCircularPictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imagenUsuario)).BeginInit();
             this.SuspendLayout();
             // 
             // panelBarrasub
@@ -351,9 +351,10 @@ namespace UI
             this.btnMaterial.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
             this.btnMaterial.Size = new System.Drawing.Size(251, 35);
             this.btnMaterial.TabIndex = 3;
-            this.btnMaterial.Text = "Asignar Material";
+            this.btnMaterial.Text = "Entrada/Salida Material";
             this.btnMaterial.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnMaterial.UseVisualStyleBackColor = false;
+            this.btnMaterial.Click += new System.EventHandler(this.btnMaterial_Click);
             // 
             // btnClientes
             // 
@@ -391,6 +392,7 @@ namespace UI
             this.btnCarEvento.Text = "Cargar Evento";
             this.btnCarEvento.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCarEvento.UseVisualStyleBackColor = false;
+            this.btnCarEvento.Click += new System.EventHandler(this.btnCarEvento_Click);
             // 
             // btnEventos
             // 
@@ -437,9 +439,10 @@ namespace UI
             this.btnSaldo.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
             this.btnSaldo.Size = new System.Drawing.Size(251, 35);
             this.btnSaldo.TabIndex = 3;
-            this.btnSaldo.Text = "Saldos";
+            this.btnSaldo.Text = "Material";
             this.btnSaldo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSaldo.UseVisualStyleBackColor = false;
+            this.btnSaldo.Click += new System.EventHandler(this.btnSaldo_Click);
             // 
             // btnCarCompra
             // 
@@ -499,8 +502,8 @@ namespace UI
             // 
             // panelLogoImg
             // 
+            this.panelLogoImg.Controls.Add(this.imagenUsuario);
             this.panelLogoImg.Controls.Add(this.lblNombre);
-            this.panelLogoImg.Controls.Add(this.rjCircularPictureBox1);
             this.panelLogoImg.Controls.Add(this.pictureBox5);
             this.panelLogoImg.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelLogoImg.Location = new System.Drawing.Point(0, 0);
@@ -518,22 +521,6 @@ namespace UI
             this.lblNombre.Size = new System.Drawing.Size(15, 20);
             this.lblNombre.TabIndex = 2;
             this.lblNombre.Text = "-";
-            // 
-            // rjCircularPictureBox1
-            // 
-            this.rjCircularPictureBox1.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
-            this.rjCircularPictureBox1.BorderColor = System.Drawing.Color.Black;
-            this.rjCircularPictureBox1.BorderColor2 = System.Drawing.Color.DarkGray;
-            this.rjCircularPictureBox1.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-            this.rjCircularPictureBox1.BorderSize = 2;
-            this.rjCircularPictureBox1.GradientAngle = 50F;
-            this.rjCircularPictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("rjCircularPictureBox1.Image")));
-            this.rjCircularPictureBox1.Location = new System.Drawing.Point(12, 142);
-            this.rjCircularPictureBox1.Name = "rjCircularPictureBox1";
-            this.rjCircularPictureBox1.Size = new System.Drawing.Size(47, 47);
-            this.rjCircularPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.rjCircularPictureBox1.TabIndex = 1;
-            this.rjCircularPictureBox1.TabStop = false;
             // 
             // pictureBox5
             // 
@@ -557,6 +544,22 @@ namespace UI
             // 
             this.ellipseComponentes1.CornerRadius = 40;
             this.ellipseComponentes1.TargetControl = this;
+            // 
+            // imagenUsuario
+            // 
+            this.imagenUsuario.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
+            this.imagenUsuario.BorderColor = System.Drawing.Color.Black;
+            this.imagenUsuario.BorderColor2 = System.Drawing.SystemColors.ControlDarkDark;
+            this.imagenUsuario.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+            this.imagenUsuario.BorderSize = 2;
+            this.imagenUsuario.GradientAngle = 50F;
+            this.imagenUsuario.Image = global::UI.Properties.Resources.usuario;
+            this.imagenUsuario.Location = new System.Drawing.Point(5, 138);
+            this.imagenUsuario.Name = "imagenUsuario";
+            this.imagenUsuario.Size = new System.Drawing.Size(55, 55);
+            this.imagenUsuario.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.imagenUsuario.TabIndex = 3;
+            this.imagenUsuario.TabStop = false;
             // 
             // Menu
             // 
@@ -584,8 +587,8 @@ namespace UI
             this.panelSubCom.ResumeLayout(false);
             this.panelLogoImg.ResumeLayout(false);
             this.panelLogoImg.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.rjCircularPictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imagenUsuario)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -600,7 +603,6 @@ namespace UI
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panelMenu;
         private System.Windows.Forms.Panel panelLogoImg;
-        private componentes.RJCircularPictureBox rjCircularPictureBox1;
         private System.Windows.Forms.PictureBox pictureBox5;
         public System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.Panel panelContenedor;
@@ -624,5 +626,6 @@ namespace UI
         private System.Windows.Forms.Button btnCarCompra;
         private System.Windows.Forms.Button btnProveedores;
         private System.Windows.Forms.Button btnCompras;
+        private componentes.RJCircularPictureBox imagenUsuario;
     }
 }

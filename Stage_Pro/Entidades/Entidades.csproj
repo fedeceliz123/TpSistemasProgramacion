@@ -48,6 +48,7 @@
     <Compile Include="Direcciones.cs" />
     <Compile Include="Emails.cs" />
     <Compile Include="Empleados.cs" />
+    <Compile Include="EntradaMaterial.cs" />
     <Compile Include="Eventos.cs" />
     <Compile Include="Login.cs" />
     <Compile Include="Material.cs" />
@@ -56,6 +57,7 @@
     <Compile Include="Permisos.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Proveedores.cs" />
+    <Compile Include="SalidaMaterial.cs" />
     <Compile Include="Telefonos.cs" />
     <Compile Include="TipoMaterial.cs" />
   </ItemGroup>

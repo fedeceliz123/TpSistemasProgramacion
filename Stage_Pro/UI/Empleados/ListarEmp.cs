@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Negocio;
 using Entidades;
+using System.IO;
 
 namespace UI.Empleados
 {
@@ -111,6 +112,8 @@ namespace UI.Empleados
 
         private void btnCargar_Click(object sender, EventArgs e)
         {
+            pbUser.Enabled = true;
+            pbUser.Image = UI.Properties.Resources.usuario;
             acciones = 1;
             inputHabilitados();
             btnReactivar.Visible = false;
@@ -124,6 +127,8 @@ namespace UI.Empleados
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
+
+            pbUser.Enabled = true;
             btnReactivar.Visible = false;
             acciones = 2;
             if (dni == "")
@@ -146,6 +151,7 @@ namespace UI.Empleados
 
         private void btnDetalles_Click(object sender, EventArgs e)
         {
+            pbUser.Enabled = false;
             btnReactivar.Visible = false;
             acciones = 3;
             if (dni == "")
@@ -184,10 +190,13 @@ namespace UI.Empleados
 
         }
 
+        
+       
+
         private void LlenarCampos()
         {
 
-
+            MemoryStream ms = new MemoryStream();
             emp.dni = dni;
 
             foreach (DataRow obj in nEmp.empleados(emp, activo).Rows)
@@ -206,7 +215,19 @@ namespace UI.Empleados
                 tbPreDep.Text = obj["valor_dia_deposito"].ToString();
                 tbPreEve.Text = obj["valor_dia_evento"].ToString();
 
+              
 
+
+            }
+
+            if (nEmp.ImagenPerfil(dni) != null)
+            {
+                Bitmap bm =new Bitmap( nEmp.ImagenPerfil(dni));
+                pbUser.Image = bm;
+            }
+            else
+            {
+                pbUser.Image = UI.Properties.Resources.usuario;
             }
 
             foreach (DataRow obj in nEmp.direccionE(emp).Rows)
@@ -641,8 +662,11 @@ namespace UI.Empleados
             if (acciones == 2)
             {
                 cargarEntidades();
-                if(validaciones.TextBoxNull(tbDni)==validaciones.TextBoxNull(tbNombre)==validaciones.TextBoxNull(tbApellido)==validaciones.TextBoxNull(tbPuesto)==false)
-                {
+                //if(validaciones.TextBoxNull(tbDni)==validaciones.TextBoxNull(tbNombre)==validaciones.TextBoxNull(tbApellido)==validaciones.TextBoxNull(tbPuesto)==false)
+                //{
+
+
+
                 nEmp.ModificarEmp(emp, dir, tel, mail, login);
 
                 
@@ -659,21 +683,21 @@ namespace UI.Empleados
 
                     cargarGrilla(nEmp.ListarEmp(activo));
                     dni = "";
-                }
-                else
-                {
-                    MensajeOk mensaje = new MensajeOk();
-                    mensaje.lblMensaje.Text = "Complete los campos obligatorios";
-                    mensaje.Show();
-                }
+                //}
+                //else
+                //{
+                //    MensajeOk mensaje = new MensajeOk();
+                //    mensaje.lblMensaje.Text = "Complete los campos obligatorios";
+                //    mensaje.Show();
+                //}
 
             }
             else if (acciones==1)
             {
                 cargarEntidades();
-                if (validaciones.TextBoxNull(tbDni) == validaciones.TextBoxNull(tbNombre) == validaciones.TextBoxNull(tbApellido) == validaciones.TextBoxNull(tbPuesto) == false)
-                {
-                    nEmp.ModificarEmp(emp, dir, tel, mail, login);
+                //if (validaciones.TextBoxNull(tbDni) == validaciones.TextBoxNull(tbNombre) == validaciones.TextBoxNull(tbApellido) == validaciones.TextBoxNull(tbPuesto) == false)
+                //{
+                    //nEmp.ModificarEmp(emp, dir, tel, mail, login);
 
 
                     nEmp.cargarEmpleado(emp, dir, tel, mail, login);
@@ -690,13 +714,13 @@ namespace UI.Empleados
 
                     cargarGrilla(nEmp.ListarEmp(activo));
                     dni = "";
-                }
-                else
-                {
-                    MensajeOk mensaje = new MensajeOk();
-                    mensaje.lblMensaje.Text = "Complete los campos obligatorios *";
-                    mensaje.Show();
-                }
+                //}
+                //else
+                //{
+                //    MensajeOk mensaje = new MensajeOk();
+                //    mensaje.lblMensaje.Text = "Complete los campos obligatorios *";
+                //    mensaje.Show();
+                //}
 
             }
            
@@ -705,6 +729,9 @@ namespace UI.Empleados
 
         string userAc = "si";
 
+
+       
+   
         private void cargarEntidades()
         {
             emp.dni = tbDni.Text;
@@ -716,6 +743,10 @@ namespace UI.Empleados
             emp.fecha_ingreso = tbFechai.Text;
             emp.valor_dia_deposito = decimal.Parse(tbPreDep.Text);
             emp.valor_dia_evento = decimal.Parse(tbPreEve.Text);
+
+            MemoryStream ms = new MemoryStream();
+            pbUser.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
+            emp.imagen = ms;
 
             // dir 
 
