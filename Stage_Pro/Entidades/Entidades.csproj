@@ -50,6 +50,8 @@
     <Compile Include="Empleados.cs" />
     <Compile Include="EntradaMaterial.cs" />
     <Compile Include="Eventos.cs" />
+    <Compile Include="FormatoMaterial.cs" />
+    <Compile Include="ListaMaterial.cs" />
     <Compile Include="Login.cs" />
     <Compile Include="Material.cs" />
     <Compile Include="MedidaMaterial.cs" />

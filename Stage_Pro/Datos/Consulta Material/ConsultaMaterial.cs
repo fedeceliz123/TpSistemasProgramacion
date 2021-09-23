@@ -30,7 +30,7 @@ namespace Datos.Consulta_Matrial
         public DataTable LlenarModelo(int tipo)
         {
             DataTable dt = new DataTable();
-            string consulta = "select id,modelo from modelo_material where id_tipo="+tipo;
+            string consulta = "select id,id_tipo,modelo from modelo_material where id_tipo="+tipo;
             SqlDataAdapter da = new SqlDataAdapter(consulta, Conetar());
             DataSet ds = new DataSet();
             da.Fill(ds);
